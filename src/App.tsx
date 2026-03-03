@@ -15,7 +15,10 @@ import { useTranslation } from './lib/i18n';
 type ViewState =
     | { type: 'modules' }
     | { type: 'artikel' }
+    | { type: 'vokabeltrainer' }
     | { type: 'story' }
+    | { type: 'media' }
+    | { type: 'tools' }
     | { type: 'admin' }
     | { type: 'lessons', moduleId: string }
     | { type: 'player', lessonId: string, mode: 'learn' | 'edit' }
@@ -109,9 +112,9 @@ function App() {
     return (
         <div className="flex h-screen bg-background text-foreground overflow-hidden">
             <Sidebar
+                user={user}
                 activeView={view.type}
-                onNavigate={(id) => navigateTo({ type: id as any })}
-                userRole={user.role}
+                onNavigate={(id) => setView({ type: id as any })}
             />
 
             <div className="flex-1 flex flex-col overflow-hidden">
@@ -160,9 +163,25 @@ function App() {
                         />
                     )}
 
-                    {view.type === 'settings' && (
-                        <DiagnosticsPanel />
+                    {view.type === 'vokabeltrainer' && (
+                        <div className="p-8 text-center mt-20">
+                            <h2 className="text-3xl font-black mb-4">Vokabeltrainer</h2>
+                            <p className="text-muted-foreground">Vertiefe deinen Wortschatz mit interaktiven Übungen. Demnächst verfügbar!</p>
+                        </div>
                     )}
+                    {view.type === 'media' && (
+                        <div className="p-8 text-center mt-20">
+                            <h2 className="text-3xl font-black mb-4">Medienbibliothek</h2>
+                            <p className="text-muted-foreground">Hier findest du bald alle deine heruntergeladenen Audio- und Videodateien.</p>
+                        </div>
+                    )}
+                    {view.type === 'tools' && (
+                        <div className="p-8 text-center mt-20">
+                            <h2 className="text-3xl font-black mb-4">Lern-Werkzeuge</h2>
+                            <p className="text-muted-foreground">Wörterbücher, Grammatiktabellen und praktische Tools in Kürze verfügbar.</p>
+                        </div>
+                    )}
+                    {view.type === 'settings' && <div className="p-8">Einstellungen (Coming Soon)</div>}
                 </main>
             </div>
         </div>

@@ -88,8 +88,9 @@ export function UserList() {
         { key: 'B1.2', label: 'Modul B1.2' },
         { key: 'B2.1', label: 'Modul B2.1' },
         { key: 'B2.2', label: 'Modul B2.2' },
-        { key: 'vocab_trainer', label: 'Vokabeltrainer' },
-        { key: 'story_mode', label: 'Storymodus' },
+        { key: 'artikel', label: t('artikeltrainer') },
+        { key: 'vokabeltrainer', label: t('vokabeltrainer') },
+        { key: 'story', label: t('story_modus') },
     ];
 
     if (loading) return (

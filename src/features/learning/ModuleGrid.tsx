@@ -18,11 +18,11 @@ const getLevelGradient = (moduleId: string) => {
 
 export function ModuleGrid({ user, onSelectModule }: ModuleGridProps) {
     return (
-        <div className="p-8 max-w-6xl mx-auto min-h-screen">
-            <h1 className="text-4xl font-extrabold mb-12 text-center text-[#1A1A1A]">
+        <div className="p-8 max-w-7xl mx-auto min-h-screen">
+            <h1 className="text-5xl font-extrabold mb-16 text-center text-[#1A1A1A]">
                 Lingo<span className="text-primary">Lume</span> Lernplan
             </h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                 {MODULES.map((module) => {
                     const isLocked = user.role !== 'admin' && !(user.permissions || {})[module.id];
 
@@ -32,7 +32,7 @@ export function ModuleGrid({ user, onSelectModule }: ModuleGridProps) {
                             disabled={isLocked}
                             onClick={() => onSelectModule(module.id)}
                             className={cn(
-                                "group relative overflow-hidden rounded-[2rem] bg-card p-6 text-left transition-all hover:shadow-2xl active:scale-95 border-none shadow-lg",
+                                "group relative overflow-hidden rounded-[2.5rem] bg-card p-10 text-left transition-all hover:shadow-2xl active:scale-95 border-none shadow-lg min-h-[300px]",
                                 !isLocked ? "hover:-translate-y-2" : "opacity-60 cursor-not-allowed grayscale-[0.8]"
                             )}
                         >

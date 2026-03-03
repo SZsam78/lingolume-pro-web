@@ -28,26 +28,32 @@ export function LessonList({ moduleId, onSelectLesson, onBack }: LessonListProps
                 // Fetch lessons for this module from the database
                 const dbLessons = await DB.query('SELECT * FROM lessons WHERE moduleId = ?', [moduleId]);
 
-                // Map to our UI format
-                // If the DB is empty for this module, falling back to basic metadata structure
-                // but using titles from DB where available.
-                const mapped = Array.from({ length: LESSONS_PER_MODULE }, (_, i) => {
-                    const id = `${moduleId}-L${String(i + 1).padStart(2, '0')}`;
-                    const dbMatch = (dbLessons as any[]).find(l => l.id === id);
+                let mapped: LessonItem[] = [];
 
-                    return {
-                        id,
+                if (dbLessons && dbLessons.length > 0) {
+                    mapped = dbLessons.map((doc: any) => {
+                        const data = JSON.parse(doc.content_json || "{}");
+                        return {
+                            id: data.id || doc.id,
+                            number: data.order || data.lessonNumber || parseInt((data.id || doc.id)?.split('-L')[1] || '0', 10),
+                            title: data.title || `Lektion`,
+                            completed: false,
+                        };
+                    }).sort((a, b) => a.number - b.number);
+                } else {
+                    mapped = Array.from({ length: 144 }, (_, i) => ({
+                        id: `${moduleId}-L${String(i + 1).padStart(2, '0')}`,
                         number: i + 1,
-                        title: dbMatch ? dbMatch.title : `Lektion ${i + 1}`,
-                        completed: false, // Progress to be implemented
-                    };
-                });
+                        title: `Lektion ${i + 1}`,
+                        completed: false,
+                    }));
+                }
 
                 setLessons(mapped);
             } catch (error) {
                 console.error("Failed to fetch lessons:", error);
                 // Fallback to basic structure on error
-                setLessons(Array.from({ length: LESSONS_PER_MODULE }, (_, i) => ({
+                setLessons(Array.from({ length: 144 }, (_, i) => ({
                     id: `${moduleId}-L${String(i + 1).padStart(2, '0')}`,
                     number: i + 1,
                     title: `Lektion ${i + 1}`,

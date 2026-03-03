@@ -1,0 +1,3549 @@
+[
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 1,
+    "order": 1,
+    "exerciseType": "richtext",
+    "title": "Lektion 1: Hallo! Ich heiße ...",
+    "instruction": "Lesen Sie den Einführungstext.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Willkommen in A1.1!\n\nIn Lektion 1 lernen Sie:\n- sich begrüßen und verabschieden\n- Namen sagen und nach dem Namen fragen\n- sich kurz vorstellen\n\nWichtige Wörter:\nHallo, Guten Morgen, Guten Tag, Tschüss, Auf Wiedersehen\nIch heiße ..., Wie heißen Sie?"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 1,
+    "order": 2,
+    "exerciseType": "dialog",
+    "title": "Begrüßung und Name",
+    "instruction": "Lesen Sie den Dialog.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Person A: Guten Tag!\nPerson B: Guten Tag!\nPerson A: Wie heißen Sie?\nPerson B: Ich heiße Maria. Und Sie?\nPerson A: Ich heiße Ali.\nPerson B: Freut mich!\nPerson A: Freut mich auch.\nPerson B: Auf Wiedersehen!\nPerson A: Tschüss!"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 1,
+    "order": 3,
+    "exerciseType": "multiple_choice",
+    "title": "Dialog verstehen",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 8,
+    "solution": "1. Maria\n2. Ali\n3. Guten Tag\n4. Auf Wiedersehen",
+    "content": {
+      "questions": [
+        {
+          "question": "Wie heißt Person B?",
+          "options": [
+            "Maria",
+            "Ali",
+            "Max"
+          ],
+          "correctAnswer": "Maria"
+        },
+        {
+          "question": "Wie heißt Person A?",
+          "options": [
+            "Anna",
+            "Ali",
+            "Tom"
+          ],
+          "correctAnswer": "Ali"
+        },
+        {
+          "question": "Was sagen beide am Anfang?",
+          "options": [
+            "Tschüss",
+            "Guten Tag",
+            "Danke"
+          ],
+          "correctAnswer": "Guten Tag"
+        },
+        {
+          "question": "Was sagt Person B am Ende?",
+          "options": [
+            "Auf Wiedersehen",
+            "Guten Morgen",
+            "Bitte"
+          ],
+          "correctAnswer": "Auf Wiedersehen"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 1,
+    "order": 4,
+    "exerciseType": "richtext",
+    "title": "Redemittel: Begrüßung und Abschied",
+    "instruction": "Lesen Sie die Wörter und Sätze.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Begrüßung:\n- Hallo!\n- Guten Morgen!\n- Guten Tag!\n- Guten Abend!\n\nAbschied:\n- Tschüss!\n- Auf Wiedersehen!\n- Bis morgen!\n\nNach dem Namen fragen:\n- Wie heißen Sie?\n- Wie heißt du? (informell)\n\nName sagen:\n- Ich heiße ...\n- Mein Name ist ..."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 1,
+    "order": 5,
+    "exerciseType": "matching",
+    "title": "Begrüßung zuordnen",
+    "instruction": "Ordnen Sie zu.",
+    "difficulty": "leicht",
+    "points": 8,
+    "solution": "Hallo = informell\nGuten Morgen = morgens\nGuten Tag = tagsüber\nGuten Abend = abends\nTschüss = informell (Abschied)\nAuf Wiedersehen = formell (Abschied)",
+    "content": {
+      "pairs": [
+        {
+          "left": "Hallo",
+          "right": "informell"
+        },
+        {
+          "left": "Guten Morgen",
+          "right": "morgens"
+        },
+        {
+          "left": "Guten Tag",
+          "right": "tagsüber"
+        },
+        {
+          "left": "Guten Abend",
+          "right": "abends"
+        },
+        {
+          "left": "Tschüss",
+          "right": "informell (Abschied)"
+        },
+        {
+          "left": "Auf Wiedersehen",
+          "right": "formell (Abschied)"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 1,
+    "order": 6,
+    "exerciseType": "richtext",
+    "title": "Grammatik: Ich – Sie (sein/heißen)",
+    "instruction": "Lesen Sie die Erklärung.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Verb: heißen\n- ich heiße\n- Sie heißen\n\nVerb: sein\n- ich bin\n- Sie sind\n\nBeispiele:\n- Ich heiße Anna.\n- Wie heißen Sie?\n- Ich bin Tom.\n- Ich bin aus Spanien."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 1,
+    "order": 7,
+    "exerciseType": "fill_in_blank",
+    "title": "heißen oder sein",
+    "instruction": "Ergänzen Sie die Lücken.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. heiße\n2. heißen\n3. bin\n4. sind\n5. bin",
+    "content": {
+      "blanks": [
+        {
+          "sentence": "Ich ___ Maria.",
+          "correctAnswer": "heiße",
+          "position": 1
+        },
+        {
+          "sentence": "Wie ___ Sie?",
+          "correctAnswer": "heißen",
+          "position": 2
+        },
+        {
+          "sentence": "Ich ___ Ali.",
+          "correctAnswer": "bin",
+          "position": 3
+        },
+        {
+          "sentence": "Sie ___ Tom.",
+          "correctAnswer": "sind",
+          "position": 4
+        },
+        {
+          "sentence": "Ich ___ aus Deutschland.",
+          "correctAnswer": "bin",
+          "position": 5
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 1,
+    "order": 8,
+    "exerciseType": "multiple_choice",
+    "title": "Ich/Sie richtig",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 8,
+    "solution": "1. Ich heiße...\n2. Sie sind...\n3. Wie heißen Sie?",
+    "content": {
+      "questions": [
+        {
+          "question": "___ heiße Anna.",
+          "options": [
+            "Ich",
+            "Sie",
+            "Wir"
+          ],
+          "correctAnswer": "Ich"
+        },
+        {
+          "question": "Sie ___ aus Österreich.",
+          "options": [
+            "bin",
+            "sind",
+            "ist"
+          ],
+          "correctAnswer": "sind"
+        },
+        {
+          "question": "___ heißen Sie?",
+          "options": [
+            "Wie",
+            "Wo",
+            "Wann"
+          ],
+          "correctAnswer": "Wie"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 1,
+    "order": 9,
+    "exerciseType": "word_order",
+    "title": "Sätze ordnen",
+    "instruction": "Bringen Sie die Wörter in die richtige Reihenfolge.",
+    "difficulty": "leicht",
+    "points": 8,
+    "solution": "1. Ich heiße Maria.\n2. Wie heißen Sie?\n3. Ich bin aus Spanien.",
+    "content": {
+      "text": "1. heiße – Maria – ich\n2. heißen – Sie – wie\n3. aus Spanien – bin – ich"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 1,
+    "order": 10,
+    "exerciseType": "roleplay",
+    "title": "Sich vorstellen",
+    "instruction": "Spielen Sie das Gespräch zu zweit.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "Person A: Guten Tag! Wie heißen Sie?\nPerson B: Ich heiße ... Und Sie?\nPerson A: Ich heiße ...\nPerson B: Woher kommen Sie?\nPerson A: Ich bin aus ...\nPerson B: Freut mich!\nPerson A: Freut mich auch. Auf Wiedersehen!\nPerson B: Tschüss!",
+    "content": {
+      "roleplayInstructions": {
+        "roleA": "Begrüßen Sie, fragen Sie nach dem Namen und sagen Sie Ihren Namen.",
+        "roleB": "Antworten Sie, fragen Sie nach der Herkunft und verabschieden Sie sich.",
+        "tasks": [
+          "Begrüßung",
+          "Name fragen und sagen",
+          "Herkunft fragen und sagen",
+          "Abschied"
+        ]
+      }
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 1,
+    "order": 11,
+    "exerciseType": "free_text",
+    "title": "Schreiben: Kurz vorstellen",
+    "instruction": "Schreiben Sie 4–5 Sätze.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "Hallo! Ich heiße Maria. Ich bin aus Spanien. Ich wohne in Berlin. Tschüss!",
+    "content": {
+      "template": "Hallo!\nIch heiße ...\nIch bin aus ...\nIch wohne in ...\nTschüss!"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 1,
+    "order": 12,
+    "exerciseType": "mini_test",
+    "title": "Mini-Test Lektion 1",
+    "instruction": "Testen Sie Ihr Wissen.",
+    "difficulty": "leicht",
+    "points": 20,
+    "description": "Zeitlimit: 15 Minuten",
+    "solution": "1: Ich heiße...\n2: Guten Tag\n3: Auf Wiedersehen\nFreitext: individuelle Antworten",
+    "content": {
+      "questions": [
+        {
+          "question": "Welche Antwort passt?",
+          "options": [
+            "Ich heiße Anna.",
+            "Ich heißen Anna.",
+            "Ich heißt Anna."
+          ],
+          "correctAnswer": "Ich heiße Anna."
+        },
+        {
+          "question": "Welche Begrüßung passt am Tag?",
+          "options": [
+            "Guten Tag",
+            "Gute Nacht",
+            "Tschüss"
+          ],
+          "correctAnswer": "Guten Tag"
+        },
+        {
+          "question": "Welche Verabschiedung ist formell?",
+          "options": [
+            "Tschüss",
+            "Auf Wiedersehen",
+            "Hallo"
+          ],
+          "correctAnswer": "Auf Wiedersehen"
+        }
+      ],
+      "text": "Schreiben Sie 2 Sätze: Name + Herkunft."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 2,
+    "order": 1,
+    "exerciseType": "richtext",
+    "title": "Lektion 2: Zahlen und Telefonnummer",
+    "instruction": "Lesen Sie den Einführungstext.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "In Lektion 2 lernen Sie:\n- Zahlen 0–20\n- Telefonnummer sagen und verstehen\n- nach der Telefonnummer fragen\n\nWichtige Wörter:\nnull, eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn\nWie ist Ihre Telefonnummer?"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 2,
+    "order": 2,
+    "exerciseType": "richtext",
+    "title": "Zahlen 0–20",
+    "instruction": "Lesen Sie die Zahlen.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "0 null\n1 eins\n2 zwei\n3 drei\n4 vier\n5 fünf\n6 sechs\n7 sieben\n8 acht\n9 neun\n10 zehn\n11 elf\n12 zwölf\n13 dreizehn\n14 vierzehn\n15 fünfzehn\n16 sechzehn\n17 siebzehn\n18 achtzehn\n19 neunzehn\n20 zwanzig"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 2,
+    "order": 3,
+    "exerciseType": "dialog",
+    "title": "Telefonnummer",
+    "instruction": "Lesen Sie den Dialog.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Person A: Guten Tag! Wie ist Ihre Telefonnummer?\nPerson B: 0 1 7 6 – 3 2 8 – 0 9 4.\nPerson A: Können Sie das bitte wiederholen?\nPerson B: Ja: 0 1 7 6 – 3 2 8 – 0 9 4.\nPerson A: Danke.\nPerson B: Bitte."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 2,
+    "order": 4,
+    "exerciseType": "multiple_choice",
+    "title": "Dialog verstehen",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 8,
+    "solution": "1. Telefonnummer\n2. wiederholen\n3. Danke\n4. Bitte",
+    "content": {
+      "questions": [
+        {
+          "question": "Was fragt Person A?",
+          "options": [
+            "Adresse",
+            "Telefonnummer",
+            "Name"
+          ],
+          "correctAnswer": "Telefonnummer"
+        },
+        {
+          "question": "Was sagt Person A, weil es schwer ist?",
+          "options": [
+            "Können Sie das bitte wiederholen?",
+            "Guten Morgen!",
+            "Wie heißen Sie?"
+          ],
+          "correctAnswer": "Können Sie das bitte wiederholen?"
+        },
+        {
+          "question": "Was sagt Person A am Ende?",
+          "options": [
+            "Danke",
+            "Tschüss",
+            "Hallo"
+          ],
+          "correctAnswer": "Danke"
+        },
+        {
+          "question": "Was sagt Person B am Ende?",
+          "options": [
+            "Bitte",
+            "Auf Wiedersehen",
+            "Entschuldigung"
+          ],
+          "correctAnswer": "Bitte"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 2,
+    "order": 5,
+    "exerciseType": "matching",
+    "title": "Zahlen zuordnen",
+    "instruction": "Ordnen Sie Zahl und Wort zu.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "0 = null\n3 = drei\n5 = fünf\n7 = sieben\n9 = neun\n12 = zwölf",
+    "content": {
+      "pairs": [
+        {
+          "left": "0",
+          "right": "null"
+        },
+        {
+          "left": "3",
+          "right": "drei"
+        },
+        {
+          "left": "5",
+          "right": "fünf"
+        },
+        {
+          "left": "7",
+          "right": "sieben"
+        },
+        {
+          "left": "9",
+          "right": "neun"
+        },
+        {
+          "left": "12",
+          "right": "zwölf"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 2,
+    "order": 6,
+    "exerciseType": "fill_in_blank",
+    "title": "Zahlen schreiben",
+    "instruction": "Ergänzen Sie die Lücken.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. fünf\n2. acht\n3. zwölf\n4. zwanzig\n5. null",
+    "content": {
+      "blanks": [
+        {
+          "sentence": "5 = ___",
+          "correctAnswer": "fünf",
+          "position": 1
+        },
+        {
+          "sentence": "8 = ___",
+          "correctAnswer": "acht",
+          "position": 2
+        },
+        {
+          "sentence": "12 = ___",
+          "correctAnswer": "zwölf",
+          "position": 3
+        },
+        {
+          "sentence": "20 = ___",
+          "correctAnswer": "zwanzig",
+          "position": 4
+        },
+        {
+          "sentence": "0 = ___",
+          "correctAnswer": "null",
+          "position": 5
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 2,
+    "order": 7,
+    "exerciseType": "word_order",
+    "title": "Fragen bilden",
+    "instruction": "Bringen Sie die Wörter in die richtige Reihenfolge.",
+    "difficulty": "leicht",
+    "points": 8,
+    "solution": "1. Wie ist Ihre Telefonnummer?\n2. Können Sie das bitte wiederholen?\n3. Wie ist die Nummer?",
+    "content": {
+      "text": "1. Ihre – Telefonnummer – wie – ist\n2. das – bitte – wiederholen – können – Sie\n3. ist – die Nummer – wie"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 2,
+    "order": 8,
+    "exerciseType": "multiple_choice",
+    "title": "Zahlen hören (einfach)",
+    "instruction": "Wählen Sie die richtige Zahl.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. 12\n2. 17\n3. 20",
+    "content": {
+      "questions": [
+        {
+          "question": "„zwölf“",
+          "options": [
+            "2",
+            "12",
+            "20"
+          ],
+          "correctAnswer": "12"
+        },
+        {
+          "question": "„siebzehn“",
+          "options": [
+            "7",
+            "17",
+            "70"
+          ],
+          "correctAnswer": "17"
+        },
+        {
+          "question": "„zwanzig“",
+          "options": [
+            "12",
+            "20",
+            "2"
+          ],
+          "correctAnswer": "20"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 2,
+    "order": 9,
+    "exerciseType": "roleplay",
+    "title": "Telefonnummer fragen und sagen",
+    "instruction": "Spielen Sie das Gespräch zu zweit.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "Person A: Guten Tag! Wie ist Ihre Telefonnummer?\nPerson B: Meine Telefonnummer ist ...\nPerson A: Können Sie das bitte wiederholen?\nPerson B: Ja: ...\nPerson A: Danke.\nPerson B: Bitte.",
+    "content": {
+      "roleplayInstructions": {
+        "roleA": "Fragen Sie nach der Telefonnummer. Bitten Sie um Wiederholung.",
+        "roleB": "Sagen Sie die Telefonnummer langsam. Wiederholen Sie sie.",
+        "tasks": [
+          "Telefonnummer fragen",
+          "Telefonnummer sagen",
+          "Wiederholen",
+          "Abschluss"
+        ]
+      }
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 2,
+    "order": 10,
+    "exerciseType": "free_text",
+    "title": "Schreiben: Meine Nummer",
+    "instruction": "Schreiben Sie 1–2 Sätze.",
+    "difficulty": "leicht",
+    "points": 8,
+    "solution": "Meine Telefonnummer ist 0 1 7 6 – 3 2 8 – 0 9 4.",
+    "content": {
+      "template": "Meine Telefonnummer ist ...\nDie Nummer ist ..."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 2,
+    "order": 11,
+    "exerciseType": "richtext",
+    "title": "Mini-Info: Bindestrich und Gruppen",
+    "instruction": "Lesen Sie die Info.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Telefonnummern spricht man oft in Gruppen:\n- 0 1 7 6 – 3 2 8 – 0 9 4\n\nWichtige Sätze:\n- Können Sie das bitte wiederholen?\n- Bitte langsam.\n- Danke."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 2,
+    "order": 12,
+    "exerciseType": "mini_test",
+    "title": "Mini-Test Lektion 2",
+    "instruction": "Testen Sie Ihr Wissen.",
+    "difficulty": "leicht",
+    "points": 20,
+    "description": "Zeitlimit: 15 Minuten",
+    "solution": "1: zwölf\n2: Wie ist Ihre Telefonnummer?\n3: Können Sie das bitte wiederholen?\nFreitext: individuelle Antworten",
+    "content": {
+      "questions": [
+        {
+          "question": "12 = ___",
+          "options": [
+            "zwölf",
+            "zwanzig",
+            "zwei"
+          ],
+          "correctAnswer": "zwölf"
+        },
+        {
+          "question": "Welche Frage passt?",
+          "options": [
+            "Wie ist Ihre Telefonnummer?",
+            "Wo wohnen Sie?",
+            "Wie alt sind Sie?"
+          ],
+          "correctAnswer": "Wie ist Ihre Telefonnummer?"
+        },
+        {
+          "question": "Welche Bitte passt?",
+          "options": [
+            "Können Sie das bitte wiederholen?",
+            "Gute Nacht!",
+            "Wie heißen Sie?"
+          ],
+          "correctAnswer": "Können Sie das bitte wiederholen?"
+        }
+      ],
+      "text": "Schreiben Sie eine Telefonnummer (mit Leerzeichen)."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 3,
+    "order": 1,
+    "exerciseType": "richtext",
+    "title": "Lektion 3: Buchstabieren und E-Mail",
+    "instruction": "Lesen Sie den Einführungstext.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "In Lektion 3 lernen Sie:\n- Buchstaben sagen (buchstabieren)\n- E-Mail-Adresse sagen und verstehen\n- nach der E-Mail fragen\n\nWichtige Wörter:\nE-Mail, Adresse, at (@), Punkt (.), minus (-)\nWie ist Ihre E-Mail-Adresse?"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 3,
+    "order": 2,
+    "exerciseType": "richtext",
+    "title": "Alphabet (Auswahl)",
+    "instruction": "Lesen Sie die Buchstaben.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "A, B, C, D, E, F, G, H, I, J\nK, L, M, N, O, P, Q, R, S, T\nU, V, W, X, Y, Z"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 3,
+    "order": 3,
+    "exerciseType": "dialog",
+    "title": "E-Mail-Adresse",
+    "instruction": "Lesen Sie den Dialog.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Person A: Wie ist Ihre E-Mail-Adresse?\nPerson B: maria.perez at beispiel.de\nPerson A: Können Sie das bitte buchstabieren?\nPerson B: Ja: M-A-R-I-A Punkt P-E-R-E-Z at B-E-I-S-P-I-E-L Punkt D-E.\nPerson A: Danke.\nPerson B: Bitte."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 3,
+    "order": 4,
+    "exerciseType": "multiple_choice",
+    "title": "Dialog verstehen",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 8,
+    "solution": "1. E-Mail-Adresse\n2. buchstabieren\n3. Punkt\n4. at",
+    "content": {
+      "questions": [
+        {
+          "question": "Was fragt Person A?",
+          "options": [
+            "Telefonnummer",
+            "E-Mail-Adresse",
+            "Alter"
+          ],
+          "correctAnswer": "E-Mail-Adresse"
+        },
+        {
+          "question": "Was soll Person B machen?",
+          "options": [
+            "singen",
+            "buchstabieren",
+            "kochen"
+          ],
+          "correctAnswer": "buchstabieren"
+        },
+        {
+          "question": "Was sagt man für '.'?",
+          "options": [
+            "Punkt",
+            "Minus",
+            "Komma"
+          ],
+          "correctAnswer": "Punkt"
+        },
+        {
+          "question": "Was sagt man für '@'?",
+          "options": [
+            "at",
+            "und",
+            "oder"
+          ],
+          "correctAnswer": "at"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 3,
+    "order": 5,
+    "exerciseType": "matching",
+    "title": "Symbole zuordnen",
+    "instruction": "Ordnen Sie zu.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "@ = at\n. = Punkt\n- = minus\n_ = Unterstrich\n? = Fragezeichen\n! = Ausrufezeichen",
+    "content": {
+      "pairs": [
+        {
+          "left": "@",
+          "right": "at"
+        },
+        {
+          "left": ".",
+          "right": "Punkt"
+        },
+        {
+          "left": "-",
+          "right": "minus"
+        },
+        {
+          "left": "_",
+          "right": "Unterstrich"
+        },
+        {
+          "left": "?",
+          "right": "Fragezeichen"
+        },
+        {
+          "left": "!",
+          "right": "Ausrufezeichen"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 3,
+    "order": 6,
+    "exerciseType": "fill_in_blank",
+    "title": "E-Mail schreiben (Wörter)",
+    "instruction": "Ergänzen Sie die Lücken.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Punkt\n2. at\n3. minus\n4. Unterstrich\n5. Punkt",
+    "content": {
+      "blanks": [
+        {
+          "sentence": "maria___perez = maria.perez",
+          "correctAnswer": "Punkt",
+          "position": 1
+        },
+        {
+          "sentence": "maria.perez ___ beispiel.de",
+          "correctAnswer": "at",
+          "position": 2
+        },
+        {
+          "sentence": "maria-perez = maria ___ perez",
+          "correctAnswer": "minus",
+          "position": 3
+        },
+        {
+          "sentence": "maria_perez = maria ___ perez",
+          "correctAnswer": "Unterstrich",
+          "position": 4
+        },
+        {
+          "sentence": "beispiel___de = beispiel.de",
+          "correctAnswer": "Punkt",
+          "position": 5
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 3,
+    "order": 7,
+    "exerciseType": "word_order",
+    "title": "Fragen bilden",
+    "instruction": "Bringen Sie die Wörter in die richtige Reihenfolge.",
+    "difficulty": "leicht",
+    "points": 8,
+    "solution": "1. Wie ist Ihre E-Mail-Adresse?\n2. Können Sie das bitte buchstabieren?\n3. Wie schreibt man das?",
+    "content": {
+      "text": "1. Ihre – E-Mail-Adresse – wie – ist\n2. bitte – buchstabieren – können – Sie – das\n3. man – wie – das – schreibt"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 3,
+    "order": 8,
+    "exerciseType": "multiple_choice",
+    "title": "Buchstaben erkennen",
+    "instruction": "Wählen Sie den richtigen Buchstaben.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. M\n2. A\n3. Z",
+    "content": {
+      "questions": [
+        {
+          "question": "Welcher Buchstabe ist „M“?",
+          "options": [
+            "M",
+            "N",
+            "W"
+          ],
+          "correctAnswer": "M"
+        },
+        {
+          "question": "Welcher Buchstabe ist „A“?",
+          "options": [
+            "H",
+            "A",
+            "E"
+          ],
+          "correctAnswer": "A"
+        },
+        {
+          "question": "Welcher Buchstabe ist „Z“?",
+          "options": [
+            "S",
+            "Z",
+            "C"
+          ],
+          "correctAnswer": "Z"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 3,
+    "order": 9,
+    "exerciseType": "roleplay",
+    "title": "E-Mail fragen und buchstabieren",
+    "instruction": "Spielen Sie das Gespräch zu zweit.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "Person A: Wie ist Ihre E-Mail-Adresse?\nPerson B: ...\nPerson A: Können Sie das bitte buchstabieren?\nPerson B: Ja: ...\nPerson A: Danke.\nPerson B: Bitte.",
+    "content": {
+      "roleplayInstructions": {
+        "roleA": "Fragen Sie nach der E-Mail-Adresse und bitten Sie um Buchstabieren.",
+        "roleB": "Sagen Sie die E-Mail-Adresse und buchstabieren Sie sie.",
+        "tasks": [
+          "E-Mail fragen",
+          "E-Mail sagen",
+          "Buchstabieren",
+          "Abschluss"
+        ]
+      }
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 3,
+    "order": 10,
+    "exerciseType": "free_text",
+    "title": "Schreiben: Meine E-Mail",
+    "instruction": "Schreiben Sie Ihre E-Mail-Adresse (Beispiel).",
+    "difficulty": "leicht",
+    "points": 8,
+    "solution": "anna.meier at beispiel.de",
+    "content": {
+      "template": "[name].[nachname] at beispiel.de"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 3,
+    "order": 11,
+    "exerciseType": "richtext",
+    "title": "Mini-Info: Langsam sprechen",
+    "instruction": "Lesen Sie die Sätze.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Hilfreiche Sätze:\n- Können Sie das bitte wiederholen?\n- Bitte langsam.\n- Können Sie das bitte buchstabieren?\n- Danke!"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 3,
+    "order": 12,
+    "exerciseType": "mini_test",
+    "title": "Mini-Test Lektion 3",
+    "instruction": "Testen Sie Ihr Wissen.",
+    "difficulty": "leicht",
+    "points": 20,
+    "description": "Zeitlimit: 15 Minuten",
+    "solution": "1: E-Mail-Adresse\n2: Punkt\n3: at\nFreitext: individuelle Antworten",
+    "content": {
+      "questions": [
+        {
+          "question": "Welche Frage passt?",
+          "options": [
+            "Wie ist Ihre E-Mail-Adresse?",
+            "Wie alt sind Sie?",
+            "Wo wohnen Sie?"
+          ],
+          "correctAnswer": "Wie ist Ihre E-Mail-Adresse?"
+        },
+        {
+          "question": "Was sagt man für '.'?",
+          "options": [
+            "Punkt",
+            "minus",
+            "at"
+          ],
+          "correctAnswer": "Punkt"
+        },
+        {
+          "question": "Was sagt man für '@'?",
+          "options": [
+            "und",
+            "at",
+            "oder"
+          ],
+          "correctAnswer": "at"
+        }
+      ],
+      "text": "Schreiben Sie eine E-Mail-Adresse mit „Punkt“ und „at“ (Wörter)."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 4,
+    "order": 1,
+    "exerciseType": "richtext",
+    "title": "Lektion 4: Länder und Sprachen",
+    "instruction": "Lesen Sie den Einführungstext.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "In Lektion 4 lernen Sie:\n- Länder und Sprachen\n- Woher kommen Sie?\n- Welche Sprache sprechen Sie?\n\nBeispiele:\n- Ich komme aus Deutschland.\n- Ich spreche Deutsch.\n- Ich spreche Englisch."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 4,
+    "order": 2,
+    "exerciseType": "richtext",
+    "title": "Wortschatz: Länder und Sprachen",
+    "instruction": "Lesen Sie die Wörter.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Deutschland – Deutsch\nÖsterreich – Deutsch\nSchweiz – Deutsch\nSpanien – Spanisch\nItalien – Italienisch\nFrankreich – Französisch\nEngland – Englisch\nUSA – Englisch\nTürkei – Türkisch"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 4,
+    "order": 3,
+    "exerciseType": "dialog",
+    "title": "Woher kommen Sie? Welche Sprache?",
+    "instruction": "Lesen Sie den Dialog.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Person A: Guten Tag! Woher kommen Sie?\nPerson B: Ich komme aus Spanien.\nPerson A: Sprechen Sie Deutsch?\nPerson B: Ja, ich spreche Deutsch und Spanisch.\nPerson A: Sehr gut!\nPerson B: Danke."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 4,
+    "order": 4,
+    "exerciseType": "multiple_choice",
+    "title": "Dialog verstehen",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 8,
+    "solution": "1. Spanien\n2. Deutsch und Spanisch\n3. Woher kommen Sie?\n4. Sehr gut!",
+    "content": {
+      "questions": [
+        {
+          "question": "Woher kommt Person B?",
+          "options": [
+            "Italien",
+            "Spanien",
+            "Deutschland"
+          ],
+          "correctAnswer": "Spanien"
+        },
+        {
+          "question": "Welche Sprachen spricht Person B?",
+          "options": [
+            "Deutsch und Spanisch",
+            "Englisch und Französisch",
+            "nur Deutsch"
+          ],
+          "correctAnswer": "Deutsch und Spanisch"
+        },
+        {
+          "question": "Welche Frage stellt Person A?",
+          "options": [
+            "Wie heißen Sie?",
+            "Woher kommen Sie?",
+            "Wie alt sind Sie?"
+          ],
+          "correctAnswer": "Woher kommen Sie?"
+        },
+        {
+          "question": "Was sagt Person A als Reaktion?",
+          "options": [
+            "Sehr gut!",
+            "Nein!",
+            "Tschüss!"
+          ],
+          "correctAnswer": "Sehr gut!"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 4,
+    "order": 5,
+    "exerciseType": "matching",
+    "title": "Land – Sprache zuordnen",
+    "instruction": "Ordnen Sie zu.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "Deutschland = Deutsch\nSpanien = Spanisch\nItalien = Italienisch\nFrankreich = Französisch\nUSA = Englisch\nTürkei = Türkisch",
+    "content": {
+      "pairs": [
+        {
+          "left": "Deutschland",
+          "right": "Deutsch"
+        },
+        {
+          "left": "Spanien",
+          "right": "Spanisch"
+        },
+        {
+          "left": "Italien",
+          "right": "Italienisch"
+        },
+        {
+          "left": "Frankreich",
+          "right": "Französisch"
+        },
+        {
+          "left": "USA",
+          "right": "Englisch"
+        },
+        {
+          "left": "Türkei",
+          "right": "Türkisch"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 4,
+    "order": 6,
+    "exerciseType": "richtext",
+    "title": "Grammatik: kommen aus / sprechen",
+    "instruction": "Lesen Sie die Erklärung.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Fragen:\n- Woher kommen Sie?\n- Sprechen Sie Deutsch?\n\nAntworten:\n- Ich komme aus ...\n- Ich spreche ...\n\nBeispiele:\n- Ich komme aus Italien.\n- Ich spreche Italienisch.\n- Ich spreche Deutsch und Englisch."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 4,
+    "order": 7,
+    "exerciseType": "fill_in_blank",
+    "title": "kommen / sprechen",
+    "instruction": "Ergänzen Sie die Lücken.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "1. komme\n2. sprechen\n3. spreche\n4. komme\n5. spreche",
+    "content": {
+      "blanks": [
+        {
+          "sentence": "Ich ___ aus Deutschland.",
+          "correctAnswer": "komme",
+          "position": 1
+        },
+        {
+          "sentence": "___ Sie Englisch?",
+          "correctAnswer": "sprechen",
+          "position": 2
+        },
+        {
+          "sentence": "Ich ___ Spanisch.",
+          "correctAnswer": "spreche",
+          "position": 3
+        },
+        {
+          "sentence": "Ich ___ aus der Türkei.",
+          "correctAnswer": "komme",
+          "position": 4
+        },
+        {
+          "sentence": "Ich ___ Deutsch und Englisch.",
+          "correctAnswer": "spreche",
+          "position": 5
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 4,
+    "order": 8,
+    "exerciseType": "multiple_choice",
+    "title": "Richtig wählen",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Ich komme aus Italien.\n2. Ich spreche Französisch.\n3. Sprechen Sie Deutsch?",
+    "content": {
+      "questions": [
+        {
+          "question": "Welche Antwort passt zu „Woher kommen Sie?“",
+          "options": [
+            "Ich komme aus Italien.",
+            "Ich spreche Italienisch.",
+            "Ich heiße Anna."
+          ],
+          "correctAnswer": "Ich komme aus Italien."
+        },
+        {
+          "question": "Welche Antwort passt zu „Welche Sprache sprechen Sie?“",
+          "options": [
+            "Ich spreche Französisch.",
+            "Ich komme aus Frankreich.",
+            "Ich bin 20."
+          ],
+          "correctAnswer": "Ich spreche Französisch."
+        },
+        {
+          "question": "Welche Frage passt?",
+          "options": [
+            "Sprechen Sie Deutsch?",
+            "Wie ist Ihre Telefonnummer?",
+            "Wie alt sind Sie?"
+          ],
+          "correctAnswer": "Sprechen Sie Deutsch?"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 4,
+    "order": 9,
+    "exerciseType": "word_order",
+    "title": "Sätze ordnen",
+    "instruction": "Bringen Sie die Wörter in die richtige Reihenfolge.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Woher kommen Sie?\n2. Ich komme aus Spanien.\n3. Ich spreche Deutsch.",
+    "content": {
+      "text": "1. kommen – Sie – woher\n2. aus Spanien – komme – ich\n3. spreche – Deutsch – ich"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 4,
+    "order": 10,
+    "exerciseType": "roleplay",
+    "title": "Herkunft und Sprache",
+    "instruction": "Spielen Sie das Gespräch zu zweit.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "Person A: Guten Tag! Woher kommen Sie?\nPerson B: Ich komme aus ...\nPerson A: Welche Sprache sprechen Sie?\nPerson B: Ich spreche ...\nPerson A: Sprechen Sie Deutsch?\nPerson B: Ja, ich spreche Deutsch. / Nein, ich spreche kein Deutsch.\nPerson A: Danke.\nPerson B: Bitte.",
+    "content": {
+      "roleplayInstructions": {
+        "roleA": "Fragen Sie nach Herkunft und Sprache.",
+        "roleB": "Antworten Sie mit „Ich komme aus...“ und „Ich spreche...“.",
+        "tasks": [
+          "Herkunft fragen",
+          "Sprache fragen",
+          "Antworten geben",
+          "Abschluss"
+        ]
+      }
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 4,
+    "order": 11,
+    "exerciseType": "free_text",
+    "title": "Schreiben: Ich komme aus ...",
+    "instruction": "Schreiben Sie 3–4 Sätze.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "Ich komme aus Italien. Ich spreche Italienisch. Ich spreche auch Deutsch. Ich wohne in Berlin.",
+    "content": {
+      "template": "Ich komme aus ...\nIch spreche ...\nIch spreche auch ...\nIch wohne in ..."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 4,
+    "order": 12,
+    "exerciseType": "mini_test",
+    "title": "Mini-Test Lektion 4",
+    "instruction": "Testen Sie Ihr Wissen.",
+    "difficulty": "leicht",
+    "points": 20,
+    "description": "Zeitlimit: 15 Minuten",
+    "solution": "1: Spanien\n2: Spanisch\n3: Ich komme aus ...\nFreitext: individuelle Antworten",
+    "content": {
+      "questions": [
+        {
+          "question": "Deutschland – ___",
+          "options": [
+            "Deutsch",
+            "Spanisch",
+            "Türkisch"
+          ],
+          "correctAnswer": "Deutsch"
+        },
+        {
+          "question": "Spanien – ___",
+          "options": [
+            "Französisch",
+            "Spanisch",
+            "Englisch"
+          ],
+          "correctAnswer": "Spanisch"
+        },
+        {
+          "question": "Welche Antwort passt zu „Woher kommen Sie?“",
+          "options": [
+            "Ich komme aus Spanien.",
+            "Ich spreche Deutsch.",
+            "Ich heiße Ali."
+          ],
+          "correctAnswer": "Ich komme aus Spanien."
+        }
+      ],
+      "text": "Schreiben Sie 2 Sätze: Herkunft + Sprache."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 5,
+    "order": 1,
+    "exerciseType": "richtext",
+    "title": "Lektion 5: Im Café – bestellen",
+    "instruction": "Lesen Sie den Einführungstext.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "In Lektion 5 lernen Sie:\n- im Café bestellen\n- „Ich hätte gern …“\n- Preise verstehen\n\nWichtige Wörter:\nKaffee, Tee, Wasser, Saft, Kuchen\nbitte, danke\nWie viel kostet das?"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 5,
+    "order": 2,
+    "exerciseType": "richtext",
+    "title": "Wortschatz: Getränke und Essen",
+    "instruction": "Lesen Sie die Wörter.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Getränke:\n- der Kaffee\n- der Tee\n- das Wasser\n- der Saft\n\nEssen:\n- der Kuchen\n- das Brot\n\nHöflich bestellen:\n- Ich hätte gern ...\n- Bitte.\n- Danke."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 5,
+    "order": 3,
+    "exerciseType": "dialog",
+    "title": "Bestellen im Café",
+    "instruction": "Lesen Sie den Dialog.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Person A: Guten Tag! Was möchten Sie?\nPerson B: Ich hätte gern einen Kaffee, bitte.\nPerson A: Mit Milch?\nPerson B: Ja, bitte.\nPerson A: Möchten Sie auch Kuchen?\nPerson B: Ja, ein Stück Kuchen.\nPerson A: Das macht 6 Euro.\nPerson B: Danke.\nPerson A: Bitte."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 5,
+    "order": 4,
+    "exerciseType": "multiple_choice",
+    "title": "Dialog verstehen",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. einen Kaffee\n2. mit Milch\n3. ein Stück Kuchen\n4. 6 Euro",
+    "content": {
+      "questions": [
+        {
+          "question": "Was bestellt Person B zuerst?",
+          "options": [
+            "einen Kaffee",
+            "ein Wasser",
+            "einen Saft"
+          ],
+          "correctAnswer": "einen Kaffee"
+        },
+        {
+          "question": "Wie möchte Person B den Kaffee?",
+          "options": [
+            "ohne Milch",
+            "mit Milch",
+            "mit Zucker"
+          ],
+          "correctAnswer": "mit Milch"
+        },
+        {
+          "question": "Was bestellt Person B danach?",
+          "options": [
+            "ein Stück Kuchen",
+            "ein Brot",
+            "keinen Kuchen"
+          ],
+          "correctAnswer": "ein Stück Kuchen"
+        },
+        {
+          "question": "Wie viel kostet das?",
+          "options": [
+            "3 Euro",
+            "6 Euro",
+            "10 Euro"
+          ],
+          "correctAnswer": "6 Euro"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 5,
+    "order": 5,
+    "exerciseType": "matching",
+    "title": "Wortschatz zuordnen",
+    "instruction": "Ordnen Sie zu.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "Kaffee = Getränk\nTee = Getränk\nWasser = Getränk\nSaft = Getränk\nKuchen = Essen\nBrot = Essen",
+    "content": {
+      "pairs": [
+        {
+          "left": "Kaffee",
+          "right": "Getränk"
+        },
+        {
+          "left": "Tee",
+          "right": "Getränk"
+        },
+        {
+          "left": "Wasser",
+          "right": "Getränk"
+        },
+        {
+          "left": "Saft",
+          "right": "Getränk"
+        },
+        {
+          "left": "Kuchen",
+          "right": "Essen"
+        },
+        {
+          "left": "Brot",
+          "right": "Essen"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 5,
+    "order": 6,
+    "exerciseType": "richtext",
+    "title": "Grammatik: Artikel (der/die/das) – Einführung",
+    "instruction": "Lesen Sie die Erklärung.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Im Deutschen gibt es drei Artikel:\n- der (maskulin)\n- die (feminin)\n- das (neutrum)\n\nBeispiele:\n- der Kaffee\n- der Tee\n- das Wasser\n- der Saft\n- der Kuchen\n- das Brot"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 5,
+    "order": 7,
+    "exerciseType": "fill_in_blank",
+    "title": "der/die/das einsetzen",
+    "instruction": "Ergänzen Sie die Lücken.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "1. der\n2. das\n3. der\n4. der\n5. das",
+    "content": {
+      "blanks": [
+        {
+          "sentence": "___ Kaffee",
+          "correctAnswer": "der",
+          "position": 1
+        },
+        {
+          "sentence": "___ Wasser",
+          "correctAnswer": "das",
+          "position": 2
+        },
+        {
+          "sentence": "___ Tee",
+          "correctAnswer": "der",
+          "position": 3
+        },
+        {
+          "sentence": "___ Kuchen",
+          "correctAnswer": "der",
+          "position": 4
+        },
+        {
+          "sentence": "___ Brot",
+          "correctAnswer": "das",
+          "position": 5
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 5,
+    "order": 8,
+    "exerciseType": "multiple_choice",
+    "title": "Höflich bestellen",
+    "instruction": "Wählen Sie den richtigen Satz.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Ich hätte gern einen Kaffee, bitte.\n2. Ich hätte gern ein Wasser, bitte.\n3. Wie viel kostet das?",
+    "content": {
+      "questions": [
+        {
+          "question": "Welche Bestellung ist höflich?",
+          "options": [
+            "Gib mir Kaffee.",
+            "Ich hätte gern einen Kaffee, bitte.",
+            "Kaffee jetzt!"
+          ],
+          "correctAnswer": "Ich hätte gern einen Kaffee, bitte."
+        },
+        {
+          "question": "Welche Bestellung ist korrekt?",
+          "options": [
+            "Ich hätte gern ein Wasser, bitte.",
+            "Ich hätte gern eine Wasser, bitte.",
+            "Ich hätte gern der Wasser, bitte."
+          ],
+          "correctAnswer": "Ich hätte gern ein Wasser, bitte."
+        },
+        {
+          "question": "Welche Frage passt zum Preis?",
+          "options": [
+            "Wie alt sind Sie?",
+            "Wie viel kostet das?",
+            "Woher kommen Sie?"
+          ],
+          "correctAnswer": "Wie viel kostet das?"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 5,
+    "order": 9,
+    "exerciseType": "word_order",
+    "title": "Sätze ordnen (Café)",
+    "instruction": "Bringen Sie die Wörter in die richtige Reihenfolge.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Ich hätte gern einen Kaffee, bitte.\n2. Möchten Sie auch Kuchen?\n3. Wie viel kostet das?",
+    "content": {
+      "text": "1. gern – ich – hätte – einen Kaffee – bitte\n2. auch – möchten – Sie – Kuchen\n3. kostet – wie viel – das"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 5,
+    "order": 10,
+    "exerciseType": "roleplay",
+    "title": "Rollenspiel: Im Café",
+    "instruction": "Spielen Sie das Gespräch zu zweit.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "Person A: Guten Tag! Was möchten Sie?\nPerson B: Ich hätte gern ..., bitte.\nPerson A: Mit Milch?\nPerson B: Ja, bitte. / Nein, danke.\nPerson A: Möchten Sie auch Kuchen?\nPerson B: Ja, bitte. / Nein, danke.\nPerson A: Das macht ... Euro.\nPerson B: Danke.\nPerson A: Bitte.",
+    "content": {
+      "roleplayInstructions": {
+        "roleA": "Sie sind im Café. Fragen Sie: Was möchten Sie? Mit Milch? Kuchen? Sagen Sie den Preis.",
+        "roleB": "Sie bestellen 1 Getränk und (optional) 1 Essen. Reagieren Sie höflich.",
+        "tasks": [
+          "Bestellung aufnehmen",
+          "Getränk auswählen",
+          "Optionen (Milch/Kuchen)",
+          "Preis nennen",
+          "Abschluss"
+        ]
+      }
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 5,
+    "order": 11,
+    "exerciseType": "free_text",
+    "title": "Schreiben: Meine Bestellung",
+    "instruction": "Schreiben Sie 2–3 Sätze.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "Ich hätte gern einen Kaffee, bitte. Ich hätte gern ein Wasser. Danke.",
+    "content": {
+      "template": "Ich hätte gern ... , bitte.\nIch hätte gern ...\nDanke."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 5,
+    "order": 12,
+    "exerciseType": "mini_test",
+    "title": "Mini-Test Lektion 5",
+    "instruction": "Testen Sie Ihr Wissen.",
+    "difficulty": "leicht",
+    "points": 25,
+    "description": "Zeitlimit: 15 Minuten",
+    "solution": "1: der\n2: Ich hätte gern einen Kaffee, bitte.\n3: Wie viel kostet das?\nFreitext: individuelle Antworten",
+    "content": {
+      "questions": [
+        {
+          "question": "___ Wasser",
+          "options": [
+            "der",
+            "die",
+            "das"
+          ],
+          "correctAnswer": "das"
+        },
+        {
+          "question": "Welche Bestellung ist korrekt?",
+          "options": [
+            "Ich hätte gern einen Kaffee, bitte.",
+            "Ich hätte gern eine Kaffee, bitte.",
+            "Ich hätte gern das Kaffee, bitte."
+          ],
+          "correctAnswer": "Ich hätte gern einen Kaffee, bitte."
+        },
+        {
+          "question": "Welche Frage passt zum Preis?",
+          "options": [
+            "Wie viel kostet das?",
+            "Wie heißen Sie?",
+            "Wo wohnen Sie?"
+          ],
+          "correctAnswer": "Wie viel kostet das?"
+        }
+      ],
+      "text": "Schreiben Sie 2 Bestellungen: 1 Getränk + 1 Essen."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 6,
+    "order": 1,
+    "exerciseType": "richtext",
+    "title": "Lektion 6: Im Supermarkt – einkaufen",
+    "instruction": "Lesen Sie den Einführungstext.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "In Lektion 6 lernen Sie:\n- Lebensmittel im Supermarkt\n- „Ich brauche … / Ich möchte …“\n- Mengen: ein, eine, zwei\n\nWichtige Wörter:\nMilch, Brot, Wasser, Apfel, Banane\nHaben Sie ...?\nIch nehme ..."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 6,
+    "order": 2,
+    "exerciseType": "richtext",
+    "title": "Wortschatz: Lebensmittel",
+    "instruction": "Lesen Sie die Wörter.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Obst:\n- der Apfel\n- die Banane\n\nGetränke:\n- das Wasser\n- die Milch\n\nSonstiges:\n- das Brot\n- der Käse\n\nSätze:\n- Ich brauche ...\n- Ich möchte ...\n- Ich nehme ..."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 6,
+    "order": 3,
+    "exerciseType": "dialog",
+    "title": "Einkaufen",
+    "instruction": "Lesen Sie den Dialog.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Person A: Guten Tag! Kann ich Ihnen helfen?\nPerson B: Ja, bitte. Ich brauche Milch.\nPerson A: Welche Milch?\nPerson B: Eine Milch, bitte.\nPerson A: Sonst noch etwas?\nPerson B: Ja, ich nehme ein Brot und zwei Äpfel.\nPerson A: Okay. Das ist alles.\nPerson B: Danke.\nPerson A: Bitte."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 6,
+    "order": 4,
+    "exerciseType": "multiple_choice",
+    "title": "Dialog verstehen",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Milch\n2. ein Brot\n3. zwei Äpfel\n4. Danke",
+    "content": {
+      "questions": [
+        {
+          "question": "Was braucht Person B?",
+          "options": [
+            "Milch",
+            "Kaffee",
+            "Tee"
+          ],
+          "correctAnswer": "Milch"
+        },
+        {
+          "question": "Was nimmt Person B noch?",
+          "options": [
+            "ein Brot",
+            "ein Kuchen",
+            "ein Saft"
+          ],
+          "correctAnswer": "ein Brot"
+        },
+        {
+          "question": "Wie viele Äpfel nimmt Person B?",
+          "options": [
+            "einen Apfel",
+            "zwei Äpfel",
+            "drei Äpfel"
+          ],
+          "correctAnswer": "zwei Äpfel"
+        },
+        {
+          "question": "Was sagt Person B am Ende?",
+          "options": [
+            "Danke",
+            "Hallo",
+            "Guten Morgen"
+          ],
+          "correctAnswer": "Danke"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 6,
+    "order": 5,
+    "exerciseType": "matching",
+    "title": "Artikel zuordnen",
+    "instruction": "Ordnen Sie zu.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "der Apfel\ndie Banane\ndas Wasser\ndie Milch\ndas Brot\nder Käse",
+    "content": {
+      "pairs": [
+        {
+          "left": "Apfel",
+          "right": "der"
+        },
+        {
+          "left": "Banane",
+          "right": "die"
+        },
+        {
+          "left": "Wasser",
+          "right": "das"
+        },
+        {
+          "left": "Milch",
+          "right": "die"
+        },
+        {
+          "left": "Brot",
+          "right": "das"
+        },
+        {
+          "left": "Käse",
+          "right": "der"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 6,
+    "order": 6,
+    "exerciseType": "richtext",
+    "title": "Grammatik: ein/eine + Mengen",
+    "instruction": "Lesen Sie die Erklärung.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Einzahl (1):\n- ein Brot (das)\n- ein Apfel (der)\n- eine Banane (die)\n- eine Milch (die) (umgangssprachlich: eine Packung Milch)\n\nMehrzahl:\n- zwei Äpfel\n- drei Bananen\n\nBeispiele:\n- Ich nehme ein Brot.\n- Ich nehme zwei Äpfel."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 6,
+    "order": 7,
+    "exerciseType": "fill_in_blank",
+    "title": "ein/eine einsetzen",
+    "instruction": "Ergänzen Sie die Lücken.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "1. ein\n2. eine\n3. ein\n4. eine\n5. ein",
+    "content": {
+      "blanks": [
+        {
+          "sentence": "Ich nehme ___ Brot.",
+          "correctAnswer": "ein",
+          "position": 1
+        },
+        {
+          "sentence": "Ich nehme ___ Banane.",
+          "correctAnswer": "eine",
+          "position": 2
+        },
+        {
+          "sentence": "Ich nehme ___ Apfel.",
+          "correctAnswer": "ein",
+          "position": 3
+        },
+        {
+          "sentence": "Ich brauche ___ Milch.",
+          "correctAnswer": "eine",
+          "position": 4
+        },
+        {
+          "sentence": "Ich möchte ___ Wasser.",
+          "correctAnswer": "ein",
+          "position": 5
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 6,
+    "order": 8,
+    "exerciseType": "multiple_choice",
+    "title": "Mengen richtig",
+    "instruction": "Wählen Sie die richtige Option.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. ein Brot\n2. eine Banane\n3. zwei Äpfel",
+    "content": {
+      "questions": [
+        {
+          "question": "___ Brot",
+          "options": [
+            "ein",
+            "eine",
+            "einen"
+          ],
+          "correctAnswer": "ein"
+        },
+        {
+          "question": "___ Banane",
+          "options": [
+            "ein",
+            "eine",
+            "einen"
+          ],
+          "correctAnswer": "eine"
+        },
+        {
+          "question": "___ Äpfel",
+          "options": [
+            "zwei",
+            "eine",
+            "ein"
+          ],
+          "correctAnswer": "zwei"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 6,
+    "order": 9,
+    "exerciseType": "word_order",
+    "title": "Sätze ordnen (Supermarkt)",
+    "instruction": "Bringen Sie die Wörter in die richtige Reihenfolge.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Ich brauche Milch.\n2. Ich nehme ein Brot.\n3. Ich nehme zwei Äpfel.",
+    "content": {
+      "text": "1. brauche – Milch – ich\n2. ein Brot – nehme – ich\n3. zwei Äpfel – nehme – ich"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 6,
+    "order": 10,
+    "exerciseType": "roleplay",
+    "title": "Rollenspiel: Im Supermarkt",
+    "instruction": "Spielen Sie das Gespräch zu zweit.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "Person A: Guten Tag! Kann ich Ihnen helfen?\nPerson B: Ja, bitte. Ich brauche ...\nPerson A: Sonst noch etwas?\nPerson B: Ja, ich nehme ...\nPerson A: Alles klar.\nPerson B: Danke.\nPerson A: Bitte.",
+    "content": {
+      "roleplayInstructions": {
+        "roleA": "Sie sind Mitarbeiter/in. Fragen Sie: Kann ich Ihnen helfen? Sonst noch etwas?",
+        "roleB": "Sie kaufen 3 Dinge (1x ein/eine, 1x zwei/drei).",
+        "tasks": [
+          "Hilfe anbieten",
+          "3 Produkte nennen",
+          "Mengen sagen",
+          "Abschluss"
+        ]
+      }
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 6,
+    "order": 11,
+    "exerciseType": "free_text",
+    "title": "Schreiben: Einkaufsliste",
+    "instruction": "Schreiben Sie 4 Dinge.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "Ich brauche eine Milch. Ich brauche ein Brot. Ich nehme zwei Äpfel. Ich nehme eine Banane.",
+    "content": {
+      "template": "Ich brauche ...\nIch brauche ...\nIch nehme ...\nIch nehme ..."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 6,
+    "order": 12,
+    "exerciseType": "mini_test",
+    "title": "Mini-Test Lektion 6",
+    "instruction": "Testen Sie Ihr Wissen.",
+    "difficulty": "leicht",
+    "points": 25,
+    "description": "Zeitlimit: 15 Minuten",
+    "solution": "1: eine\n2: ein\n3: zwei\nFreitext: individuelle Antworten",
+    "content": {
+      "questions": [
+        {
+          "question": "___ Banane",
+          "options": [
+            "eine",
+            "ein",
+            "einen"
+          ],
+          "correctAnswer": "eine"
+        },
+        {
+          "question": "___ Brot",
+          "options": [
+            "ein",
+            "eine",
+            "einen"
+          ],
+          "correctAnswer": "ein"
+        },
+        {
+          "question": "___ Äpfel",
+          "options": [
+            "zwei",
+            "eine",
+            "ein"
+          ],
+          "correctAnswer": "zwei"
+        }
+      ],
+      "text": "Schreiben Sie 3 Sätze: Ich brauche … / Ich nehme …"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 7,
+    "order": 1,
+    "exerciseType": "richtext",
+    "title": "Lektion 7: Uhrzeit – Wann ist es?",
+    "instruction": "Lesen Sie den Einführungstext.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "In Lektion 7 lernen Sie:\n- Uhrzeiten sagen und verstehen\n- Fragen: „Wie spät ist es?“ / „Um wie viel Uhr …?“\n- einfache Tageszeiten\n\nWichtige Wörter:\nUhr, morgens, nachmittags, abends\num, heute"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 7,
+    "order": 2,
+    "exerciseType": "richtext",
+    "title": "Uhrzeiten (Beispiele)",
+    "instruction": "Lesen Sie die Beispiele.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Es ist 8 Uhr.\nEs ist 10 Uhr.\nEs ist 12 Uhr.\nEs ist 15 Uhr.\nEs ist 18 Uhr.\n\nFragen:\n- Wie spät ist es?\n- Um wie viel Uhr ist der Termin?"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 7,
+    "order": 3,
+    "exerciseType": "dialog",
+    "title": "Terminzeit",
+    "instruction": "Lesen Sie den Dialog.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Person A: Hallo! Um wie viel Uhr ist der Termin?\nPerson B: Um 10 Uhr.\nPerson A: Super, danke.\nPerson B: Bitte.\nPerson A: Und wann ist er morgen?\nPerson B: Morgen um 9 Uhr.\nPerson A: Okay. Tschüss!\nPerson B: Tschüss!"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 7,
+    "order": 4,
+    "exerciseType": "multiple_choice",
+    "title": "Dialog verstehen",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. um 10 Uhr\n2. um 9 Uhr\n3. Termin\n4. Tschüss",
+    "content": {
+      "questions": [
+        {
+          "question": "Wann ist der Termin heute?",
+          "options": [
+            "um 10 Uhr",
+            "um 12 Uhr",
+            "um 8 Uhr"
+          ],
+          "correctAnswer": "um 10 Uhr"
+        },
+        {
+          "question": "Wann ist der Termin morgen?",
+          "options": [
+            "um 10 Uhr",
+            "um 9 Uhr",
+            "um 15 Uhr"
+          ],
+          "correctAnswer": "um 9 Uhr"
+        },
+        {
+          "question": "Worüber sprechen die Personen?",
+          "options": [
+            "Essen",
+            "Telefonnummer",
+            "Termin"
+          ],
+          "correctAnswer": "Termin"
+        },
+        {
+          "question": "Wie verabschieden sie sich?",
+          "options": [
+            "Tschüss",
+            "Guten Morgen",
+            "Bitte"
+          ],
+          "correctAnswer": "Tschüss"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 7,
+    "order": 5,
+    "exerciseType": "matching",
+    "title": "Zeit – Tageszeit zuordnen",
+    "instruction": "Ordnen Sie zu.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "8 Uhr = morgens\n15 Uhr = nachmittags\n18 Uhr = abends\n12 Uhr = mittags\n10 Uhr = morgens\n20 Uhr = abends",
+    "content": {
+      "pairs": [
+        {
+          "left": "8 Uhr",
+          "right": "morgens"
+        },
+        {
+          "left": "10 Uhr",
+          "right": "morgens"
+        },
+        {
+          "left": "12 Uhr",
+          "right": "mittags"
+        },
+        {
+          "left": "15 Uhr",
+          "right": "nachmittags"
+        },
+        {
+          "left": "18 Uhr",
+          "right": "abends"
+        },
+        {
+          "left": "20 Uhr",
+          "right": "abends"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 7,
+    "order": 6,
+    "exerciseType": "richtext",
+    "title": "Grammatik: um + Uhrzeit",
+    "instruction": "Lesen Sie die Erklärung.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Für eine Uhrzeit benutzen wir „um“:\n- um 8 Uhr\n- um 10 Uhr\n- um 15 Uhr\n\nFragen:\n- Um wie viel Uhr ...?\nAntwort:\n- Um ... Uhr."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 7,
+    "order": 7,
+    "exerciseType": "fill_in_blank",
+    "title": "um + Uhrzeit",
+    "instruction": "Ergänzen Sie die Lücken.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "1. um\n2. Uhr\n3. um\n4. Uhr\n5. um",
+    "content": {
+      "blanks": [
+        {
+          "sentence": "Der Termin ist ___ 10 Uhr.",
+          "correctAnswer": "um",
+          "position": 1
+        },
+        {
+          "sentence": "Es ist 8 ___ .",
+          "correctAnswer": "Uhr",
+          "position": 2
+        },
+        {
+          "sentence": "Morgen ___ 9 Uhr.",
+          "correctAnswer": "um",
+          "position": 3
+        },
+        {
+          "sentence": "Es ist 15 ___ .",
+          "correctAnswer": "Uhr",
+          "position": 4
+        },
+        {
+          "sentence": "Wir treffen uns ___ 18 Uhr.",
+          "correctAnswer": "um",
+          "position": 5
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 7,
+    "order": 8,
+    "exerciseType": "multiple_choice",
+    "title": "Wie spät ist es?",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Es ist 12 Uhr.\n2. Um 18 Uhr.\n3. Es ist 8 Uhr.",
+    "content": {
+      "questions": [
+        {
+          "question": "Frage: Wie spät ist es? (12:00)",
+          "options": [
+            "Es ist 12 Uhr.",
+            "Um 12 Uhr.",
+            "Wie viel Uhr?"
+          ],
+          "correctAnswer": "Es ist 12 Uhr."
+        },
+        {
+          "question": "Frage: Um wie viel Uhr ist der Termin? (18:00)",
+          "options": [
+            "Es ist 18 Uhr.",
+            "Um 18 Uhr.",
+            "Morgens."
+          ],
+          "correctAnswer": "Um 18 Uhr."
+        },
+        {
+          "question": "Frage: Wie spät ist es? (08:00)",
+          "options": [
+            "Es ist 8 Uhr.",
+            "Um 8 Uhr.",
+            "Abends."
+          ],
+          "correctAnswer": "Es ist 8 Uhr."
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 7,
+    "order": 9,
+    "exerciseType": "word_order",
+    "title": "Sätze ordnen (Uhrzeit)",
+    "instruction": "Bringen Sie die Wörter in die richtige Reihenfolge.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Wie spät ist es?\n2. Um wie viel Uhr ist der Termin?\n3. Der Termin ist um 10 Uhr.",
+    "content": {
+      "text": "1. ist – wie spät – es\n2. ist – der Termin – um wie viel Uhr\n3. ist – um 10 Uhr – der Termin"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 7,
+    "order": 10,
+    "exerciseType": "roleplay",
+    "title": "Rollenspiel: Termine",
+    "instruction": "Spielen Sie das Gespräch zu zweit.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "Person A: Hallo! Um wie viel Uhr ist der Termin?\nPerson B: Um ... Uhr.\nPerson A: Und wann ist er morgen?\nPerson B: Morgen um ... Uhr.\nPerson A: Danke!\nPerson B: Bitte.",
+    "content": {
+      "roleplayInstructions": {
+        "roleA": "Fragen Sie nach der Uhrzeit: heute und morgen.",
+        "roleB": "Antworten Sie mit „Um … Uhr“.",
+        "tasks": [
+          "Termin heute",
+          "Termin morgen",
+          "Danke/Bitte"
+        ]
+      }
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 7,
+    "order": 11,
+    "exerciseType": "free_text",
+    "title": "Schreiben: Meine Zeiten",
+    "instruction": "Schreiben Sie 3 Sätze mit Uhrzeiten.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "Ich arbeite um 9 Uhr. Ich esse um 12 Uhr. Ich schlafe um 22 Uhr.",
+    "content": {
+      "template": "Ich ... um ... Uhr.\nIch ... um ... Uhr.\nIch ... um ... Uhr."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 7,
+    "order": 12,
+    "exerciseType": "mini_test",
+    "title": "Mini-Test Lektion 7",
+    "instruction": "Testen Sie Ihr Wissen.",
+    "difficulty": "leicht",
+    "points": 25,
+    "description": "Zeitlimit: 15 Minuten",
+    "solution": "1: Um 10 Uhr.\n2: Es ist 8 Uhr.\n3: um\nFreitext: individuelle Antworten",
+    "content": {
+      "questions": [
+        {
+          "question": "Frage: Um wie viel Uhr ist der Termin? (10:00)",
+          "options": [
+            "Um 10 Uhr.",
+            "Es ist 10 Uhr.",
+            "Morgens."
+          ],
+          "correctAnswer": "Um 10 Uhr."
+        },
+        {
+          "question": "Frage: Wie spät ist es? (08:00)",
+          "options": [
+            "Um 8 Uhr.",
+            "Es ist 8 Uhr.",
+            "Abends."
+          ],
+          "correctAnswer": "Es ist 8 Uhr."
+        },
+        {
+          "question": "Der Termin ist ___ 9 Uhr.",
+          "options": [
+            "um",
+            "Uhr",
+            "at"
+          ],
+          "correctAnswer": "um"
+        }
+      ],
+      "text": "Schreiben Sie 2 Sätze: Termin + Uhrzeit."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 8,
+    "order": 1,
+    "exerciseType": "richtext",
+    "title": "Lektion 8: Wochentage und Termine",
+    "instruction": "Lesen Sie den Einführungstext.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "In Lektion 8 lernen Sie:\n- Wochentage\n- „am Montag“ / „am Dienstag“\n- einfache Termine machen\n\nWichtige Wörter:\nMontag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag, Sonntag\nWann?\nam"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 8,
+    "order": 2,
+    "exerciseType": "richtext",
+    "title": "Wochentage",
+    "instruction": "Lesen Sie die Wörter.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Montag\nDienstag\nMittwoch\nDonnerstag\nFreitag\nSamstag\nSonntag\n\nFrage:\n- Wann ist der Termin?\nAntwort:\n- Am Montag. / Am Freitag."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 8,
+    "order": 3,
+    "exerciseType": "dialog",
+    "title": "Termin am Freitag",
+    "instruction": "Lesen Sie den Dialog.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Person A: Wann ist der Termin?\nPerson B: Am Freitag.\nPerson A: Um wie viel Uhr?\nPerson B: Um 15 Uhr.\nPerson A: Super. Danke.\nPerson B: Bitte."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 8,
+    "order": 4,
+    "exerciseType": "multiple_choice",
+    "title": "Dialog verstehen",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Am Freitag\n2. Um 15 Uhr\n3. Wann ist der Termin?\n4. Bitte",
+    "content": {
+      "questions": [
+        {
+          "question": "Wann ist der Termin?",
+          "options": [
+            "Am Freitag",
+            "Am Montag",
+            "Am Sonntag"
+          ],
+          "correctAnswer": "Am Freitag"
+        },
+        {
+          "question": "Um wie viel Uhr ist der Termin?",
+          "options": [
+            "Um 10 Uhr",
+            "Um 15 Uhr",
+            "Um 18 Uhr"
+          ],
+          "correctAnswer": "Um 15 Uhr"
+        },
+        {
+          "question": "Welche Frage steht im Dialog?",
+          "options": [
+            "Wann ist der Termin?",
+            "Wie heißen Sie?",
+            "Woher kommen Sie?"
+          ],
+          "correctAnswer": "Wann ist der Termin?"
+        },
+        {
+          "question": "Was antwortet Person B auf „Danke“?",
+          "options": [
+            "Bitte",
+            "Tschüss",
+            "Hallo"
+          ],
+          "correctAnswer": "Bitte"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 8,
+    "order": 5,
+    "exerciseType": "matching",
+    "title": "Wochentage zuordnen",
+    "instruction": "Ordnen Sie die Abkürzung zu.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "Mo = Montag\nDi = Dienstag\nMi = Mittwoch\nDo = Donnerstag\nFr = Freitag\nSa = Samstag\nSo = Sonntag",
+    "content": {
+      "pairs": [
+        {
+          "left": "Mo",
+          "right": "Montag"
+        },
+        {
+          "left": "Di",
+          "right": "Dienstag"
+        },
+        {
+          "left": "Mi",
+          "right": "Mittwoch"
+        },
+        {
+          "left": "Do",
+          "right": "Donnerstag"
+        },
+        {
+          "left": "Fr",
+          "right": "Freitag"
+        },
+        {
+          "left": "Sa",
+          "right": "Samstag"
+        },
+        {
+          "left": "So",
+          "right": "Sonntag"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 8,
+    "order": 6,
+    "exerciseType": "richtext",
+    "title": "Grammatik: am + Wochentag",
+    "instruction": "Lesen Sie die Erklärung.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Für Wochentage benutzen wir „am“:\n- am Montag\n- am Dienstag\n- am Freitag\n\nFrage:\n- Wann?\nAntwort:\n- Am Freitag."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 8,
+    "order": 7,
+    "exerciseType": "fill_in_blank",
+    "title": "am einsetzen",
+    "instruction": "Ergänzen Sie die Lücken mit am.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. am\n2. am\n3. am\n4. am\n5. am",
+    "content": {
+      "blanks": [
+        {
+          "sentence": "Der Termin ist ___ Montag.",
+          "correctAnswer": "am",
+          "position": 1
+        },
+        {
+          "sentence": "Wir treffen uns ___ Dienstag.",
+          "correctAnswer": "am",
+          "position": 2
+        },
+        {
+          "sentence": "Ich arbeite ___ Mittwoch.",
+          "correctAnswer": "am",
+          "position": 3
+        },
+        {
+          "sentence": "Die Party ist ___ Samstag.",
+          "correctAnswer": "am",
+          "position": 4
+        },
+        {
+          "sentence": "Der Kurs ist ___ Freitag.",
+          "correctAnswer": "am",
+          "position": 5
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 8,
+    "order": 8,
+    "exerciseType": "multiple_choice",
+    "title": "Wann? richtig",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Am Donnerstag.\n2. Am Sonntag.\n3. Am Montag.",
+    "content": {
+      "questions": [
+        {
+          "question": "Frage: Wann ist der Termin?",
+          "options": [
+            "Am Donnerstag.",
+            "Um 10 Uhr.",
+            "Guten Tag."
+          ],
+          "correctAnswer": "Am Donnerstag."
+        },
+        {
+          "question": "Frage: Wann ist die Party?",
+          "options": [
+            "Am Sonntag.",
+            "Um 18 Uhr.",
+            "Danke."
+          ],
+          "correctAnswer": "Am Sonntag."
+        },
+        {
+          "question": "Frage: Wann ist der Kurs?",
+          "options": [
+            "Am Montag.",
+            "Wie heißen Sie?",
+            "Ich heiße ..."
+          ],
+          "correctAnswer": "Am Montag."
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 8,
+    "order": 9,
+    "exerciseType": "word_order",
+    "title": "Sätze ordnen (Wochentage)",
+    "instruction": "Bringen Sie die Wörter in die richtige Reihenfolge.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Wann ist der Termin?\n2. Der Termin ist am Freitag.\n3. Wir treffen uns am Montag.",
+    "content": {
+      "text": "1. ist – wann – der Termin\n2. am Freitag – ist – der Termin\n3. am Montag – treffen – wir – uns"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 8,
+    "order": 10,
+    "exerciseType": "roleplay",
+    "title": "Rollenspiel: Termin machen",
+    "instruction": "Spielen Sie das Gespräch zu zweit.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "Person A: Wann ist der Termin?\nPerson B: Am ...\nPerson A: Um wie viel Uhr?\nPerson B: Um ... Uhr.\nPerson A: Super, danke.\nPerson B: Bitte.",
+    "content": {
+      "roleplayInstructions": {
+        "roleA": "Fragen Sie nach Tag und Uhrzeit.",
+        "roleB": "Antworten Sie mit „Am …“ und „Um … Uhr“.",
+        "tasks": [
+          "Tag nennen",
+          "Uhrzeit nennen",
+          "Abschluss"
+        ]
+      }
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 8,
+    "order": 11,
+    "exerciseType": "free_text",
+    "title": "Schreiben: Meine Woche",
+    "instruction": "Schreiben Sie 3 Sätze mit Wochentagen.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "Am Montag arbeite ich. Am Mittwoch habe ich einen Termin. Am Samstag habe ich frei.",
+    "content": {
+      "template": "Am Montag ...\nAm Mittwoch ...\nAm Samstag ..."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 8,
+    "order": 12,
+    "exerciseType": "mini_test",
+    "title": "Mini-Test Lektion 8",
+    "instruction": "Testen Sie Ihr Wissen.",
+    "difficulty": "leicht",
+    "points": 25,
+    "description": "Zeitlimit: 15 Minuten",
+    "solution": "1: Am Freitag.\n2: am\n3: Freitag\nFreitext: individuelle Antworten",
+    "content": {
+      "questions": [
+        {
+          "question": "Frage: Wann ist der Termin?",
+          "options": [
+            "Am Freitag.",
+            "Um 15 Uhr.",
+            "Hallo!"
+          ],
+          "correctAnswer": "Am Freitag."
+        },
+        {
+          "question": "Der Termin ist ___ Montag.",
+          "options": [
+            "am",
+            "um",
+            "at"
+          ],
+          "correctAnswer": "am"
+        },
+        {
+          "question": "Fr = ___",
+          "options": [
+            "Freitag",
+            "Februar",
+            "Frau"
+          ],
+          "correctAnswer": "Freitag"
+        }
+      ],
+      "text": "Schreiben Sie 2 Sätze: Am ... + Um ... Uhr."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 9,
+    "order": 1,
+    "exerciseType": "richtext",
+    "title": "Lektion 9: Familie und Personen",
+    "instruction": "Lesen Sie den Einführungstext.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "In Lektion 9 lernen Sie:\n- Familie nennen\n- „Ich habe …“\n- einfache Sätze mit „und“\n\nWichtige Wörter:\nMutter, Vater, Schwester, Bruder, Kind\nWer ist das?\nIch habe ..."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 9,
+    "order": 2,
+    "exerciseType": "richtext",
+    "title": "Wortschatz: Familie",
+    "instruction": "Lesen Sie die Wörter.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Familie:\n- die Mutter\n- der Vater\n- die Schwester\n- der Bruder\n- das Kind\n\nSätze:\n- Das ist meine Mutter.\n- Ich habe einen Bruder.\n- Ich habe zwei Kinder."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 9,
+    "order": 3,
+    "exerciseType": "dialog",
+    "title": "Meine Familie",
+    "instruction": "Lesen Sie den Dialog.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Person A: Wer ist das?\nPerson B: Das ist meine Mutter.\nPerson A: Hast du Geschwister?\nPerson B: Ja, ich habe eine Schwester und einen Bruder.\nPerson A: Und hast du Kinder?\nPerson B: Nein, ich habe keine Kinder.\nPerson A: Okay.\nPerson B: Danke."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 9,
+    "order": 4,
+    "exerciseType": "multiple_choice",
+    "title": "Dialog verstehen",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Mutter\n2. eine Schwester und einen Bruder\n3. keine Kinder\n4. Wer ist das?",
+    "content": {
+      "questions": [
+        {
+          "question": "Wer ist die Person auf dem Foto?",
+          "options": [
+            "die Mutter",
+            "der Vater",
+            "das Kind"
+          ],
+          "correctAnswer": "die Mutter"
+        },
+        {
+          "question": "Was hat Person B?",
+          "options": [
+            "eine Schwester und einen Bruder",
+            "zwei Kinder",
+            "keine Geschwister"
+          ],
+          "correctAnswer": "eine Schwester und einen Bruder"
+        },
+        {
+          "question": "Hat Person B Kinder?",
+          "options": [
+            "Ja, zwei Kinder",
+            "Nein, keine Kinder",
+            "Ja, ein Kind"
+          ],
+          "correctAnswer": "Nein, keine Kinder"
+        },
+        {
+          "question": "Welche Frage steht am Anfang?",
+          "options": [
+            "Wie spät ist es?",
+            "Wer ist das?",
+            "Wo wohnen Sie?"
+          ],
+          "correctAnswer": "Wer ist das?"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 9,
+    "order": 5,
+    "exerciseType": "matching",
+    "title": "Familie – Artikel zuordnen",
+    "instruction": "Ordnen Sie zu.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "die Mutter\nder Vater\ndie Schwester\nder Bruder\ndas Kind",
+    "content": {
+      "pairs": [
+        {
+          "left": "Mutter",
+          "right": "die"
+        },
+        {
+          "left": "Vater",
+          "right": "der"
+        },
+        {
+          "left": "Schwester",
+          "right": "die"
+        },
+        {
+          "left": "Bruder",
+          "right": "der"
+        },
+        {
+          "left": "Kind",
+          "right": "das"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 9,
+    "order": 6,
+    "exerciseType": "richtext",
+    "title": "Grammatik: haben (ich/du/er/sie)",
+    "instruction": "Lesen Sie die Formen.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Verb: haben\n- ich habe\n- du hast\n- er hat\n- sie hat\n- wir haben\n- Sie haben\n\nBeispiele:\n- Ich habe eine Schwester.\n- Hast du Kinder?\n- Er hat zwei Brüder."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 9,
+    "order": 7,
+    "exerciseType": "fill_in_blank",
+    "title": "haben einsetzen",
+    "instruction": "Ergänzen Sie die Lücken.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "1. habe\n2. hast\n3. hat\n4. haben\n5. haben",
+    "content": {
+      "blanks": [
+        {
+          "sentence": "Ich ___ eine Schwester.",
+          "correctAnswer": "habe",
+          "position": 1
+        },
+        {
+          "sentence": "Du ___ einen Bruder.",
+          "correctAnswer": "hast",
+          "position": 2
+        },
+        {
+          "sentence": "Er ___ ein Kind.",
+          "correctAnswer": "hat",
+          "position": 3
+        },
+        {
+          "sentence": "Wir ___ zwei Kinder.",
+          "correctAnswer": "haben",
+          "position": 4
+        },
+        {
+          "sentence": "Sie ___ keine Kinder.",
+          "correctAnswer": "haben",
+          "position": 5
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 9,
+    "order": 8,
+    "exerciseType": "multiple_choice",
+    "title": "Ich/du/er – haben",
+    "instruction": "Wählen Sie die richtige Form.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. habe\n2. hast\n3. hat",
+    "content": {
+      "questions": [
+        {
+          "question": "Ich ___ zwei Kinder.",
+          "options": [
+            "habe",
+            "hast",
+            "hat"
+          ],
+          "correctAnswer": "habe"
+        },
+        {
+          "question": "Du ___ eine Schwester.",
+          "options": [
+            "habe",
+            "hast",
+            "hat"
+          ],
+          "correctAnswer": "hast"
+        },
+        {
+          "question": "Er ___ einen Bruder.",
+          "options": [
+            "habe",
+            "hast",
+            "hat"
+          ],
+          "correctAnswer": "hat"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 9,
+    "order": 9,
+    "exerciseType": "word_order",
+    "title": "Sätze ordnen (Familie)",
+    "instruction": "Bringen Sie die Wörter in die richtige Reihenfolge.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Das ist meine Mutter.\n2. Ich habe einen Bruder.\n3. Ich habe keine Kinder.",
+    "content": {
+      "text": "1. ist – meine Mutter – das\n2. habe – einen Bruder – ich\n3. habe – keine Kinder – ich"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 9,
+    "order": 10,
+    "exerciseType": "roleplay",
+    "title": "Rollenspiel: Über Familie sprechen",
+    "instruction": "Spielen Sie das Gespräch zu zweit.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "Person A: Wer ist das?\nPerson B: Das ist mein/meine ...\nPerson A: Hast du Geschwister?\nPerson B: Ja, ich habe ... / Nein, ich habe keine Geschwister.\nPerson A: Hast du Kinder?\nPerson B: Ja, ich habe ... / Nein, ich habe keine Kinder.\nPerson A: Danke!\nPerson B: Bitte.",
+    "content": {
+      "roleplayInstructions": {
+        "roleA": "Fragen Sie nach Familie, Geschwistern und Kindern.",
+        "roleB": "Antworten Sie mit „Ich habe ... / Ich habe keine ...“.",
+        "tasks": [
+          "Wer ist das?",
+          "Geschwister",
+          "Kinder",
+          "Abschluss"
+        ]
+      }
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 9,
+    "order": 11,
+    "exerciseType": "free_text",
+    "title": "Schreiben: Meine Familie",
+    "instruction": "Schreiben Sie 4 Sätze.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "Das ist meine Mutter. Das ist mein Vater. Ich habe eine Schwester. Ich habe keine Kinder.",
+    "content": {
+      "template": "Das ist meine ...\nDas ist mein ...\nIch habe ...\nIch habe keine ..."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 9,
+    "order": 12,
+    "exerciseType": "mini_test",
+    "title": "Mini-Test Lektion 9",
+    "instruction": "Testen Sie Ihr Wissen.",
+    "difficulty": "leicht",
+    "points": 30,
+    "description": "Zeitlimit: 15 Minuten",
+    "solution": "1: die\n2: hast\n3: Ich habe keine Kinder.\nFreitext: individuelle Antworten",
+    "content": {
+      "questions": [
+        {
+          "question": "___ Mutter",
+          "options": [
+            "der",
+            "die",
+            "das"
+          ],
+          "correctAnswer": "die"
+        },
+        {
+          "question": "Du ___ eine Schwester.",
+          "options": [
+            "habe",
+            "hast",
+            "hat"
+          ],
+          "correctAnswer": "hast"
+        },
+        {
+          "question": "Welche Negation ist richtig?",
+          "options": [
+            "Ich habe nicht Kinder.",
+            "Ich habe keine Kinder.",
+            "Ich habe kein Kinder."
+          ],
+          "correctAnswer": "Ich habe keine Kinder."
+        }
+      ],
+      "text": "Schreiben Sie 3 Sätze: Mutter/Vater + Geschwister + Kinder."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 10,
+    "order": 1,
+    "exerciseType": "richtext",
+    "title": "Lektion 10: Adjektive (groß/klein) und „aber/und“",
+    "instruction": "Lesen Sie den Einführungstext.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "In Lektion 10 lernen Sie:\n- einfache Adjektive: groß/klein, alt/jung, gut/schlecht\n- Sätze verbinden mit „und“ und „aber“\n\nBeispiele:\n- Das Haus ist groß.\n- Die Wohnung ist klein, aber schön."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 10,
+    "order": 2,
+    "exerciseType": "richtext",
+    "title": "Wortschatz: Adjektive",
+    "instruction": "Lesen Sie die Wörter.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Adjektive:\n- groß / klein\n- alt / jung\n- gut / schlecht\n- schön\n\nSätze:\n- Der Kaffee ist gut.\n- Die Wohnung ist klein.\n- Der Film ist gut, aber lang."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 10,
+    "order": 3,
+    "exerciseType": "dialog",
+    "title": "Groß oder klein?",
+    "instruction": "Lesen Sie den Dialog.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Person A: Ist die Wohnung groß?\nPerson B: Nein, sie ist klein, aber schön.\nPerson A: Und ist sie teuer?\nPerson B: Nein, sie ist gut und nicht teuer.\nPerson A: Super!\nPerson B: Ja."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 10,
+    "order": 4,
+    "exerciseType": "multiple_choice",
+    "title": "Dialog verstehen",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. klein\n2. schön\n3. gut\n4. nicht teuer",
+    "content": {
+      "questions": [
+        {
+          "question": "Wie ist die Wohnung?",
+          "options": [
+            "groß",
+            "klein",
+            "alt"
+          ],
+          "correctAnswer": "klein"
+        },
+        {
+          "question": "Wie ist die Wohnung noch?",
+          "options": [
+            "schön",
+            "schlecht",
+            "jung"
+          ],
+          "correctAnswer": "schön"
+        },
+        {
+          "question": "Wie ist sie (Bewertung)?",
+          "options": [
+            "gut",
+            "schlecht",
+            "teuer"
+          ],
+          "correctAnswer": "gut"
+        },
+        {
+          "question": "Ist die Wohnung teuer?",
+          "options": [
+            "Ja, teuer.",
+            "Nein, nicht teuer.",
+            "Keine Antwort."
+          ],
+          "correctAnswer": "Nein, nicht teuer."
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 10,
+    "order": 5,
+    "exerciseType": "matching",
+    "title": "Gegensätze zuordnen",
+    "instruction": "Ordnen Sie die Gegensätze zu.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "groß–klein\nalt–jung\ngut–schlecht\nteuer–billig\nschön–hässlich\nwarm–kalt",
+    "content": {
+      "pairs": [
+        {
+          "left": "groß",
+          "right": "klein"
+        },
+        {
+          "left": "alt",
+          "right": "jung"
+        },
+        {
+          "left": "gut",
+          "right": "schlecht"
+        },
+        {
+          "left": "teuer",
+          "right": "billig"
+        },
+        {
+          "left": "schön",
+          "right": "hässlich"
+        },
+        {
+          "left": "warm",
+          "right": "kalt"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 10,
+    "order": 6,
+    "exerciseType": "richtext",
+    "title": "Grammatik: und / aber",
+    "instruction": "Lesen Sie die Erklärung.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Sätze verbinden:\n- und = plus\n  Beispiel: Die Wohnung ist klein und schön.\n\n- aber = Gegensatz\n  Beispiel: Die Wohnung ist klein, aber schön.\n\nHinweis: Vor „aber“ steht oft ein Komma."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 10,
+    "order": 7,
+    "exerciseType": "fill_in_blank",
+    "title": "und oder aber",
+    "instruction": "Ergänzen Sie die Lücken mit und oder aber.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "1. und\n2. aber\n3. und\n4. aber\n5. und",
+    "content": {
+      "blanks": [
+        {
+          "sentence": "Die Wohnung ist klein ___ schön.",
+          "correctAnswer": "und",
+          "position": 1
+        },
+        {
+          "sentence": "Der Kaffee ist gut, ___ teuer.",
+          "correctAnswer": "aber",
+          "position": 2
+        },
+        {
+          "sentence": "Ich spreche Deutsch ___ Englisch.",
+          "correctAnswer": "und",
+          "position": 3
+        },
+        {
+          "sentence": "Das Haus ist groß, ___ alt.",
+          "correctAnswer": "aber",
+          "position": 4
+        },
+        {
+          "sentence": "Der Film ist gut ___ spannend.",
+          "correctAnswer": "und",
+          "position": 5
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 10,
+    "order": 8,
+    "exerciseType": "multiple_choice",
+    "title": "Satz passt?",
+    "instruction": "Wählen Sie den richtigen Satz.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. klein, aber schön\n2. groß und alt\n3. gut, aber teuer",
+    "content": {
+      "questions": [
+        {
+          "question": "Gegensatz: Die Wohnung ist ...",
+          "options": [
+            "klein und schön",
+            "klein, aber schön",
+            "klein oder schön"
+          ],
+          "correctAnswer": "klein, aber schön"
+        },
+        {
+          "question": "Plus: Das Haus ist ...",
+          "options": [
+            "groß und alt",
+            "groß, aber alt",
+            "groß oder alt"
+          ],
+          "correctAnswer": "groß und alt"
+        },
+        {
+          "question": "Gegensatz: Der Kaffee ist ...",
+          "options": [
+            "gut und teuer",
+            "gut, aber teuer",
+            "gut oder teuer"
+          ],
+          "correctAnswer": "gut, aber teuer"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 10,
+    "order": 9,
+    "exerciseType": "word_order",
+    "title": "Sätze ordnen (Adjektive)",
+    "instruction": "Bringen Sie die Wörter in die richtige Reihenfolge.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Die Wohnung ist klein, aber schön.\n2. Der Kaffee ist gut und nicht teuer.\n3. Das Haus ist groß, aber alt.",
+    "content": {
+      "text": "1. ist – klein – die Wohnung – aber – schön\n2. ist – gut – der Kaffee – und – nicht teuer\n3. ist – groß – das Haus – aber – alt"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 10,
+    "order": 10,
+    "exerciseType": "roleplay",
+    "title": "Rollenspiel: Beschreiben",
+    "instruction": "Spielen Sie das Gespräch zu zweit.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "Person A: Ist das ... groß?\nPerson B: Nein, es ist ... , aber ...\nPerson A: Und ist es ...?\nPerson B: Ja, es ist ... und ...\nPerson A: Super!\nPerson B: Danke.",
+    "content": {
+      "roleplayInstructions": {
+        "roleA": "Stellen Sie 2 Fragen (groß? teuer? gut?).",
+        "roleB": "Antworten Sie mit Adjektiven und nutzen Sie „und/aber“.",
+        "tasks": [
+          "2 Fragen stellen",
+          "2 Antworten geben",
+          "und/aber benutzen"
+        ]
+      }
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 10,
+    "order": 11,
+    "exerciseType": "free_text",
+    "title": "Schreiben: 4 Sätze mit Adjektiven",
+    "instruction": "Schreiben Sie 4 Sätze. Nutzen Sie 2x „und“ und 2x „aber“.",
+    "difficulty": "leicht",
+    "points": 14,
+    "solution": "Die Wohnung ist klein und schön. Der Kaffee ist gut und warm. Das Haus ist groß, aber alt. Der Film ist gut, aber lang.",
+    "content": {
+      "template": "1) ... und ...\n2) ... und ...\n3) ..., aber ...\n4) ..., aber ..."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 10,
+    "order": 12,
+    "exerciseType": "mini_test",
+    "title": "Mini-Test Lektion 10",
+    "instruction": "Testen Sie Ihr Wissen.",
+    "difficulty": "leicht",
+    "points": 30,
+    "description": "Zeitlimit: 15 Minuten",
+    "solution": "1: aber\n2: und\n3: klein, aber schön\nFreitext: individuelle Antworten",
+    "content": {
+      "questions": [
+        {
+          "question": "Der Film ist gut, ___ lang.",
+          "options": [
+            "und",
+            "aber",
+            "am"
+          ],
+          "correctAnswer": "aber"
+        },
+        {
+          "question": "Ich spreche Deutsch ___ Englisch.",
+          "options": [
+            "und",
+            "aber",
+            "um"
+          ],
+          "correctAnswer": "und"
+        },
+        {
+          "question": "Welche Variante ist richtig?",
+          "options": [
+            "Die Wohnung ist klein, aber schön.",
+            "Die Wohnung ist klein und aber schön.",
+            "Die Wohnung ist aber klein schön."
+          ],
+          "correctAnswer": "Die Wohnung ist klein, aber schön."
+        }
+      ],
+      "text": "Schreiben Sie 2 Sätze: 1x und, 1x aber."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 11,
+    "order": 1,
+    "exerciseType": "richtext",
+    "title": "Lektion 11: Wohnen und Adresse",
+    "instruction": "Lesen Sie den Einführungstext.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "In Lektion 11 lernen Sie:\n- Adresse sagen\n- Fragen: „Wo wohnen Sie?“ / „Wie ist Ihre Adresse?“\n- einfache Angaben: Straße, Nummer, Stadt\n\nWichtige Wörter:\nStraße, Hausnummer, PLZ, Stadt\nIch wohne in ...\nMeine Adresse ist ..."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 11,
+    "order": 2,
+    "exerciseType": "richtext",
+    "title": "Wortschatz: Adresse",
+    "instruction": "Lesen Sie die Wörter und Beispiele.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Wörter:\n- die Straße\n- die Hausnummer\n- die Postleitzahl (PLZ)\n- die Stadt\n\nBeispiel:\nMeine Adresse ist:\nMusterstraße 12\n10115 Berlin"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 11,
+    "order": 3,
+    "exerciseType": "dialog",
+    "title": "Adresse sagen",
+    "instruction": "Lesen Sie den Dialog.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Person A: Wo wohnen Sie?\nPerson B: Ich wohne in Berlin.\nPerson A: Wie ist Ihre Adresse?\nPerson B: Musterstraße 12, 10115 Berlin.\nPerson A: Danke.\nPerson B: Bitte."
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 11,
+    "order": 4,
+    "exerciseType": "multiple_choice",
+    "title": "Dialog verstehen",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. in Berlin\n2. Musterstraße 12\n3. 10115\n4. Wo wohnen Sie?",
+    "content": {
+      "questions": [
+        {
+          "question": "Wo wohnt Person B?",
+          "options": [
+            "in Berlin",
+            "in Wien",
+            "in Zürich"
+          ],
+          "correctAnswer": "in Berlin"
+        },
+        {
+          "question": "Wie heißt die Straße?",
+          "options": [
+            "Musterstraße",
+            "Bahnhofstraße",
+            "Hauptstraße"
+          ],
+          "correctAnswer": "Musterstraße"
+        },
+        {
+          "question": "Welche PLZ hat die Adresse?",
+          "options": [
+            "10115",
+            "20115",
+            "10151"
+          ],
+          "correctAnswer": "10115"
+        },
+        {
+          "question": "Welche Frage steht im Dialog?",
+          "options": [
+            "Wo wohnen Sie?",
+            "Wie heißen Sie?",
+            "Wie spät ist es?"
+          ],
+          "correctAnswer": "Wo wohnen Sie?"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 11,
+    "order": 5,
+    "exerciseType": "matching",
+    "title": "Adresse – Bedeutung",
+    "instruction": "Ordnen Sie zu.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "Straße = Name der Straße\nHausnummer = Nummer vom Haus\nPLZ = Postleitzahl\nStadt = z.B. Berlin\nAdresse = Straße + Nummer + PLZ + Stadt",
+    "content": {
+      "pairs": [
+        {
+          "left": "Straße",
+          "right": "Name der Straße"
+        },
+        {
+          "left": "Hausnummer",
+          "right": "Nummer vom Haus"
+        },
+        {
+          "left": "PLZ",
+          "right": "Postleitzahl"
+        },
+        {
+          "left": "Stadt",
+          "right": "z.B. Berlin"
+        },
+        {
+          "left": "Adresse",
+          "right": "Straße + Nummer + PLZ + Stadt"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 11,
+    "order": 6,
+    "exerciseType": "richtext",
+    "title": "Grammatik: in + Stadt (Wo?)",
+    "instruction": "Lesen Sie die Erklärung.",
+    "difficulty": "leicht",
+    "points": 0,
+    "solution": "",
+    "content": {
+      "text": "Frage: Wo?\n- Wo wohnen Sie?\n\nAntwort:\n- Ich wohne in Berlin.\n- Ich wohne in München.\n\nMerke: in + Stadt"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 11,
+    "order": 7,
+    "exerciseType": "fill_in_blank",
+    "title": "Adresse ergänzen",
+    "instruction": "Ergänzen Sie die Lücken.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "1. wohne\n2. in\n3. Adresse\n4. Straße\n5. Berlin",
+    "content": {
+      "blanks": [
+        {
+          "sentence": "Ich ___ in Berlin.",
+          "correctAnswer": "wohne",
+          "position": 1
+        },
+        {
+          "sentence": "Ich wohne ___ Berlin.",
+          "correctAnswer": "in",
+          "position": 2
+        },
+        {
+          "sentence": "Wie ist Ihre ___?",
+          "correctAnswer": "Adresse",
+          "position": 3
+        },
+        {
+          "sentence": "Die ___ heißt Musterstraße.",
+          "correctAnswer": "Straße",
+          "position": 4
+        },
+        {
+          "sentence": "10115 ist die PLZ von ___.",
+          "correctAnswer": "Berlin",
+          "position": 5
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 11,
+    "order": 8,
+    "exerciseType": "multiple_choice",
+    "title": "Wo? in + Stadt",
+    "instruction": "Wählen Sie die richtige Antwort.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Ich wohne in Hamburg.\n2. Wie ist Ihre Adresse?\n3. Wo wohnen Sie?",
+    "content": {
+      "questions": [
+        {
+          "question": "Welche Antwort passt zu „Wo wohnen Sie?“",
+          "options": [
+            "Ich wohne in Hamburg.",
+            "Ich heiße Anna.",
+            "Ich bin 20."
+          ],
+          "correctAnswer": "Ich wohne in Hamburg."
+        },
+        {
+          "question": "Welche Frage passt zur Straße und Nummer?",
+          "options": [
+            "Wie ist Ihre Adresse?",
+            "Wie spät ist es?",
+            "Wie viel kostet das?"
+          ],
+          "correctAnswer": "Wie ist Ihre Adresse?"
+        },
+        {
+          "question": "Welche Frage passt zur Stadt?",
+          "options": [
+            "Wo wohnen Sie?",
+            "Wie ist Ihre Telefonnummer?",
+            "Wann ist der Termin?"
+          ],
+          "correctAnswer": "Wo wohnen Sie?"
+        }
+      ]
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 11,
+    "order": 9,
+    "exerciseType": "word_order",
+    "title": "Sätze ordnen (Adresse)",
+    "instruction": "Bringen Sie die Wörter in die richtige Reihenfolge.",
+    "difficulty": "leicht",
+    "points": 10,
+    "solution": "1. Wo wohnen Sie?\n2. Ich wohne in Berlin.\n3. Wie ist Ihre Adresse?",
+    "content": {
+      "text": "1. wohnen – Sie – wo\n2. in Berlin – wohne – ich\n3. ist – Ihre Adresse – wie"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 11,
+    "order": 10,
+    "exerciseType": "roleplay",
+    "title": "Rollenspiel: Adresse fragen",
+    "instruction": "Spielen Sie das Gespräch zu zweit.",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "Person A: Wo wohnen Sie?\nPerson B: Ich wohne in ...\nPerson A: Wie ist Ihre Adresse?\nPerson B: ...straße ..., ... ...\nPerson A: Danke.\nPerson B: Bitte.",
+    "content": {
+      "roleplayInstructions": {
+        "roleA": "Fragen Sie nach Stadt und Adresse.",
+        "roleB": "Antworten Sie mit Stadt + Adresse (Straße, Nummer, PLZ, Stadt).",
+        "tasks": [
+          "Stadt fragen",
+          "Adresse fragen",
+          "Adresse sagen",
+          "Abschluss"
+        ]
+      }
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 11,
+    "order": 11,
+    "exerciseType": "free_text",
+    "title": "Schreiben: Meine Adresse",
+    "instruction": "Schreiben Sie 3 Zeilen (Beispiel).",
+    "difficulty": "leicht",
+    "points": 12,
+    "solution": "Meine Adresse ist:\nMusterstraße 12\n10115 Berlin",
+    "content": {
+      "template": "Meine Adresse ist:\n[Straße] [Nummer]\n[PLZ] [Stadt]"
+    }
+  },
+  {
+    "moduleId": "A1.1",
+    "lessonNumber": 11,
+    "order": 12,
+    "exerciseType": "mini_test",
+    "title": "Mini-Test Lektion 11",
+    "instruction": "Testen Sie Ihr Wissen.",
+    "difficulty": "leicht",
+    "points": 30,
+    "description": "Zeitlimit: 15 Minuten",
+    "solution": "1: Adresse\n2: in\n3: Wo wohnen Sie?\nFreitext: individuelle Antworten",
+    "content": {
+      "questions": [
+        {
+          "question": "Wie ist Ihre ___?",
+          "options": [
+            "Adresse",
+            "Uhr",
+            "Sprache"
+          ],
+          "correctAnswer": "Adresse"
+        },
+        {
+          "question": "Ich wohne ___ Berlin.",
+          "options": [
+            "in",
+            "am",
+            "um"
+          ],
+          "correctAnswer": "in"
+        },
+        {
+          "question": "Welche Frage passt zur Stadt?",
+          "options": [
+            "Wo wohnen Sie?",
+            "Wie viel kostet das?",
+            "Wie ist Ihre Telefonnummer?"
+          ],
+          "correctAnswer": "Wo wohnen Sie?"
+        }
+      ],
+      "text": "Schreiben Sie 2 Zeilen: Straße + PLZ/Stadt."
+    }
+  }
+]

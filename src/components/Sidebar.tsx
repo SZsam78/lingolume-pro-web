@@ -1,4 +1,4 @@
-import { LayoutGrid, Settings, HelpCircle, LogOut, GraduationCap } from 'lucide-react';
+import { LayoutGrid, Settings, HelpCircle, LogOut, GraduationCap, PlaySquare, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface SidebarProps {
@@ -10,6 +10,8 @@ export function Sidebar({ activeView, onNavigate }: SidebarProps) {
     const items = [
         { id: 'modules', label: 'Lernplan', icon: LayoutGrid },
         { id: 'artikel', label: 'Artikeltrainer', icon: GraduationCap },
+        { id: 'story', label: 'Story-Modus', icon: PlaySquare },
+        { id: 'admin', label: 'Admin-Bereich', icon: ShieldCheck },
         { id: 'settings', label: 'Einstellungen', icon: Settings },
     ];
 

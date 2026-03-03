@@ -6,10 +6,13 @@ import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';
 import { DiagnosticsPanel } from './components/DiagnosticsPanel';
 import { Artikeltrainer } from './features/learning/Artikeltrainer';
+import { AdminDashboard } from './features/admin/AdminDashboard';
 
 type ViewState =
     | { type: 'modules' }
     | { type: 'artikel' }
+    | { type: 'story' }
+    | { type: 'admin' }
     | { type: 'lessons', moduleId: string }
     | { type: 'player', lessonId: string, mode: 'learn' | 'edit' }
     | { type: 'settings' };
@@ -50,6 +53,10 @@ function App() {
 
         if (view.type === 'artikel') {
             bcs.push({ label: 'Artikeltrainer', onClick: () => { } });
+        } else if (view.type === 'story') {
+            bcs.push({ label: 'Story-Modus', onClick: () => { } });
+        } else if (view.type === 'admin') {
+            bcs.push({ label: 'Admin-Bereich', onClick: () => { } });
         } else if (view.type === 'lessons') {
             bcs.push({ label: view.moduleId, onClick: () => { } });
         } else if (view.type === 'player') {
@@ -87,6 +94,17 @@ function App() {
 
                     {view.type === 'artikel' && (
                         <Artikeltrainer />
+                    )}
+
+                    {view.type === 'story' && (
+                        <div className="p-20 text-center">
+                            <h2 className="text-2xl font-black mb-4">Story-Modus</h2>
+                            <p className="text-muted-foreground">Wird geladen...</p>
+                        </div>
+                    )}
+
+                    {view.type === 'admin' && (
+                        <AdminDashboard />
                     )}
 
                     {view.type === 'lessons' && (

@@ -21,16 +21,35 @@ type ViewState =
     | { type: 'player', lessonId: string, mode: 'learn' | 'edit' }
     | { type: 'settings' };
 
+import { firestore } from './lib/firebase';
+import { doc, getDoc, onSnapshot } from 'firebase/firestore';
+
 function App() {
     const [user, setUser] = useState<User | null>(AuthService.getCurrentUser());
     const [view, setView] = useState<ViewState>({ type: 'modules' });
     const [history, setHistory] = useState<ViewState[]>([]);
 
     useEffect(() => {
-        if (user?.role === 'user' && view.type === 'admin') {
-            setView({ type: 'modules' });
-        }
-    }, [view, user]);
+        if (!user || user.role === 'admin') return;
+
+        // Sync user profile from Firestore to get updated permissions
+        const userRef = doc(firestore, 'users', user.id);
+        const unsubscribe = onSnapshot(userRef, (snapshot) => {
+            if (snapshot.exists()) {
+                const data = snapshot.data();
+                const updatedUser: User = {
+                    ...user,
+                    name: data.name || user.name,
+                    permissions: data.permissions || {},
+                    role: data.role as 'admin' | 'user'
+                };
+                setUser(updatedUser);
+                localStorage.setItem('lingolume_user', JSON.stringify(updatedUser));
+            }
+        });
+
+        return () => unsubscribe();
+    }, [user?.id]);
 
     if (!user) {
         return <Login onLogin={setUser} />;
@@ -108,6 +127,7 @@ function App() {
                 <main className="flex-1 overflow-auto bg-slate-50/50">
                     {view.type === 'modules' && (
                         <ModuleGrid
+                            user={user}
                             onSelectModule={(moduleId) => navigateTo({ type: 'lessons', moduleId })}
                         />
                     )}

@@ -25,7 +25,7 @@ export function Sidebar({ activeView, onNavigate, user }: SidebarProps) {
     ];
 
     return (
-        <aside className="w-72 bg-[#F9F7F2] border-r border-[#EFEBE0] flex flex-col h-screen shadow-sm">
+        <aside className="w-full bg-[#F9F7F2] border-r border-[#EFEBE0] flex flex-col h-full shadow-lg lg:shadow-none">
             <div className="p-8">
                 <div className="flex items-center gap-3">
                     <div className="h-10 w-10 bg-primary rounded-2xl flex items-center justify-center shadow-lg shadow-primary/30">

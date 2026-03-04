@@ -27,11 +27,11 @@ function adaptLessonFormat(parsed: any): Lesson {
         const questions = content.questions || [];
         questions.forEach((q: any, i: number) => {
             items.push({
-                id: `q-${i}`,
+                id: `q - ${i} `,
                 type: 'multiple_choice',
                 prompt: q.question,
                 choices: (q.options || []).map((opt: string, j: number) => ({
-                    id: `opt-${j}`,
+                    id: `opt - ${j} `,
                     text: opt,
                     isCorrect: opt === q.correctAnswer
                 }))
@@ -42,9 +42,9 @@ function adaptLessonFormat(parsed: any): Lesson {
         blanks.forEach((b: any, i: number) => {
             const text = b.sentence.replace('___', `[${b.correctAnswer}]`);
             items.push({
-                id: `b-${i}`,
+                id: `b - ${i} `,
                 type: 'fill_blank',
-                prompt: `Fülle die Lücke aus: ${b.sentence.replace('___', '...')}`,
+                prompt: `Fülle die Lücke aus: ${b.sentence.replace('___', '...')} `,
                 text: text,
                 solutions: { "0": b.correctAnswer }
             });
@@ -53,9 +53,9 @@ function adaptLessonFormat(parsed: any): Lesson {
         const lines = (content.text || "").split('\n').map((line: string, i: number) => {
             const split = line.split(':');
             if (split.length > 1) {
-                return { id: `l-${i}`, speaker: split[0].trim(), text: split.slice(1).join(':').trim() };
+                return { id: `l - ${i} `, speaker: split[0].trim(), text: split.slice(1).join(':').trim() };
             }
-            return { id: `l-${i}`, speaker: '', text: line.trim() };
+            return { id: `l - ${i} `, speaker: '', text: line.trim() };
         }).filter((l: any) => l.text);
         items.push({ id: 'item-1', type: 'dialog', lines });
     } else if (type === 'matching') {
@@ -66,7 +66,7 @@ function adaptLessonFormat(parsed: any): Lesson {
             const cleanLine = line.replace(/^\d+\.\s*/, '');
             const parts = cleanLine.split('–').map((p: string) => p.trim());
             items.push({
-                id: `wo-${i}`,
+                id: `wo - ${i} `,
                 type: 'reorder_sentence',
                 instruction: 'Bringen Sie die Wörter in die richtige Reihenfolge.',
                 prompt: parts.join(' / '),
@@ -77,7 +77,7 @@ function adaptLessonFormat(parsed: any): Lesson {
         items.push({
             id: 'item-1',
             type: 'roleplay',
-            prompt: `${content.roleplayInstructions?.roleA || ''}\n${content.roleplayInstructions?.roleB || ''}`,
+            prompt: `${content.roleplayInstructions?.roleA || ''} \n${content.roleplayInstructions?.roleB || ''} `,
             usefulPhrases: content.roleplayInstructions?.tasks || []
         });
     } else if (type === 'free_text') {
@@ -91,11 +91,11 @@ function adaptLessonFormat(parsed: any): Lesson {
         const questions = content.questions || [];
         questions.forEach((q: any, i: number) => {
             items.push({
-                id: `mt-${i}`,
+                id: `mt - ${i} `,
                 type: 'multiple_choice',
                 prompt: q.question,
                 choices: (q.options || []).map((opt: string, j: number) => ({
-                    id: `opt-${j}`,
+                    id: `opt - ${j} `,
                     text: opt,
                     isCorrect: opt === q.correctAnswer
                 }))
@@ -112,7 +112,7 @@ function adaptLessonFormat(parsed: any): Lesson {
     };
 
     return {
-        id: parsed.id || `${parsed.moduleId}-L${String(parsed.lessonNumber || parsed.order || 1).padStart(2, '0')}`,
+        id: parsed.id || `${parsed.moduleId} -L${String(parsed.lessonNumber || parsed.order || 1).padStart(2, '0')} `,
         moduleId: parsed.moduleId || 'Unknown',
         title: parsed.title || 'Lektion',
         version: "1.0.0",
@@ -152,7 +152,7 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson }: LessonPlayerPro
                     // Fallback to legacy JSON if needed or show error
                     console.warn("Lesson not found in DB, checking legacy local files...");
                     const [module, id] = lessonId.split('-');
-                    const moduleContent = await import(`../../content/${module}/${id}.json`);
+                    const moduleContent = await import(`../../ content / ${module}/${id}.json`);
                     setLesson(adaptLessonFormat(moduleContent.default));
                 }
             } catch (error) {
@@ -295,12 +295,12 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson }: LessonPlayerPro
             </main>
 
             {/* Footer Controls */}
-            <footer className="w-full border-t bg-card/95 backdrop-blur-md p-4 lg:p-6 sticky bottom-0 z-50">
-                <div className="max-w-3xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <footer className="w-full border-t bg-card/95 backdrop-blur-md p-3 md:p-4 lg:p-6 sticky bottom-0 z-50">
+                <div className="max-w-3xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 md:gap-4">
                     <button
                         onClick={() => setCurrentSectionIndex(prev => Math.max(0, prev - 1))}
                         disabled={currentSectionIndex === 0}
-                        className="w-full sm:w-auto px-6 py-3 rounded-xl font-bold disabled:opacity-30 text-muted-foreground hover:bg-slate-100 transition-colors"
+                        className="w-full sm:w-auto px-6 py-2.5 md:py-3 rounded-xl font-bold disabled:opacity-30 text-muted-foreground hover:bg-slate-100 transition-colors text-sm"
                     >
                         {t('zurueck')}
                     </button>
@@ -328,7 +328,7 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson }: LessonPlayerPro
                                 setCurrentSectionIndex(prev => prev + 1);
                             }
                         }}
-                        className="w-full sm:w-auto px-6 py-3 rounded-xl border-2 border-slate-200 font-black text-[#1A1A1A] hover:bg-slate-50 hover:border-slate-300 transition-all flex items-center justify-center group"
+                        className="w-full sm:w-auto px-6 py-2.5 md:py-3 rounded-xl border-2 border-slate-200 font-black text-[#1A1A1A] hover:bg-slate-50 hover:border-slate-300 transition-all flex items-center justify-center group text-sm"
                     >
                         Next
                         <ChevronRight className="inline h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" />

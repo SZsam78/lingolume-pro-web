@@ -16,9 +16,10 @@ interface HeaderProps {
     onHome: () => void;
     user: User;
     onLogout: () => void;
+    onMenuToggle?: () => void;
 }
 
-export function Header({ breadcrumbs, onBack, canBack, onHome, user, onLogout }: HeaderProps) {
+export function Header({ breadcrumbs, onBack, canBack, onHome, user, onLogout, onMenuToggle }: HeaderProps) {
     const { language, setLanguage, t } = useTranslation();
     const [showLangMenu, setShowLangMenu] = useState(false);
 
@@ -38,9 +39,17 @@ export function Header({ breadcrumbs, onBack, canBack, onHome, user, onLogout }:
         document.documentElement.lang = language;
     }, [language]);
     return (
-        <header className="h-16 border-b bg-card px-6 flex items-center justify-between sticky top-0 z-40 backdrop-blur-md bg-card/80">
-            <div className="flex items-center gap-6">
-                <div className="flex items-center gap-2">
+        <header className="h-16 lg:h-20 border-b bg-card px-4 lg:px-6 flex items-center justify-between sticky top-0 z-40 backdrop-blur-md bg-card/80">
+            <div className="flex items-center gap-2 lg:gap-6">
+                <button
+                    onClick={onMenuToggle}
+                    className="p-2 lg:hidden rounded-lg hover:bg-muted transition-colors"
+                >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+                <div className="flex items-center gap-1 lg:gap-2">
                     <button
                         onClick={onBack}
                         disabled={!canBack}
@@ -61,7 +70,7 @@ export function Header({ breadcrumbs, onBack, canBack, onHome, user, onLogout }:
                     </button>
                 </div>
 
-                <nav className="flex items-center text-sm font-medium text-muted-foreground whitespace-nowrap overflow-x-auto no-scrollbar">
+                <nav className="hidden sm:flex items-center text-sm font-medium text-muted-foreground whitespace-nowrap overflow-x-auto no-scrollbar">
                     {breadcrumbs.map((bc, i) => (
                         <div key={i} className="flex items-center">
                             {i > 0 && <ChevronRight className="h-4 w-4 mx-2 text-slate-300" />}
@@ -77,6 +86,7 @@ export function Header({ breadcrumbs, onBack, canBack, onHome, user, onLogout }:
                         </div>
                     ))}
                 </nav>
+                <div className="sm:hidden text-xs font-bold text-foreground bg-slate-100 px-3 py-1 rounded-full">{breadcrumbs[breadcrumbs.length - 1]?.label}</div>
             </div>
 
             <div className="flex items-center gap-4">

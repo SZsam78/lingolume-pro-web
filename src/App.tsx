@@ -4,6 +4,7 @@ import { LessonList } from './features/learning/LessonList';
 import { LessonContainer } from './features/shared/LessonContainer';
 import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';
+import { cn } from './lib/utils';
 import { DiagnosticsPanel } from './components/DiagnosticsPanel';
 import { Artikeltrainer } from './features/learning/Artikeltrainer';
 import { AdminDashboard } from './features/admin/AdminDashboard';
@@ -31,6 +32,7 @@ function App() {
     const [user, setUser] = useState<User | null>(AuthService.getCurrentUser());
     const [view, setView] = useState<ViewState>({ type: 'modules' });
     const [history, setHistory] = useState<ViewState[]>([]);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     useEffect(() => {
         if (!user || user.role === 'admin') return;
@@ -111,14 +113,30 @@ function App() {
     };
 
     return (
-        <div className="flex h-screen bg-background text-foreground overflow-hidden">
-            <Sidebar
-                user={user}
-                activeView={view.type}
-                onNavigate={(id) => setView({ type: id as any })}
-            />
+        <div className="flex h-screen bg-background text-foreground overflow-hidden relative">
+            {/* Mobile Sidebar Overlay */}
+            {isSidebarOpen && (
+                <div
+                    className="fixed inset-0 bg-black/50 z-40 lg:hidden backdrop-blur-sm transition-all"
+                    onClick={() => setIsSidebarOpen(false)}
+                />
+            )}
 
-            <div className="flex-1 flex flex-col overflow-hidden">
+            <div className={cn(
+                "fixed inset-y-0 left-0 z-50 transform transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0 w-72 shrink-0",
+                isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+            )}>
+                <Sidebar
+                    user={user}
+                    activeView={view.type}
+                    onNavigate={(id) => {
+                        setView({ type: id as any });
+                        setIsSidebarOpen(false);
+                    }}
+                />
+            </div>
+
+            <div className="flex-1 flex flex-col overflow-hidden w-full">
                 <Header
                     breadcrumbs={getBreadcrumbs()}
                     onBack={handleBack}
@@ -126,6 +144,7 @@ function App() {
                     onHome={() => setView({ type: 'modules' })}
                     user={user}
                     onLogout={() => AuthService.logout()}
+                    onMenuToggle={() => setIsSidebarOpen(!isSidebarOpen)}
                 />
 
                 <main className="flex-1 overflow-auto bg-slate-50/50">

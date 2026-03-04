@@ -225,15 +225,15 @@ export function LessonPlayer({ lessonId, onBack }: LessonPlayerProps) {
             </header>
 
             {/* Main Content Area */}
-            <main className="flex-1 overflow-y-auto p-4 md:p-8">
-                <div className="max-w-3xl mx-auto space-y-8">
-                    <div className="bg-card rounded-2xl border p-8 shadow-sm">
-                        <h2 className="text-2xl font-bold mb-2">{currentSection.title}</h2>
+            <main className="flex-1 w-full mx-auto overflow-y-auto no-scrollbar">
+                <div className="min-h-full py-8 px-4 md:px-8 flex flex-col items-center">
+                    <div className="w-full max-w-3xl bg-card rounded-2xl border p-6 md:p-10 shadow-sm transition-all">
+                        <h2 className="text-2xl md:text-3xl font-bold mb-3 text-[#1A1A1A]">{currentSection.title}</h2>
                         {currentSection.instruction && (
-                            <p className="text-muted-foreground mb-6 italic">{currentSection.instruction}</p>
+                            <p className="text-base md:text-lg text-muted-foreground mb-8 italic">{currentSection.instruction}</p>
                         )}
 
-                        <div className="space-y-6">
+                        <div className="space-y-8 pb-10">
                             <TaskRenderer
                                 section={currentSection}
                                 answers={allAnswers[currentSection.id] || {}}
@@ -246,43 +246,46 @@ export function LessonPlayer({ lessonId, onBack }: LessonPlayerProps) {
             </main>
 
             {/* Footer Controls */}
-            <footer className="p-4 bg-card border-t flex justify-center gap-4">
-                <button
-                    onClick={() => setCurrentSectionIndex(prev => Math.max(0, prev - 1))}
-                    disabled={currentSectionIndex === 0}
-                    className="px-6 py-2 rounded-xl border font-medium disabled:opacity-50 hover:bg-slate-50 transition-colors"
-                >
-                    {t('zurueck')}
-                </button>
-                <div className="flex gap-2">
+            <footer className="w-full border-t bg-card/95 backdrop-blur-md p-4 lg:p-6 sticky bottom-0 z-50">
+                <div className="max-w-3xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
                     <button
-                        onClick={handleReset}
-                        className="flex items-center gap-2 px-6 py-2 rounded-xl bg-slate-100 text-slate-700 font-medium hover:bg-slate-200 transition-colors"
+                        onClick={() => setCurrentSectionIndex(prev => Math.max(0, prev - 1))}
+                        disabled={currentSectionIndex === 0}
+                        className="w-full sm:w-auto px-6 py-3 rounded-xl font-bold disabled:opacity-30 text-muted-foreground hover:bg-slate-100 transition-colors"
                     >
-                        <RotateCcw className="h-4 w-4" /> {t('zuruecksetzen')}
+                        {t('zurueck')}
                     </button>
+
+                    <div className="flex flex-1 justify-center gap-2 lg:gap-4 w-full sm:w-auto">
+                        <button
+                            onClick={handleReset}
+                            className="flex items-center justify-center flex-1 sm:flex-none gap-2 px-6 py-3 rounded-xl bg-slate-100 text-slate-700 font-bold hover:bg-slate-200 transition-colors"
+                        >
+                            <RotateCcw className="h-5 w-5" />
+                            <span className="hidden sm:inline">{t('zuruecksetzen')}</span>
+                        </button>
+                        <button
+                            onClick={handleCheck}
+                            className="flex items-center justify-center flex-1 sm:flex-none gap-2 px-8 py-3 rounded-xl bg-primary text-white font-black uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-md"
+                        >
+                            <CheckCircle className="h-5 w-5" /> {t('pruefen')}
+                        </button>
+                    </div>
                     <button
-                        onClick={() => setShowResults(prev => ({ ...prev, [currentSection.id]: true }))}
-                        className="flex items-center gap-2 px-6 py-2 rounded-xl bg-slate-100 text-slate-700 font-medium hover:bg-slate-200 transition-colors"
+                        onClick={() => {
+                            if (currentSectionIndex === lesson.sections.length - 1) {
+                                // Reached the end -> "Next" triggers back to module overview or next task
+                                onBack();
+                            } else {
+                                setCurrentSectionIndex(prev => prev + 1);
+                            }
+                        }}
+                        className="w-full sm:w-auto px-6 py-3 rounded-xl border-2 border-slate-200 font-black text-[#1A1A1A] hover:bg-slate-50 hover:border-slate-300 transition-all flex items-center justify-center group"
                     >
-                        <Lightbulb className="h-4 w-4" /> {t('loesung')}
-                    </button>
-                    <button
-                        onClick={handleCheck}
-                        className="flex items-center gap-2 px-8 py-2 rounded-xl bg-primary text-primary-foreground font-bold hover:opacity-90 transition-opacity"
-                    >
-                        <CheckCircle className="h-4 w-4" /> {t('pruefen')}
+                        Next
+                        <ChevronRight className="inline h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" />
                     </button>
                 </div>
-                <button
-                    onClick={() => {
-                        setCurrentSectionIndex(prev => Math.min(lesson.sections.length - 1, prev + 1));
-                    }}
-                    className="px-6 py-2 rounded-xl border font-medium hover:bg-slate-50 transition-colors group"
-                >
-                    {currentSectionIndex === lesson.sections.length - 1 ? t('abschliessen') : t('weiter')}
-                    <ChevronRight className="inline h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </button>
             </footer>
         </div>
     );

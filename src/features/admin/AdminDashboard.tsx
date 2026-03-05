@@ -10,6 +10,8 @@ export function AdminDashboard() {
     const [activeTab, setActiveTab] = useState<'users' | 'content' | 'story'>('content');
     const [isProcessing, setIsProcessing] = useState(false);
     const [jsonInput, setJsonInput] = useState('');
+    const [importMode, setImportMode] = useState<'json' | 'smart'>('json');
+    const [previewData, setPreviewData] = useState<any[]>([]);
 
     const tabs = [
         { id: 'users' as const, label: t('benutzerverwaltung'), icon: Users },
@@ -87,22 +89,64 @@ export function AdminDashboard() {
                                 </button>
 
                                 <div className="flex flex-col gap-4 p-6 bg-slate-50 dark:bg-slate-800 rounded-3xl border dark:border-slate-700">
-                                    <div className="flex items-center gap-2 mb-2">
-                                        <UploadCloud className="h-5 w-5 text-muted-foreground" />
-                                        <span className="font-bold text-sm text-[#1A1A1A] dark:text-white">Manueller JSON Import</span>
+                                    <div className="flex items-center justify-between mb-2">
+                                        <div className="flex items-center gap-2">
+                                            <UploadCloud className="h-5 w-5 text-muted-foreground" />
+                                            <span className="font-bold text-sm text-[#1A1A1A] dark:text-white">Inhalts-Import</span>
+                                        </div>
+                                        <div className="flex bg-slate-100 dark:bg-slate-900 rounded-lg p-1 scale-90">
+                                            <button
+                                                onClick={() => setImportMode('json')}
+                                                className={cn("px-2 py-1 rounded-md text-[10px] font-black uppercase transition-all", importMode === 'json' ? "bg-white dark:bg-surface-dark shadow-sm text-primary" : "text-slate-400")}
+                                            >JSON</button>
+                                            <button
+                                                onClick={() => setImportMode('smart')}
+                                                className={cn("px-2 py-1 rounded-md text-[10px] font-black uppercase transition-all", importMode === 'smart' ? "bg-white dark:bg-surface-dark shadow-sm text-primary" : "text-slate-400")}
+                                            >Smart Text</button>
+                                        </div>
                                     </div>
                                     <textarea
                                         value={jsonInput}
                                         onChange={(e) => setJsonInput(e.target.value)}
-                                        placeholder="Paste JSON here..."
+                                        placeholder={importMode === 'json' ? "JSON Daten hier einfügen..." : "Q: Frage?\nO: Option A\nO: Option B\nA: Option A\n\nQ: Nächste Frage..."}
                                         className="flex-1 min-h-[150px] bg-white dark:bg-slate-900 dark:text-white border dark:border-slate-700 rounded-xl p-3 text-xs font-mono focus:ring-2 focus:ring-primary/20 outline-none"
                                     />
                                     <button
                                         onClick={async () => {
                                             setIsProcessing(true);
                                             try {
-                                                const data = JSON.parse(jsonInput);
-                                                const items = Array.isArray(data) ? data : [data];
+                                                let items: any[] = [];
+                                                if (importMode === 'json') {
+                                                    const data = JSON.parse(jsonInput);
+                                                    items = Array.isArray(data) ? data : [data];
+                                                } else {
+                                                    // Simple Smart Parser
+                                                    const lines = jsonInput.split('\n');
+                                                    let current: any = null;
+                                                    lines.forEach(line => {
+                                                        const t = line.trim();
+                                                        if (!t) return;
+                                                        if (t.startsWith('Q:')) {
+                                                            if (current) items.push(current);
+                                                            current = { type: 'multiple_choice', question: t.substring(2).trim(), choices: [] };
+                                                        } else if (t.startsWith('O:') && current) {
+                                                            current.choices.push({ id: crypto.randomUUID(), text: t.substring(2).trim(), isCorrect: false });
+                                                        } else if (t.startsWith('A:') && current) {
+                                                            const ans = t.substring(2).trim();
+                                                            current.choices.forEach((c: any) => { if (c.text === ans) c.isCorrect = true; });
+                                                        }
+                                                    });
+                                                    if (current) items.push(current);
+
+                                                    // Wrap items in a lesson structure if they are just tasks
+                                                    items = [{
+                                                        id: `import-${Date.now()}`,
+                                                        title: "Importierte Lektion",
+                                                        moduleId: "A1.1",
+                                                        sections: [{ id: 'sec-1', type: 'multiple_choice', title: 'Aufgaben', items }]
+                                                    }];
+                                                }
+
                                                 for (const l of items) await DB.saveLesson(l);
                                                 alert(`${items.length} Lektion(en) erfolgreich importiert.`);
                                                 setJsonInput('');
@@ -110,9 +154,9 @@ export function AdminDashboard() {
                                             finally { setIsProcessing(false); }
                                         }}
                                         disabled={!jsonInput || isProcessing}
-                                        className="bg-[#1A1A1A] text-white py-3 rounded-xl font-bold text-sm hover:opacity-90 disabled:opacity-30"
+                                        className="bg-[#1A1A1A] dark:bg-primary text-white py-3 rounded-xl font-bold text-sm hover:opacity-90 disabled:opacity-30"
                                     >
-                                        Validieren & Speichern
+                                        Konvertieren & Speichern
                                     </button>
 
                                     <div className="flex flex-col gap-2 mt-2">

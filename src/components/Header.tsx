@@ -92,10 +92,18 @@ export function Header({ breadcrumbs, onBack, canBack, onHome, user, onLogout, o
             </div>
 
             <div className="flex items-center gap-4">
+                {/* Streak Counter */}
+                {user.streakCount !== undefined && user.streakCount > 0 && (
+                    <div className="flex items-center gap-1 px-3 py-2 bg-slate-100 dark:bg-surface-darker rounded-xl border border-transparent hover:border-orange-500/20 transition-all font-black text-xs text-orange-500" title="Deine Lern-Serie">
+                        <span className="text-sm">🔥</span>
+                        <span>{user.streakCount}</span>
+                    </div>
+                )}
+
                 {/* Dark Mode Toggle */}
                 <button
                     onClick={onDarkModeToggle}
-                    className="p-2 bg-slate-100 rounded-xl border border-transparent hover:border-primary/20 transition-all text-slate-600"
+                    className="p-2 bg-slate-100 dark:bg-surface-darker rounded-xl border border-transparent hover:border-primary/20 transition-all text-slate-600 dark:text-slate-400"
                     title={isDarkMode ? "Light Mode" : "Dark Mode"}
                 >
                     {isDarkMode ? <Sun className="h-4 w-4 text-orange-400" /> : <Moon className="h-4 w-4" />}
@@ -105,7 +113,7 @@ export function Header({ breadcrumbs, onBack, canBack, onHome, user, onLogout, o
                 <div className="relative">
                     <button
                         onClick={() => setShowLangMenu(!showLangMenu)}
-                        className="flex items-center gap-2 px-3 py-2 bg-slate-100 rounded-xl border border-transparent hover:border-primary/20 transition-all font-bold text-xs uppercase tracking-widest"
+                        className="flex items-center gap-2 px-3 py-2 bg-slate-100 dark:bg-surface-darker rounded-xl border border-transparent hover:border-primary/20 transition-all font-bold text-xs uppercase tracking-widest text-[#1A1A1A] dark:text-white"
                     >
                         <Globe className="h-4 w-4 text-primary" />
                         <span className="hidden sm:inline">{languages.find(l => l.code === language)?.flag}</span>
@@ -137,15 +145,15 @@ export function Header({ breadcrumbs, onBack, canBack, onHome, user, onLogout, o
                 </div>
 
                 <div className="flex flex-col items-end mr-2">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#1A1A1A]">{user.name}</span>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#1A1A1A] dark:text-white">{user.name}</span>
                     <span className="text-[8px] font-bold text-muted-foreground uppercase">{user.role}</span>
                 </div>
-                <div className="h-10 w-10 bg-slate-100 rounded-xl flex items-center justify-center text-primary border shadow-sm">
+                <div className="h-10 w-10 bg-slate-100 dark:bg-surface-darker rounded-xl flex items-center justify-center text-primary border dark:border-surface-darker shadow-sm">
                     <UserIcon className="h-5 w-5" />
                 </div>
                 <button
                     onClick={onLogout}
-                    className="p-2 ml-2 h-10 w-10 bg-slate-100 rounded-xl border flex items-center justify-center text-slate-400 hover:text-red-500 hover:border-red-500 transition-all shadow-sm"
+                    className="p-2 ml-2 h-10 w-10 bg-slate-100 dark:bg-surface-darker rounded-xl border dark:border-surface-darker flex items-center justify-center text-slate-400 hover:text-red-500 hover:border-red-500 transition-all shadow-sm"
                     title="Abmelden"
                 >
                     <LogOut className="h-5 w-5" />

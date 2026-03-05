@@ -6,6 +6,7 @@ import { TaskRenderer } from './TaskRenderer';
 import { DB } from '@/lib/db';
 import { useTranslation } from '@/lib/i18n';
 import { AuthService } from '@/lib/auth';
+import { SoundService } from '@/lib/audio';
 
 interface LessonPlayerProps {
     lessonId: string;
@@ -181,11 +182,48 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson }: LessonPlayerPro
 
     const handleCheck = async () => {
         setShowResults(prev => ({ ...prev, [currentSection.id]: true }));
-        if (!user) return;
+
         const sectionAnswers = allAnswers[currentSection.id] || {};
+        let allCorrect = true;
+        let anyAnswered = false;
+
+        // Basic validation for sound feedback
         for (const item of currentSection.items) {
             const answer = sectionAnswers[item.id];
-            const isCorrect = true; // Placeholder for logic
+            if (answer !== undefined) anyAnswered = true;
+
+            // Very basic check logic (this should ideally match individual Task components)
+            if (item.type === 'multiple_choice') {
+                const correctIds = item.choices.filter((c: any) => c.isCorrect).map((c: any) => c.id);
+                const selectedIds = Array.isArray(answer) ? answer : [answer];
+                if (correctIds.length !== selectedIds.length || !correctIds.every((id: string) => selectedIds.includes(id))) {
+                    allCorrect = false;
+                }
+            } else if (item.type === 'fill_blank') {
+                const solutions = item.solutions || {};
+                const userAnswers = answer || {};
+                if (Object.keys(solutions).some(k => solutions[k]?.toLowerCase().trim() !== userAnswers[k]?.toLowerCase().trim())) {
+                    allCorrect = false;
+                }
+            }
+            // Add more types as needed or default to true for non-validatable types
+        }
+
+        if (anyAnswered) {
+            if (allCorrect) SoundService.playSuccess();
+            else SoundService.playError();
+        }
+
+        if (!user) return;
+        for (const item of currentSection.items) {
+            const answer = sectionAnswers[item.id];
+            // We use the same simple logic for progress tracking
+            let isCorrect = true;
+            if (item.type === 'multiple_choice') {
+                const correctIds = item.choices.filter((c: any) => c.isCorrect).map((c: any) => c.id);
+                const selectedIds = Array.isArray(answer) ? answer : [answer];
+                isCorrect = correctIds.length === selectedIds.length && correctIds.every((id: string) => selectedIds.includes(id));
+            }
             await (DB as any).updateProgress(user.id, lessonId, item.id, isCorrect ? 'completed' : 'failed', answer);
         }
     };

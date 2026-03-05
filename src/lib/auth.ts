@@ -7,6 +7,8 @@ export interface User {
     name: string;
     permissions: Record<string, boolean>;
     id: string;
+    streakCount?: number;
+    lastActivityDate?: string;
 }
 
 export const AuthService = {
@@ -35,7 +37,9 @@ export const AuthService = {
                     role: data.role || 'user',
                     id: userDoc.id,
                     name: data.name || 'User',
-                    permissions: data.permissions || {}
+                    permissions: data.permissions || {},
+                    streakCount: data.streakCount || 0,
+                    lastActivityDate: data.lastActivityDate
                 };
                 localStorage.setItem('lingolume_user', JSON.stringify(user));
                 return user;

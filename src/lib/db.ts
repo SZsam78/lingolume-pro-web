@@ -112,6 +112,60 @@ export class DB {
                 completed: true, // mark lesson as completed if they checked an answer for now
                 lastUpdated: new Date().toISOString()
             }, { merge: true });
+
+            // Trigger streak update
+            await this.syncStreak(userId);
+        }
+    }
+
+    static async syncStreak(userId: string) {
+        if (!window.electronAPI) {
+            const { doc, getDoc, updateDoc } = await import('firebase/firestore');
+            const userRef = doc(firestore, 'users', userId);
+            const userSnap = await getDoc(userRef);
+
+            if (!userSnap.exists()) return;
+
+            const data = userSnap.data();
+            const now = new Date();
+            const todayStr = now.toISOString().split('T')[0];
+            const lastActive = data.lastActivityDate;
+
+            let currentStreak = data.streakCount || 0;
+
+            if (!lastActive) {
+                currentStreak = 1;
+            } else {
+                const lastDate = new Date(lastActive);
+                // Calculate difference in days based on date strings to avoid timezone/time-of-day issues
+                const d1 = new Date(todayStr);
+                const d2 = new Date(lastActive);
+                const diffTime = d1.getTime() - d2.getTime();
+                const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+
+                if (diffDays === 1) {
+                    currentStreak += 1;
+                } else if (diffDays > 1) {
+                    currentStreak = 1;
+                }
+                // if diffDays === 0, keep current streak
+            }
+
+            await updateDoc(userRef, {
+                streakCount: currentStreak,
+                lastActivityDate: todayStr
+            });
+
+            // Update local storage for active session
+            const stored = localStorage.getItem('lingolume_user');
+            if (stored) {
+                const user = JSON.parse(stored);
+                if (user.id === userId) {
+                    user.streakCount = currentStreak;
+                    user.lastActivityDate = todayStr;
+                    localStorage.setItem('lingolume_user', JSON.stringify(user));
+                }
+            }
         }
     }
 

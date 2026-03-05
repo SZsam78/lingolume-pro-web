@@ -1,23 +1,39 @@
 import React from 'react';
 import { Section } from '@/content/schema';
+import { cn } from '@/lib/utils';
 import { MCQView } from './tasks/MCQView';
 import { FillBlankView } from './tasks/FillBlankView';
 import { ReorderView } from './tasks/ReorderView';
 import { AudioPlayer } from './AudioPlayer';
 
 const DialogView = ({ items }: any) => (
-    <div className="space-y-4">
+    <div className="flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
         {items.map((item: any, i: number) => {
             const lines = item.lines || (item.speaker && item.text ? [{ id: i, speaker: item.speaker, text: item.text }] : []);
             return (
-                <div key={i} className="space-y-4">
-                    {item.meta?.audioUrl && <AudioPlayer url={item.meta.audioUrl} />}
-                    {(lines || []).map((line: any) => (
-                        <div key={line.id} className="flex gap-4">
-                            <span className="font-bold min-w-[100px] text-primary">{line.speaker}:</span>
-                            <span className="bg-slate-50 dark:bg-slate-900 p-4 rounded-2xl flex-1 border shadow-sm whitespace-pre-wrap">{line.text}</span>
+                <div key={i} className="flex flex-col gap-6">
+                    {item.meta?.audioUrl && (
+                        <div className="mb-2">
+                            <AudioPlayer url={item.meta.audioUrl} />
                         </div>
-                    ))}
+                    )}
+                    <div className="flex flex-col gap-4">
+                        {(lines || []).map((line: any, idx: number) => (
+                            <div key={line.id || idx} className={cn(
+                                "flex flex-col sm:flex-row sm:gap-6 p-6 rounded-3xl border-2 transition-all hover:shadow-md",
+                                idx % 2 === 0
+                                    ? "bg-white dark:bg-surface-dark border-slate-100 dark:border-surface-darker"
+                                    : "bg-slate-50 dark:bg-slate-900/50 border-transparent sm:ml-8"
+                            )}>
+                                <span className="font-black text-xs uppercase tracking-[0.2em] text-primary mb-2 sm:mb-0 sm:min-w-[120px] sm:pt-1">
+                                    {line.speaker}
+                                </span>
+                                <p className="text-lg font-semibold text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-wrap">
+                                    {line.text}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             )
         })}
@@ -35,35 +51,42 @@ function ItemByType({ item, answers, onAnswer, showResults }: any) {
             return <ReorderView items={[item]} answers={answers} onAnswer={onAnswer} showResults={showResults} />;
         case 'short_write':
             return (
-                <div className="space-y-4 bg-card p-6 rounded-2xl border shadow-sm">
+                <div className="flex flex-col gap-6 p-8 bg-white dark:bg-surface-dark rounded-[2rem] border-2 border-slate-100 dark:border-surface-darker shadow-sm animate-in fade-in slide-in-from-bottom-2 duration-700">
                     {item.meta?.audioUrl && <AudioPlayer url={item.meta.audioUrl} />}
-                    <p className="font-bold text-lg">{item.prompt}</p>
+                    <h3 className="text-xl font-bold text-slate-800 dark:text-white">{item.prompt}</h3>
                     <textarea
-                        className="w-full h-32 p-4 rounded-xl border bg-slate-50 dark:bg-slate-900 focus:border-primary outline-none transition-all resize-none"
+                        className="w-full h-40 p-6 rounded-2xl border-2 border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all outline-none resize-none text-lg font-medium"
                         placeholder="Schreibe deine Antwort hier..."
                         value={answers[item.id] || ""}
                         onChange={(e) => onAnswer(item.id, e.target.value)}
                         disabled={showResults}
                     />
                     {showResults && item.sampleSolution && (
-                        <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-xl border border-green-200">
-                            <h5 className="text-xs font-bold text-green-700 uppercase mb-2">Musterlösung</h5>
-                            <p className="text-sm text-green-800 whitespace-pre-wrap">{item.sampleSolution}</p>
+                        <div className="p-6 bg-green-50 dark:bg-green-900/10 rounded-2xl border-2 border-green-100 dark:border-green-900/30">
+                            <h5 className="text-[10px] font-black text-green-600 uppercase tracking-[0.2em] mb-3">Musterlösung</h5>
+                            <p className="text-green-800 dark:text-green-300 font-bold leading-relaxed">{item.sampleSolution}</p>
                         </div>
                     )}
                 </div>
             );
         case 'matching':
             return (
-                <div className="p-4 bg-card rounded-2xl border shadow-sm">
+                <div className="flex flex-col gap-6 p-8 bg-white dark:bg-surface-dark rounded-[2rem] border-2 border-slate-100 dark:border-surface-darker shadow-sm">
                     {item.meta?.audioUrl && <AudioPlayer url={item.meta.audioUrl} />}
-                    <p className="text-sm font-medium text-muted-foreground mb-3">Zuordnungsaufgabe:</p>
-                    <div className="space-y-2">
+                    <div className="flex items-center gap-2 mb-2">
+                        <span className="material-symbols-outlined text-primary">link</span>
+                        <p className="text-xs font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Zuordnungsaufgabe</p>
+                    </div>
+                    <div className="flex flex-col gap-3">
                         {(item.pairs || []).map((pair: any, j: number) => (
-                            <div key={j} className="flex items-center gap-3 text-sm">
-                                <span className="flex-1 p-2 bg-slate-50 rounded-lg border font-medium">{pair.left}</span>
-                                <span className="text-slate-400">→</span>
-                                <span className="flex-1 p-2 bg-primary/5 rounded-lg border border-primary/20 font-medium">{pair.right}</span>
+                            <div key={j} className="flex items-center gap-4 group">
+                                <span className="flex-1 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border-2 border-transparent font-bold text-slate-700 dark:text-slate-200 group-hover:border-slate-200 transition-all">
+                                    {pair.left}
+                                </span>
+                                <span className="material-symbols-outlined text-slate-300 dark:text-slate-700">arrow_forward</span>
+                                <span className="flex-1 p-4 bg-primary/5 dark:bg-primary/10 rounded-2xl border-2 border-primary/20 font-bold text-primary shadow-sm">
+                                    {pair.right}
+                                </span>
                             </div>
                         ))}
                     </div>
@@ -71,26 +94,35 @@ function ItemByType({ item, answers, onAnswer, showResults }: any) {
             );
         case 'roleplay':
             return (
-                <div className="space-y-4 bg-card p-4 rounded-2xl border border-primary/20">
+                <div className="flex flex-col gap-6 p-8 bg-gradient-to-br from-orange-50 to-white dark:from-primary/10 dark:to-surface-dark rounded-[2rem] border-2 border-primary/20 shadow-lg relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <span className="material-symbols-outlined !text-[120px]">forum</span>
+                    </div>
                     {item.meta?.audioUrl && <AudioPlayer url={item.meta.audioUrl} />}
-                    <h4 className="font-black uppercase text-[10px] tracking-widest text-primary">Rollenspiel</h4>
-                    <p className="font-medium whitespace-pre-wrap">{item.prompt}</p>
-                    {item.usefulPhrases && (
-                        <div className="pt-2">
-                            <h4 className="font-black uppercase text-[10px] tracking-widest text-slate-400 mb-2">Hilfreiche Redemittel</h4>
-                            <div className="flex flex-wrap gap-2">
-                                {item.usefulPhrases.map((phrase: string, j: number) => (
-                                    <span key={j} className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm">{phrase}</span>
-                                ))}
+                    <div className="relative z-10 flex flex-col gap-4">
+                        <h4 className="font-black uppercase text-[10px] tracking-[0.3em] text-primary">Rollenspiel</h4>
+                        <p className="text-xl font-bold text-slate-800 dark:text-white leading-relaxed">{item.prompt}</p>
+
+                        {item.usefulPhrases && (
+                            <div className="mt-4">
+                                <h4 className="font-black uppercase text-[10px] tracking-[0.2em] text-slate-400 dark:text-slate-500 mb-3">Nützliche Redemittel</h4>
+                                <div className="flex flex-wrap gap-2">
+                                    {item.usefulPhrases.map((phrase: string, j: number) => (
+                                        <span key={j} className="px-4 py-2 bg-white dark:bg-surface-darker rounded-xl border-2 border-slate-100 dark:border-slate-800 text-sm font-bold text-slate-600 dark:text-slate-300 shadow-sm hover:border-primary transition-all cursor-default">
+                                            {phrase}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    )}
-                    {showResults && item.sampleSolution && (
-                        <div className="p-4 bg-green-50 rounded-xl border border-green-200">
-                            <h5 className="text-xs font-bold text-green-700 uppercase mb-2">Beispieldialog</h5>
-                            <p className="text-sm text-green-800 whitespace-pre-wrap">{item.sampleSolution}</p>
-                        </div>
-                    )}
+                        )}
+
+                        {showResults && item.sampleSolution && (
+                            <div className="mt-6 p-6 bg-green-50/80 dark:bg-green-900/20 rounded-2xl border-2 border-green-200/50 backdrop-blur-sm">
+                                <h5 className="text-[10px] font-black text-green-600 uppercase tracking-[0.2em] mb-3">Beispieldialog</h5>
+                                <p className="text-green-800 dark:text-green-300 font-bold leading-relaxed">{item.sampleSolution}</p>
+                            </div>
+                        )}
+                    </div>
                 </div>
             );
         case 'dialog':
@@ -99,6 +131,7 @@ function ItemByType({ item, answers, onAnswer, showResults }: any) {
             return null;
     }
 }
+
 
 interface TaskRendererProps {
     section: Section;

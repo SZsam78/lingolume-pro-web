@@ -12,21 +12,32 @@ interface MCQProps {
 
 export function MCQView({ items, answers, onAnswer, showResults }: MCQProps) {
     return (
-        <div className="space-y-8">
+        <div className="flex flex-col gap-10">
             {items.map((item) => (
-                <div key={item.id} className="space-y-4">
-                    {item.meta?.audioUrl && <AudioPlayer url={item.meta.audioUrl} />}
-                    <p className="font-medium text-lg">{item.prompt}</p>
-                    <div className="grid grid-cols-1 gap-3">
+                <div key={item.id} className="flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-2 duration-700">
+                    {item.meta?.audioUrl && (
+                        <div className="mb-2">
+                            <AudioPlayer url={item.meta.audioUrl} />
+                        </div>
+                    )}
+                    <div className="grid grid-cols-1 gap-4">
                         {item.choices.map((choice: any) => {
                             const isSelected = answers[item.id] === choice.id;
                             const isCorrect = choice.isCorrect;
 
-                            let stateClasses = "border-slate-200 hover:border-primary/50";
-                            if (isSelected) stateClasses = "border-primary bg-primary/5 shadow-sm ring-1 ring-primary";
+                            let baseClasses = "relative flex items-center p-6 rounded-[2rem] border-2 cursor-pointer transition-all transform hover:scale-[1.01] group overflow-hidden shadow-sm";
+                            let stateClasses = "border-slate-200 dark:border-surface-darker bg-white dark:bg-surface-dark hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-md";
+
+                            if (isSelected) {
+                                stateClasses = "border-primary bg-primary/5 dark:bg-primary/10 shadow-[0_0_25px_rgba(249,115,22,0.15)] ring-1 ring-primary/20";
+                            }
+
                             if (showResults) {
-                                if (isCorrect) stateClasses = "border-green-500 bg-green-50 ring-1 ring-green-500";
-                                else if (isSelected) stateClasses = "border-destructive bg-destructive/5 ring-1 ring-destructive";
+                                if (isCorrect) {
+                                    stateClasses = "border-green-500 bg-green-50 dark:bg-green-900/10 shadow-[0_0_20px_rgba(34,197,94,0.1)] ring-1 ring-green-500/30 ring-offset-2 dark:ring-offset-background-dark animate-pulse";
+                                } else if (isSelected) {
+                                    stateClasses = "border-destructive bg-destructive/5 dark:bg-destructive/10 ring-1 ring-destructive/30";
+                                }
                             }
 
                             return (
@@ -34,14 +45,38 @@ export function MCQView({ items, answers, onAnswer, showResults }: MCQProps) {
                                     key={choice.id}
                                     disabled={showResults}
                                     onClick={() => onAnswer(item.id, choice.id)}
-                                    className={cn(
-                                        "flex items-center justify-between p-4 rounded-xl border transition-all text-left",
-                                        stateClasses
-                                    )}
+                                    className={cn(baseClasses, stateClasses)}
                                 >
-                                    <span>{choice.text}</span>
-                                    {showResults && isCorrect && <Check className="h-5 w-5 text-green-600" />}
-                                    {showResults && isSelected && !isCorrect && <X className="h-5 w-5 text-destructive" />}
+                                    <div className="flex items-center gap-5 w-full relative z-10">
+                                        <div className={cn(
+                                            "flex items-center justify-center w-8 h-8 rounded-full border-2 transition-all shrink-0",
+                                            isSelected ? "bg-primary border-primary text-white shadow-md scale-110" : "border-slate-300 dark:border-slate-600 group-hover:border-slate-400"
+                                        )}>
+                                            {isSelected ? (
+                                                <span className="material-symbols-outlined !text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>check</span>
+                                            ) : null}
+                                        </div>
+                                        <div className="flex grow flex-col text-left">
+                                            <p className={cn(
+                                                "text-xl tracking-tight transition-colors",
+                                                isSelected ? "font-bold text-slate-900 dark:text-white" : "font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white"
+                                            )}>
+                                                {choice.text}
+                                            </p>
+                                        </div>
+
+                                        {showResults && isCorrect && !isSelected && (
+                                            <span className="material-symbols-outlined text-green-500 !text-[24px]" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                                        )}
+                                        {showResults && isSelected && !isCorrect && (
+                                            <span className="material-symbols-outlined text-destructive !text-[24px]">cancel</span>
+                                        )}
+                                    </div>
+
+                                    {/* Subtle background glow for selected state */}
+                                    {isSelected && (
+                                        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-50"></div>
+                                    )}
                                 </button>
                             );
                         })}
@@ -51,3 +86,4 @@ export function MCQView({ items, answers, onAnswer, showResults }: MCQProps) {
         </div>
     );
 }
+

@@ -205,36 +205,36 @@ export function LessonEditor({ lessonId }: LessonEditorProps) {
 
             <div className="space-y-4 pb-20">
                 {lesson.sections.map((section, idx) => (
-                    <div key={section.id} className="border rounded-2xl bg-card overflow-hidden shadow-sm">
+                    <div key={section.id} className="border dark:border-surface-darker rounded-2xl bg-white dark:bg-surface-dark overflow-hidden shadow-sm">
                         <button
                             onClick={() => setActiveSectionId(activeSectionId === section.id ? null : section.id)}
-                            className="w-full flex items-center justify-between p-6 hover:bg-muted/50 transition-colors"
+                            className="w-full flex items-center justify-between p-6 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
                         >
                             <div className="flex items-center gap-4">
-                                <span className="flex items-center justify-center h-8 w-8 rounded-full bg-slate-100 text-xs font-bold text-slate-500">
+                                <span className="flex items-center justify-center h-8 w-8 rounded-full bg-slate-100 dark:bg-slate-700 text-xs font-bold text-slate-500 dark:text-slate-300">
                                     {idx + 1}
                                 </span>
                                 <div className="text-left flex-1" onClick={(e) => e.stopPropagation()}>
                                     <input
                                         value={section.title}
                                         onChange={(e) => updateSectionTitle(section.id, e.target.value)}
-                                        className="font-bold bg-transparent border-none outline-none focus:ring-2 focus:ring-primary/20 rounded px-1 -ml-1 w-full max-w-sm"
+                                        className="font-bold bg-transparent dark:text-white border-none outline-none focus:ring-2 focus:ring-primary/20 rounded px-1 -ml-1 w-full max-w-sm"
                                     />
                                     <p className="text-xs text-muted-foreground uppercase tracking-wider pl-1">{section.type}</p>
                                 </div>
                             </div>
-                            {activeSectionId === section.id ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
+                            {activeSectionId === section.id ? <ChevronUp className="h-5 w-5 dark:text-white" /> : <ChevronDown className="h-5 w-5 dark:text-white" />}
                         </button>
 
                         {activeSectionId === section.id && (
-                            <div className="p-6 pt-0 border-t bg-slate-50/30">
+                            <div className="p-6 pt-0 border-t dark:border-surface-darker bg-slate-50/30 dark:bg-surface-darker/50">
                                 <div className="space-y-6 py-6 font-sans">
                                     {section.items.length === 0 && (
-                                        <div className="flex flex-col items-center justify-center p-8 text-center bg-white rounded-2xl border border-dashed border-slate-200">
-                                            <div className="w-12 h-12 bg-slate-50 rounded-full flex items-center justify-center mb-4">
-                                                <Plus className="h-6 w-6 text-slate-300" />
+                                        <div className="flex flex-col items-center justify-center p-8 text-center bg-white dark:bg-surface-dark rounded-2xl border border-dashed border-slate-200 dark:border-slate-700">
+                                            <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-4">
+                                                <Plus className="h-6 w-6 text-slate-300 dark:text-slate-500" />
                                             </div>
-                                            <h4 className="font-bold text-slate-600">Noch keine Aufgaben</h4>
+                                            <h4 className="font-bold text-slate-600 dark:text-slate-300">Noch keine Aufgaben</h4>
                                             <p className="text-xs text-muted-foreground mt-1 max-w-xs">
                                                 Wählen Sie unten einen Aufgabentyp aus, um Ihre erste Aufgabe in "{section.title}" zu erstellen.
                                             </p>
@@ -249,7 +249,7 @@ export function LessonEditor({ lessonId }: LessonEditorProps) {
                                         />
                                     ))}
 
-                                    <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-200 border-dashed">
+                                    <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 border-dashed">
                                         {[
                                             { type: 'rich_text', label: 'Rich Text' },
                                             { type: 'dialog', label: 'Dialog' },
@@ -264,7 +264,7 @@ export function LessonEditor({ lessonId }: LessonEditorProps) {
                                             <button
                                                 key={t.type}
                                                 onClick={() => addItemToSection(section.id, t.type)}
-                                                className="px-3 py-1.5 text-xs font-bold rounded-lg bg-white border shadow-sm hover:border-primary hover:text-primary transition-all flex items-center gap-1 text-slate-500"
+                                                className="px-3 py-1.5 text-xs font-bold rounded-lg bg-white dark:bg-slate-800 border dark:border-slate-700 shadow-sm hover:border-primary hover:text-primary transition-all flex items-center gap-1 text-slate-500 dark:text-slate-400 dark:hover:border-primary dark:hover:text-primary"
                                             >
                                                 <Plus className="h-3 w-3" /> {t.label}
                                             </button>

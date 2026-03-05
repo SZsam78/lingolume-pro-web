@@ -33,6 +33,19 @@ function App() {
     const [view, setView] = useState<ViewState>({ type: 'modules' });
     const [history, setHistory] = useState<ViewState[]>([]);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        return localStorage.getItem('lingolume_theme') === 'dark';
+    });
+
+    useEffect(() => {
+        if (isDarkMode) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('lingolume_theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('lingolume_theme', 'light');
+        }
+    }, [isDarkMode]);
 
     useEffect(() => {
         if (!user || user.role === 'admin') return;
@@ -145,6 +158,8 @@ function App() {
                     user={user}
                     onLogout={() => AuthService.logout()}
                     onMenuToggle={() => setIsSidebarOpen(!isSidebarOpen)}
+                    isDarkMode={isDarkMode}
+                    onDarkModeToggle={() => setIsDarkMode(!isDarkMode)}
                 />
 
                 <main className="flex-1 overflow-auto bg-slate-50/50">

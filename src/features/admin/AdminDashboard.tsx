@@ -45,12 +45,12 @@ export function AdminDashboard() {
             <header className="mb-8">
                 <div className="flex items-center gap-3 mb-2">
                     <ShieldCheck className="h-8 w-8 text-primary" />
-                    <h1 className="text-3xl font-black text-[#1A1A1A]">Admin Dashboard</h1>
+                    <h1 className="text-3xl font-black text-[#1A1A1A] dark:text-white">Admin Dashboard</h1>
                 </div>
                 <p className="text-muted-foreground">{t('verwaltung_beschreibung')}</p>
             </header>
 
-            <div className="flex gap-2 mb-8 bg-[#F0EEE6] p-1.5 rounded-2xl w-fit">
+            <div className="flex gap-2 mb-8 bg-[#F0EEE6] dark:bg-surface-dark p-1.5 rounded-2xl w-fit">
                 {tabs.map(tab => (
                     <button
                         key={tab.id}
@@ -58,8 +58,8 @@ export function AdminDashboard() {
                         className={cn(
                             "flex items-center gap-2 px-6 py-2.5 rounded-xl font-extrabold text-sm transition-all",
                             activeTab === tab.id
-                                ? "bg-white text-primary shadow-sm"
-                                : "text-muted-foreground hover:text-[#1A1A1A]"
+                                ? "bg-white dark:bg-slate-800 text-primary shadow-sm"
+                                : "text-muted-foreground hover:text-[#1A1A1A] dark:hover:text-white"
                         )}
                     >
                         <tab.icon className="h-4 w-4" />
@@ -68,34 +68,34 @@ export function AdminDashboard() {
                 ))}
             </div>
 
-            <div className="bg-white rounded-[2rem] border border-[#EFEBE0] shadow-xl p-8 min-h-[500px]">
+            <div className="bg-white dark:bg-surface-dark rounded-[2rem] border border-[#EFEBE0] dark:border-surface-darker shadow-xl p-8 min-h-[500px]">
                 {activeTab === 'content' && (
                     <div className="space-y-8">
                         <div>
-                            <h2 className="text-xl font-black mb-2">Universal Content Importer</h2>
+                            <h2 className="text-xl font-black mb-2 dark:text-white">Universal Content Importer</h2>
                             <p className="text-sm text-muted-foreground mb-6">Importiere Massendaten direkt in Firestore.</p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <button
                                     onClick={handleBatchImport}
                                     disabled={isProcessing}
-                                    className="flex flex-col items-center justify-center p-8 border-2 border-dashed border-primary/20 bg-primary/5 rounded-3xl hover:bg-primary/10 transition-all group"
+                                    className="flex flex-col items-center justify-center p-8 border-2 border-dashed border-primary/20 bg-primary/5 dark:hover:bg-primary/20 rounded-3xl hover:bg-primary/10 transition-all group"
                                 >
                                     <Zap className="h-10 w-10 text-primary mb-3 group-hover:scale-110 transition-transform" />
                                     <span className="font-black text-primary text-center">INITIAL-LOAD (A1 - B2)</span>
                                     <span className="text-[10px] text-muted-foreground mt-1 uppercase font-bold">1151 Lektionen laden</span>
                                 </button>
 
-                                <div className="flex flex-col gap-4 p-6 bg-slate-50 rounded-3xl border">
+                                <div className="flex flex-col gap-4 p-6 bg-slate-50 dark:bg-slate-800 rounded-3xl border dark:border-slate-700">
                                     <div className="flex items-center gap-2 mb-2">
                                         <UploadCloud className="h-5 w-5 text-muted-foreground" />
-                                        <span className="font-bold text-sm text-[#1A1A1A]">Manueller JSON Import</span>
+                                        <span className="font-bold text-sm text-[#1A1A1A] dark:text-white">Manueller JSON Import</span>
                                     </div>
                                     <textarea
                                         value={jsonInput}
                                         onChange={(e) => setJsonInput(e.target.value)}
                                         placeholder="Paste JSON here..."
-                                        className="flex-1 min-h-[150px] bg-white border rounded-xl p-3 text-xs font-mono focus:ring-2 focus:ring-primary/20 outline-none"
+                                        className="flex-1 min-h-[150px] bg-white dark:bg-slate-900 dark:text-white border dark:border-slate-700 rounded-xl p-3 text-xs font-mono focus:ring-2 focus:ring-primary/20 outline-none"
                                     />
                                     <button
                                         onClick={async () => {

@@ -7,13 +7,13 @@ import { MediaManager } from './MediaManager';
 // --- Shared Meta Editor ---
 export function ItemMetaEditor({ meta, onChange }: { meta: any, onChange: (meta: any) => void }) {
     return (
-        <div className="grid grid-cols-2 gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100 text-sm">
+        <div className="grid grid-cols-2 gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 text-sm">
             <div className="space-y-1">
-                <label className="font-bold text-slate-500 uppercase text-[10px]">Schwierigkeit</label>
+                <label className="font-bold text-slate-500 dark:text-slate-400 uppercase text-[10px]">Schwierigkeit</label>
                 <select
                     value={meta?.difficulty || 'medium'}
                     onChange={(e) => onChange({ ...meta, difficulty: e.target.value })}
-                    className="w-full p-2 rounded-lg border bg-white focus:ring-2 focus:ring-primary/20 outline-none font-sans"
+                    className="w-full p-2 rounded-lg border bg-white dark:bg-slate-900 dark:border-slate-700 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none font-sans"
                 >
                     <option value="easy">Leicht</option>
                     <option value="medium">Mittel</option>
@@ -21,12 +21,12 @@ export function ItemMetaEditor({ meta, onChange }: { meta: any, onChange: (meta:
                 </select>
             </div>
             <div className="space-y-1">
-                <label className="font-bold text-slate-500 uppercase text-[10px]">Punkte</label>
+                <label className="font-bold text-slate-500 dark:text-slate-400 uppercase text-[10px]">Punkte</label>
                 <input
                     type="number"
                     value={meta?.points || 0}
                     onChange={(e) => onChange({ ...meta, points: parseInt(e.target.value) })}
-                    className="w-full p-2 rounded-lg border bg-white focus:ring-2 focus:ring-primary/20 outline-none font-sans"
+                    className="w-full p-2 rounded-lg border bg-white dark:bg-slate-900 dark:border-slate-700 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none font-sans"
                 />
             </div>
             <div className="flex items-center gap-2">
@@ -48,13 +48,13 @@ export function ItemMetaEditor({ meta, onChange }: { meta: any, onChange: (meta:
                 <label className="text-xs font-medium">Lösung anzeigen erlaubt</label>
             </div>
             <div className="col-span-2 space-y-1 mt-2 border-t pt-4">
-                <label className="font-bold text-slate-500 uppercase text-[10px]">Google Drive Audio Link (Optional)</label>
+                <label className="font-bold text-slate-500 dark:text-slate-400 uppercase text-[10px]">Google Drive Audio Link (Optional)</label>
                 <input
                     type="text"
                     placeholder="Audio Link via Google Drive (https://drive.google.com/...)"
                     value={meta?.audioUrl || ''}
                     onChange={(e) => onChange({ ...meta, audioUrl: e.target.value })}
-                    className="w-full p-2 rounded-lg border bg-white focus:ring-2 focus:ring-primary/20 outline-none font-sans text-xs"
+                    className="w-full p-2 rounded-lg border bg-white dark:bg-slate-900 dark:border-slate-700 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none font-sans text-xs"
                 />
             </div>
         </div>
@@ -73,7 +73,7 @@ export function RichTextEditor({ item, onChange }: { item: any, onChange: (item:
                 value={item.content || ''}
                 onChange={(e) => onChange({ ...item, content: e.target.value })}
                 placeholder="Inhalt (Markdown unterstützt)..."
-                className="w-full h-32 p-4 rounded-xl border focus:ring-2 focus:ring-primary/20 outline-none font-sans"
+                className="w-full h-32 p-4 rounded-xl border dark:border-slate-700 bg-white dark:bg-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none font-sans"
             />
         </div>
     );
@@ -110,7 +110,7 @@ export function MCQEditor({ item, onChange }: { item: any, onChange: (item: any)
                             onClick={() => updateChoice(choice.id, { isCorrect: !choice.isCorrect })}
                             className={cn(
                                 "h-10 w-10 rounded-lg flex items-center justify-center border-2 transition-all",
-                                choice.isCorrect ? "bg-green-500 border-green-500 text-white" : "border-slate-200 text-slate-400"
+                                choice.isCorrect ? "bg-green-500 border-green-500 text-white" : "border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500"
                             )}
                         >
                             <Check className="h-5 w-5" />
@@ -118,7 +118,7 @@ export function MCQEditor({ item, onChange }: { item: any, onChange: (item: any)
                         <input
                             value={choice.text}
                             onChange={(e) => updateChoice(choice.id, { text: e.target.value })}
-                            className="flex-1 p-2 border rounded-lg focus:ring-primary/20 outline-none"
+                            className="flex-1 p-2 border dark:border-slate-700 bg-white dark:bg-slate-900 dark:text-white rounded-lg focus:ring-primary/20 outline-none"
                             placeholder="Antwortmöglichkeit..."
                         />
                         <button
@@ -143,14 +143,14 @@ export function FillBlankEditor({ item, onChange }: { item: any, onChange: (item
                 value={item.image}
                 onChange={(image) => onChange({ ...item, image })}
             />
-            <div className="p-3 bg-blue-50 text-blue-700 rounded-lg text-xs">
+            <div className="p-3 bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded-lg text-xs">
                 Nutzen Sie eckige Klammern für Lücken: <strong>Ich [bin|ist] Lukas.</strong> (Erstes Wort ist die richtige Antwort)
             </div>
             <textarea
                 value={item.text || ''}
                 onChange={(e) => onChange({ ...item, text: e.target.value })}
                 placeholder="Text mit Lücken..."
-                className="w-full h-24 p-4 rounded-xl border focus:ring-2 focus:ring-primary/20 outline-none"
+                className="w-full h-24 p-4 rounded-xl border dark:border-slate-700 bg-white dark:bg-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none"
             />
         </div>
     );
@@ -164,7 +164,7 @@ export function ReorderEditor({ item, onChange }: { item: any, onChange: (item: 
                 value={item.sentence || ''}
                 onChange={(e) => onChange({ ...item, sentence: e.target.value })}
                 placeholder="Der vollständige Satz..."
-                className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-primary/20 outline-none font-medium"
+                className="w-full p-3 rounded-xl border dark:border-slate-700 bg-white dark:bg-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none font-medium"
             />
             <p className="text-[10px] text-muted-foreground uppercase font-bold px-1">Wörter werden im Player automatisch gemischt.</p>
         </div>
@@ -179,7 +179,7 @@ export function ShortWriteEditor({ item, onChange }: { item: any, onChange: (ite
                 value={item.prompt || ''}
                 onChange={(e) => onChange({ ...item, prompt: e.target.value })}
                 placeholder="Schreibauftrag / Frage..."
-                className="w-full p-3 rounded-xl border focus:ring-2 focus:ring-primary/20 outline-none font-medium"
+                className="w-full p-3 rounded-xl border dark:border-slate-700 bg-white dark:bg-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none font-medium"
             />
             <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase text-slate-400">Musterlösung</label>
@@ -187,7 +187,7 @@ export function ShortWriteEditor({ item, onChange }: { item: any, onChange: (ite
                     value={item.sampleSolution || ''}
                     onChange={(e) => onChange({ ...item, sampleSolution: e.target.value })}
                     placeholder="Erwartete Antwort..."
-                    className="w-full p-3 rounded-xl border bg-slate-50 text-sm focus:ring-2 focus:ring-primary/20 outline-none"
+                    className="w-full p-3 rounded-xl border dark:border-slate-700 bg-slate-50 dark:bg-slate-800 dark:text-white text-sm focus:ring-2 focus:ring-primary/20 outline-none"
                 />
             </div>
         </div>
@@ -214,14 +214,14 @@ export function MatchingEditor({ item, onChange }: { item: any, onChange: (item:
                         <input
                             value={pair.left}
                             onChange={(e) => updatePair(i, { left: e.target.value })}
-                            className="flex-1 p-2 border rounded-lg focus:ring-primary/20 outline-none"
+                            className="flex-1 p-2 border dark:border-slate-700 bg-white dark:bg-slate-900 dark:text-white rounded-lg focus:ring-primary/20 outline-none"
                             placeholder="Begriff..."
                         />
                         <div className="flex items-center text-slate-300">→</div>
                         <input
                             value={pair.right}
                             onChange={(e) => updatePair(i, { right: e.target.value })}
-                            className="flex-1 p-2 border rounded-lg focus:ring-primary/20 outline-none"
+                            className="flex-1 p-2 border dark:border-slate-700 bg-white dark:bg-slate-900 dark:text-white rounded-lg focus:ring-primary/20 outline-none"
                             placeholder="Zuordnung..."
                         />
                         <button
@@ -246,7 +246,7 @@ export function RoleplayEditor({ item, onChange }: { item: any, onChange: (item:
                 value={item.prompt || ''}
                 onChange={(e) => onChange({ ...item, prompt: e.target.value })}
                 placeholder="Szenario / Rollenbeschreibung..."
-                className="w-full h-24 p-4 rounded-xl border focus:ring-2 focus:ring-primary/20 outline-none"
+                className="w-full h-24 p-4 rounded-xl border dark:border-slate-700 bg-white dark:bg-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none"
             />
             <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase text-slate-400">Hilfreiche Redemittel (einzeln durch Komma getrennt)</label>
@@ -254,7 +254,7 @@ export function RoleplayEditor({ item, onChange }: { item: any, onChange: (item:
                     value={item.usefulPhrases?.join(', ') || ''}
                     onChange={(e) => onChange({ ...item, usefulPhrases: e.target.value.split(',').map((s: string) => s.trim()) })}
                     placeholder="Ich möchte..., Könnten Sie...?"
-                    className="w-full p-3 rounded-xl border bg-slate-50 text-sm focus:ring-2 focus:ring-primary/20 outline-none"
+                    className="w-full p-3 rounded-xl border dark:border-slate-700 bg-slate-50 dark:bg-slate-800 dark:text-white text-sm focus:ring-2 focus:ring-primary/20 outline-none"
                 />
             </div>
         </div>
@@ -336,7 +336,7 @@ export function DialogEditor({ item, onChange }: { item: any, onChange: (item: a
                             value={line.text}
                             onChange={(e) => updateLine(line.id, { text: e.target.value })}
                             placeholder="Gesprochener Text..."
-                            className="flex-1 p-3 min-h-[48px] rounded-xl border focus:ring-2 focus:ring-primary/20 outline-none resize-y"
+                            className="flex-1 p-3 min-h-[48px] rounded-xl border dark:border-slate-700 bg-white dark:bg-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none resize-y"
                             rows={1}
                         />
                         <button
@@ -362,9 +362,9 @@ export function DialogEditor({ item, onChange }: { item: any, onChange: (item: a
 export function MiniTestEditor({ item, onChange }: { item: any, onChange: (item: any) => void }) {
     // This is a simplified container representation for now.
     return (
-        <div className="space-y-4 p-4 bg-orange-50 border border-orange-100 rounded-xl">
-            <div className="text-orange-800 font-bold text-sm">Mini-Test (Gemischte Aufgaben)</div>
-            <p className="text-xs text-orange-600">
+        <div className="space-y-4 p-4 bg-orange-50 dark:bg-orange-900/30 border border-orange-100 dark:border-orange-900/50 rounded-xl">
+            <div className="text-orange-800 dark:text-orange-400 font-bold text-sm">Mini-Test (Gemischte Aufgaben)</div>
+            <p className="text-xs text-orange-600 dark:text-orange-400/80">
                 Dieser Containertyp dient dazu, Unteraufgaben zu gruppieren.
                 Fügen Sie stattdessen reguläre Multiple Choice oder Zuordnungsaufgaben direkt im Section "Mini-Test" hinzu.
             </p>

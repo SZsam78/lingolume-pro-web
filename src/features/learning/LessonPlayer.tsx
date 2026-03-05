@@ -149,10 +149,9 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson }: LessonPlayerPro
                     parsed = adaptLessonFormat(parsed);
                     setLesson(parsed);
                 } else {
-                    // Fallback to legacy JSON if needed or show error
                     console.warn("Lesson not found in DB, checking legacy local files...");
                     const [module, id] = lessonId.split('-');
-                    const moduleContent = await import(`../../ content / ${module}/${id}.json`);
+                    const moduleContent = await import(`../../content/${module}/${id}.json`);
                     setLesson(adaptLessonFormat(moduleContent.default));
                 }
             } catch (error) {
@@ -164,10 +163,11 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson }: LessonPlayerPro
         loadLesson();
     }, [lessonId]);
 
-    if (loading) return <div className="p-8 text-center">Laden...</div>;
-    if (!lesson) return <div className="p-8 text-center text-destructive">Lektion nicht gefunden.</div>;
+    if (loading) return <div className="p-8 text-center dark:text-white">Laden...</div>;
+    if (!lesson) return <div className="p-8 text-center text-destructive dark:text-red-400">Lektion nicht gefunden.</div>;
 
     const currentSection = lesson.sections[currentSectionIndex];
+    const progress = ((currentSectionIndex + 1) / lesson.sections.length) * 100;
 
     const handleAnswer = (itemId: string, answer: any) => {
         setAllAnswers(prev => ({
@@ -181,15 +181,11 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson }: LessonPlayerPro
 
     const handleCheck = async () => {
         setShowResults(prev => ({ ...prev, [currentSection.id]: true }));
-
         if (!user) return;
-
-        // Save progress for each item in section
         const sectionAnswers = allAnswers[currentSection.id] || {};
         for (const item of currentSection.items) {
             const answer = sectionAnswers[item.id];
-            // Simple validation for test
-            const isCorrect = true;
+            const isCorrect = true; // Placeholder for logic
             await (DB as any).updateProgress(user.id, lessonId, item.id, isCorrect ? 'completed' : 'failed', answer);
         }
     };
@@ -204,10 +200,8 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson }: LessonPlayerPro
             onBack();
             return;
         }
-
         try {
             const dbLessons = await DB.query('SELECT * FROM lessons WHERE moduleId = ?', [lesson.moduleId]);
-
             let mapped = dbLessons.map((doc: any) => {
                 let data = doc;
                 if (doc.content_json) {
@@ -218,27 +212,19 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson }: LessonPlayerPro
                     const match = (data.id || doc.id)?.match(/-L(\d+)/);
                     num = match ? parseInt(match[1], 10) : 0;
                 }
-                return {
-                    id: doc.id || data.id,
-                    number: num
-                };
+                return { id: doc.id || data.id, number: num };
             }).sort((a: any, b: any) => a.number - b.number);
-
             const currentIndex = mapped.findIndex((l: any) => l.id === lessonId);
-
             if (currentIndex !== -1 && currentIndex < mapped.length - 1) {
-                // Next lesson in current module
                 onNextLesson(mapped[currentIndex + 1].id, lesson.moduleId);
             } else {
-                // Module finished, transition to next module
                 const { MODULES } = await import('@/content/meta');
                 const modIndex = MODULES.findIndex(m => m.id === lesson.moduleId);
                 if (modIndex !== -1 && modIndex < MODULES.length - 1) {
                     const nextModuleId = MODULES[modIndex + 1].id;
-                    // For simplicity, just send them to the first logical lesson of the next module
                     onNextLesson(`${nextModuleId}-L01`, nextModuleId);
                 } else {
-                    onBack(); // End of all modules
+                    onBack();
                 }
             }
         } catch (e) {
@@ -248,91 +234,183 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson }: LessonPlayerPro
     };
 
     return (
-        <div className="flex flex-col h-screen overflow-hidden bg-slate-50 dark:bg-black">
-            {/* Header */}
-            <header className="flex items-center justify-between px-6 py-4 bg-card border-b">
+        <div className="relative flex h-full w-full flex-col overflow-hidden bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+            <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-surface-darker px-6 py-4 bg-white dark:bg-surface-dark shrink-0 z-10 shadow-sm transition-colors duration-300">
                 <div className="flex items-center gap-4">
-                    <button onClick={onBack} className="p-2 hover:bg-slate-100 rounded-lg transition-colors">
-                        <ChevronLeft className="h-5 w-5" />
+                    <button
+                        onClick={onBack}
+                        className="flex items-center justify-center rounded-full h-10 w-10 bg-slate-100 dark:bg-surface-darker text-slate-500 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all hover:scale-105 active:scale-95"
+                    >
+                        <span className="material-symbols-outlined">close</span>
                     </button>
-                    <div>
-                        <h1 className="font-bold">{lesson.title}</h1>
-                        <p className="text-xs text-muted-foreground">{lesson.moduleId} • Lektion {lesson.id.split('-L')[1]}</p>
+                    <div className="hidden md:flex flex-col">
+                        <h2 className="text-lg font-bold leading-tight tracking-tight text-slate-900 dark:text-white">
+                            {lesson.title}
+                        </h2>
                     </div>
                 </div>
-                <div className="flex items-center gap-2">
-                    <div className="text-sm font-medium mr-4">
-                        {currentSectionIndex + 1} / {lesson.sections.length}
-                    </div>
-                    <div className="w-48 h-2 bg-slate-100 rounded-full overflow-hidden">
+
+                <div className="flex-1 max-w-xl mx-8 hidden sm:block">
+                    <div className="w-full bg-slate-200 dark:bg-surface-darker rounded-full h-3 overflow-visible relative">
                         <div
-                            className="h-full bg-primary transition-all duration-300"
-                            style={{ width: `${((currentSectionIndex + 1) / lesson.sections.length) * 100}%` }}
-                        />
+                            className="bg-primary h-3 rounded-full transition-all duration-500 ease-out relative"
+                            style={{ width: `${progress}%` }}
+                        >
+                            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white dark:bg-primary border-2 border-primary shadow-lg rounded-full cursor-default group">
+                                <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                    {Math.round(progress)}%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <p className="text-[10px] text-right mt-1 text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest">
+                        {Math.round(progress)}% {t('abgeschlossen')}
+                    </p>
+                </div>
+
+                <div className="flex gap-3">
+                    <div className="flex items-center gap-2 rounded-lg h-10 px-4 bg-orange-100 dark:bg-primary/20 text-primary font-bold border border-orange-200 dark:border-primary/30 shadow-sm">
+                        <span className="material-symbols-outlined !text-[20px] text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                        <span>0</span>
                     </div>
                 </div>
             </header>
 
-            {/* Main Content Area */}
-            <main className="flex-1 w-full mx-auto overflow-y-auto no-scrollbar">
-                <div className="min-h-full py-8 px-4 md:px-8 flex flex-col items-center">
-                    <div className="w-full max-w-3xl bg-card rounded-2xl border p-6 md:p-10 shadow-sm transition-all">
-                        <h2 className="text-2xl md:text-3xl font-bold mb-3 text-[#1A1A1A]">{currentSection.title}</h2>
-                        {currentSection.instruction && (
-                            <p className="text-base md:text-lg text-muted-foreground mb-8 italic">{currentSection.instruction}</p>
-                        )}
-
-                        <div className="space-y-8 pb-10">
-                            <TaskRenderer
-                                section={currentSection}
-                                answers={allAnswers[currentSection.id] || {}}
-                                onAnswer={handleAnswer}
-                                showResults={showResults[currentSection.id] || false}
-                            />
+            <main className="flex flex-1 overflow-hidden">
+                <div className="flex flex-1 w-full max-w-[1440px] mx-auto overflow-hidden">
+                    <aside className="hidden lg:flex flex-col w-1/3 border-r border-slate-200 dark:border-surface-darker bg-slate-50/50 dark:bg-slate-900/50 p-6 overflow-y-auto custom-scrollbar transition-colors">
+                        <div className="flex items-center gap-2 mb-6">
+                            <span className="material-symbols-outlined text-primary">auto_stories</span>
+                            <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                                {t('lernressourcen')}
+                            </h3>
                         </div>
-                    </div>
+
+                        <div className="bg-white dark:bg-surface-dark rounded-2xl p-6 border border-slate-200 dark:border-surface-darker shadow-sm mb-6 transition-all border-b-4 border-b-slate-100 dark:border-b-amber-900/20">
+                            <p className="text-sm font-bold mb-4 text-slate-600 dark:text-slate-300 flex items-center gap-2">
+                                <span className="material-symbols-outlined text-sm">headphones</span>
+                                Audio-Dialog
+                            </p>
+                            <div className="flex flex-col gap-4">
+                                <div className="flex items-center gap-4">
+                                    <button className="w-12 h-12 flex items-center justify-center rounded-full bg-primary text-white hover:bg-orange-600 transition-all shadow-lg hover:scale-105 active:scale-95 group">
+                                        <span className="material-symbols-outlined !text-[28px]" style={{ fontVariationSettings: "'FILL' 1" }}>play_arrow</span>
+                                    </button>
+                                    <div className="flex-1">
+                                        <div className="h-2 w-full bg-slate-100 dark:bg-surface-darker rounded-full overflow-hidden">
+                                            <div className="h-full bg-primary w-1/4 rounded-full"></div>
+                                        </div>
+                                        <div className="flex justify-between mt-2 text-[10px] text-slate-400 font-bold uppercase tracking-widest">
+                                            <span>0:14</span>
+                                            <span>0:45</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flex-1 min-h-0 flex flex-col">
+                            <p className="text-sm font-bold mb-3 text-slate-600 dark:text-slate-300 uppercase tracking-widest px-1">
+                                Kontext & Vokabeln
+                            </p>
+                            <div className="flex-1 bg-white dark:bg-surface-dark rounded-2xl p-6 border border-slate-200 dark:border-surface-darker shadow-sm overflow-y-auto custom-scrollbar transition-all">
+                                <div className="prose prose-sm dark:prose-invert text-slate-600 dark:text-slate-400">
+                                    <p className="mb-6 leading-relaxed font-medium">
+                                        {lesson.sections[0].instruction || "In dieser Lektion vertiefst du dein Verständnis durch interaktive Übungen."}
+                                    </p>
+
+                                    <div className="space-y-4">
+                                        <div className="flex justify-between items-center py-3 border-b border-slate-50 dark:border-slate-800 group hover:bg-slate-50 dark:hover:bg-slate-800 -mx-2 px-2 rounded-lg transition-colors">
+                                            <span className="font-bold text-slate-700 dark:text-slate-200">Guten Tag</span>
+                                            <span className="text-primary text-xs font-black uppercase tracking-widest italic">Good day</span>
+                                        </div>
+                                        <div className="flex justify-between items-center py-3 border-b border-slate-50 dark:border-slate-800 group hover:bg-slate-50 dark:hover:bg-slate-800 -mx-2 px-2 rounded-lg transition-colors">
+                                            <span className="font-bold text-slate-700 dark:text-slate-200">Wie heißen Sie?</span>
+                                            <span className="text-primary text-xs font-black uppercase tracking-widest italic">What is your name?</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-8 p-4 bg-slate-50 dark:bg-surface-darker rounded-xl border border-dotted border-slate-200 dark:border-slate-700">
+                                        <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed italic">
+                                            Kulturelle Notiz: In formellen Situationen wie im Büro verwendet man im Deutschen meist das "Sie" statt "du".
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <section className="flex-1 flex flex-col p-6 sm:p-12 lg:p-16 overflow-y-auto custom-scrollbar bg-white dark:bg-background-dark/80 transition-all">
+                        <div className="w-full max-w-2xl mx-auto">
+                            <div className="lg:hidden mb-8 p-4 bg-orange-50 dark:bg-primary/10 rounded-2xl border border-primary/20 flex items-center gap-4 transition-all animate-in fade-in slide-in-from-top-4">
+                                <span className="material-symbols-outlined text-primary">info</span>
+                                <p className="text-sm font-bold text-slate-600 dark:text-slate-300">
+                                    Nutze die Ressourcen oben für diese Aufgabe.
+                                </p>
+                            </div>
+
+                            <div className="flex flex-col mb-12">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
+                                    <p className="text-primary text-xs font-black tracking-[0.2em] uppercase">
+                                        Interaktive Übung
+                                    </p>
+                                </div>
+                                <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight mb-6 text-slate-900 dark:text-white tracking-tight">
+                                    {currentSection.title}
+                                </h1>
+                                <p className="text-slate-500 dark:text-slate-400 text-lg font-medium leading-relaxed">
+                                    {currentSection.instruction || "Wähle die richtige Antwort basierend auf dem Material."}
+                                </p>
+                            </div>
+
+                            <div className="pb-24">
+                                <TaskRenderer
+                                    section={currentSection}
+                                    answers={allAnswers[currentSection.id] || {}}
+                                    onAnswer={handleAnswer}
+                                    showResults={showResults[currentSection.id] || false}
+                                />
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </main>
 
-            {/* Footer Controls */}
-            <footer className="w-full border-t bg-card/95 backdrop-blur-md p-3 md:p-4 lg:p-6 sticky bottom-0 z-50">
-                <div className="max-w-3xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 md:gap-4">
+            <footer className="border-t border-slate-200 dark:border-surface-darker bg-white dark:bg-surface-dark py-6 px-10 shrink-0 z-10 shadow-[0_-4px_20px_rgba(0,0,0,0.03)] transition-colors">
+                <div className="max-w-[1400px] mx-auto flex justify-between items-center gap-4 md:gap-8">
                     <button
-                        onClick={() => setCurrentSectionIndex(prev => Math.max(0, prev - 1))}
-                        disabled={currentSectionIndex === 0}
-                        className="w-full sm:w-auto px-6 py-2.5 md:py-3 rounded-xl font-bold disabled:opacity-30 text-muted-foreground hover:bg-slate-100 transition-colors text-sm"
+                        onClick={handleReset}
+                        className="hidden sm:flex items-center justify-center rounded-2xl h-14 px-10 bg-slate-100 dark:bg-surface-darker text-slate-600 dark:text-slate-300 font-black hover:bg-slate-200 dark:hover:bg-slate-700 transition-all uppercase tracking-widest text-xs border-b-4 border-b-slate-200 dark:border-b-black/20"
                     >
-                        {t('zurueck')}
+                        {t('ueberspringen')}
                     </button>
 
-                    <div className="flex flex-1 justify-center gap-2 lg:gap-4 w-full sm:w-auto">
-                        <button
-                            onClick={handleReset}
-                            className="flex items-center justify-center flex-1 sm:flex-none gap-2 px-6 py-3 rounded-xl bg-slate-100 text-slate-700 font-bold hover:bg-slate-200 transition-colors"
-                        >
-                            <RotateCcw className="h-5 w-5" />
-                            <span className="hidden sm:inline">{t('zuruecksetzen')}</span>
-                        </button>
+                    <div className="flex-1 sm:hidden"></div>
+
+                    <div className="flex gap-4 w-full sm:w-auto flex-1 sm:flex-none">
                         <button
                             onClick={handleCheck}
-                            className="flex items-center justify-center flex-1 sm:flex-none gap-2 px-8 py-3 rounded-xl bg-primary text-white font-black uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-md"
+                            className="flex items-center justify-center rounded-2xl h-14 px-16 flex-1 sm:flex-none sm:w-80 bg-primary text-white text-lg font-black shadow-xl shadow-orange-500/20 hover:bg-orange-600 active:transform active:translate-y-1 transition-all uppercase tracking-widest border-b-4 border-b-orange-700/30"
                         >
-                            <CheckCircle className="h-5 w-5" /> {t('pruefen')}
+                            {t('pruefen')}
                         </button>
+
+                        {(showResults[currentSection.id]) && (
+                            <button
+                                onClick={() => {
+                                    if (currentSectionIndex === lesson.sections.length - 1) {
+                                        handleNextLesson();
+                                    } else {
+                                        setCurrentSectionIndex(prev => prev + 1);
+                                    }
+                                }}
+                                className="flex items-center justify-center rounded-2xl h-14 px-8 bg-slate-900 dark:bg-white text-white dark:text-slate-900 border-2 border-slate-900 dark:border-white font-black hover:opacity-90 transition-all uppercase tracking-widest text-xs"
+                            >
+                                <span className="material-symbols-outlined">arrow_forward</span>
+                            </button>
+                        )}
                     </div>
-                    <button
-                        onClick={() => {
-                            if (currentSectionIndex === lesson.sections.length - 1) {
-                                handleNextLesson();
-                            } else {
-                                setCurrentSectionIndex(prev => prev + 1);
-                            }
-                        }}
-                        className="w-full sm:w-auto px-6 py-2.5 md:py-3 rounded-xl border-2 border-slate-200 font-black text-[#1A1A1A] hover:bg-slate-50 hover:border-slate-300 transition-all flex items-center justify-center group text-sm"
-                    >
-                        Next
-                        <ChevronRight className="inline h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </button>
                 </div>
             </footer>
         </div>

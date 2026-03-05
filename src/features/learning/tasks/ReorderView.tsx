@@ -12,22 +12,22 @@ interface ReorderProps {
 
 export function ReorderView({ items, answers, onAnswer, showResults }: ReorderProps) {
     return (
-        <div className="space-y-8">
+        <div className="flex flex-col gap-12">
             {items.map((item) => {
-                const currentOrder = answers[item.id] || item.prompt.split(' / ').sort(() => Math.random() - 0.5);
+                const currentOrder = answers[item.id] || [];
                 const isCorrect = JSON.stringify(currentOrder) === JSON.stringify(item.solution);
 
-                // Simple click-to-move implementation for now
+                // Simple click-to-move implementation
                 const [availableWords, setAvailableWords] = useState<string[]>([]);
                 const [resultWords, setResultWords] = useState<string[]>([]);
 
                 useEffect(() => {
+                    const original = item.prompt.split(' / ');
                     if (!answers[item.id]) {
-                        setAvailableWords(item.prompt.split(' / '));
+                        setAvailableWords([...original].sort(() => Math.random() - 0.5));
                         setResultWords([]);
                     } else {
                         setResultWords(answers[item.id]);
-                        const original = item.prompt.split(' / ');
                         const remaining = [...original];
                         answers[item.id].forEach((w: string) => {
                             const idx = remaining.indexOf(w);
@@ -58,44 +58,56 @@ export function ReorderView({ items, answers, onAnswer, showResults }: ReorderPr
                 };
 
                 return (
-                    <div key={item.id} className="space-y-4">
+                    <div key={item.id} className="flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-2 duration-700">
                         {item.meta?.audioUrl && <AudioPlayer url={item.meta.audioUrl} />}
-                        <p className="font-medium">{item.instruction || "Bringen Sie die Wörter in die richtige Reihenfolge."}</p>
 
-                        <div className={cn(
-                            "min-h-[60px] p-2 rounded-xl border-2 border-dashed flex flex-wrap gap-2 transition-all",
-                            showResults
-                                ? (isCorrect ? "border-green-500 bg-green-50" : "border-destructive bg-destructive/5")
-                                : "border-slate-200"
-                        )}>
-                            {resultWords.map((word, i) => (
-                                <button
-                                    key={`${word}-${i}`}
-                                    onClick={() => removeWord(word, i)}
-                                    className="px-3 py-1 bg-white border rounded-lg shadow-sm hover:translate-y-[-1px] transition-transform"
-                                >
-                                    {word}
-                                </button>
-                            ))}
-                            {resultWords.length === 0 && !showResults && (
-                                <span className="text-muted-foreground text-sm m-auto">Klicken Sie auf die Wörter unten.</span>
-                            )}
-                        </div>
+                        <div className="flex flex-col gap-4">
+                            <div className={cn(
+                                "min-h-[140px] p-8 rounded-[2rem] border-2 border-dashed flex flex-wrap content-start gap-4 transition-all bg-white/50 dark:bg-surface-dark/50",
+                                showResults
+                                    ? (isCorrect ? "border-green-500 bg-green-50 dark:bg-green-900/10" : "border-destructive bg-destructive/5")
+                                    : "border-slate-200 dark:border-surface-darker hover:border-slate-300 dark:hover:border-slate-700"
+                            )}>
+                                {resultWords.map((word, i) => (
+                                    <button
+                                        key={`${word}-${i}`}
+                                        onClick={() => removeWord(word, i)}
+                                        className="px-6 py-3 bg-white dark:bg-surface-dark border-2 border-slate-100 dark:border-slate-800 rounded-2xl shadow-sm font-bold text-lg hover:translate-y-[-2px] hover:shadow-md transition-all active:scale-95 text-slate-800 dark:text-white"
+                                    >
+                                        {word}
+                                    </button>
+                                ))}
+                                {resultWords.length === 0 && !showResults && (
+                                    <div className="m-auto flex flex-col items-center gap-2 opacity-30 select-none">
+                                        <span className="material-symbols-outlined !text-[40px]">touch_app</span>
+                                        <span className="font-bold text-sm uppercase tracking-widest italic text-center">
+                                            Wörter auswählen
+                                        </span>
+                                    </div>
+                                )}
+                            </div>
 
-                        <div className="flex flex-wrap gap-2">
-                            {availableWords.map((word, i) => (
-                                <button
-                                    key={`${word}-${i}`}
-                                    onClick={() => addWord(word, i)}
-                                    className="px-3 py-1 bg-slate-100 border border-transparent rounded-lg hover:border-primary transition-all"
-                                >
-                                    {word}
-                                </button>
-                            ))}
+                            <div className="flex flex-wrap gap-3 p-4 bg-slate-50/50 dark:bg-surface-darker/30 rounded-3xl min-h-[80px] items-center justify-center">
+                                {availableWords.map((word, i) => (
+                                    <button
+                                        key={`${word}-${i}`}
+                                        onClick={() => addWord(word, i)}
+                                        className="px-6 py-3 bg-slate-100 dark:bg-surface-dark font-bold rounded-2xl border-2 border-transparent hover:border-primary hover:text-primary transition-all shadow-sm hover:shadow-md active:scale-95 text-slate-600 dark:text-slate-400"
+                                    >
+                                        {word}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
 
                         {showResults && !isCorrect && (
-                            <p className="text-sm text-green-600 font-medium">Lösung: {item.solution.join(' ')}</p>
+                            <div className="p-6 bg-green-50 dark:bg-green-900/10 rounded-2xl border-2 border-green-200 dark:border-green-900/30 flex items-center gap-4">
+                                <span className="material-symbols-outlined text-green-500">done_all</span>
+                                <div className="flex flex-col">
+                                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-green-600 mb-1">Richtige Reihenfolge</span>
+                                    <p className="text-green-800 dark:text-green-300 font-bold text-lg">{item.solution.join(' ')}</p>
+                                </div>
+                            </div>
                         )}
                     </div>
                 );
@@ -103,3 +115,4 @@ export function ReorderView({ items, answers, onAnswer, showResults }: ReorderPr
         </div>
     );
 }
+

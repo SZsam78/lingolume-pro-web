@@ -33,7 +33,7 @@ const TrustSocial = () => {
                 </div>
 
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem', opacity: 0.5, fontSize: '0.9rem', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-                    <p>&copy; 2026 LingoLume. Alle Rechte vorbehalten.</p>
+                    <p>&copy; 2026 Lume Media. Alle Rechte vorbehalten.</p>
                     <div style={{ display: 'flex', gap: '2rem' }}>
                         <span onClick={() => onNavigate('impressum')} style={{ cursor: 'pointer' }}>Impressum</span>
                         <span onClick={() => onNavigate('privacy')} style={{ cursor: 'pointer' }}>Datenschutz</span>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, Home, ChevronRight, LogOut, User as UserIcon, Globe } from 'lucide-react';
+import { ChevronLeft, Home, ChevronRight, LogOut, User as UserIcon, Globe, Moon, Sun } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { User } from '@/lib/auth';
 import { useTranslation, Language } from '@/lib/i18n';
@@ -17,9 +17,11 @@ interface HeaderProps {
     user: User;
     onLogout: () => void;
     onMenuToggle?: () => void;
+    isDarkMode: boolean;
+    onDarkModeToggle: () => void;
 }
 
-export function Header({ breadcrumbs, onBack, canBack, onHome, user, onLogout, onMenuToggle }: HeaderProps) {
+export function Header({ breadcrumbs, onBack, canBack, onHome, user, onLogout, onMenuToggle, isDarkMode, onDarkModeToggle }: HeaderProps) {
     const { language, setLanguage, t } = useTranslation();
     const [showLangMenu, setShowLangMenu] = useState(false);
 
@@ -90,6 +92,15 @@ export function Header({ breadcrumbs, onBack, canBack, onHome, user, onLogout, o
             </div>
 
             <div className="flex items-center gap-4">
+                {/* Dark Mode Toggle */}
+                <button
+                    onClick={onDarkModeToggle}
+                    className="p-2 bg-slate-100 rounded-xl border border-transparent hover:border-primary/20 transition-all text-slate-600"
+                    title={isDarkMode ? "Light Mode" : "Dark Mode"}
+                >
+                    {isDarkMode ? <Sun className="h-4 w-4 text-orange-400" /> : <Moon className="h-4 w-4" />}
+                </button>
+
                 {/* Language Switcher */}
                 <div className="relative">
                     <button

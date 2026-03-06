@@ -7,7 +7,7 @@ import { Header } from './components/Header';
 import { cn } from './lib/utils';
 import { DiagnosticsPanel } from './components/DiagnosticsPanel';
 import { Artikeltrainer } from './features/learning/Artikeltrainer';
-import { AdminDashboard } from './features/admin/AdminDashboard';
+import { AdminApp } from './features/admin/AdminApp';
 import { StoryMode } from './features/story/StoryMode';
 import { Login } from './features/auth/Login';
 import { AuthService, User } from './lib/auth';
@@ -94,6 +94,10 @@ function App() {
 
     if (!user) {
         return <Login onLogin={setUser} />;
+    }
+
+    if (user.role === 'admin') {
+        return <AdminApp />;
     }
 
     const navigateTo = (nextView: ViewState) => {
@@ -205,7 +209,10 @@ function App() {
                     )}
 
                     {view.type === 'admin' && (
-                        <AdminDashboard />
+                        <div className="p-8 text-center mt-20">
+                            <h2 className="text-3xl font-black mb-4">Zugriff Verweigert</h2>
+                            <p className="text-muted-foreground">Admins werden automatisch in das CMS weitergeleitet.</p>
+                        </div>
                     )}
 
                     {view.type === 'lessons' && (

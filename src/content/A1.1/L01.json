@@ -1,0 +1,191 @@
+[
+    {
+        "moduleId": "A1.1",
+        "lessonNumber": 1,
+        "order": 1,
+        "exerciseType": "info_screen",
+        "title": "Lektion 1: Hallo! Ich heiße ...",
+        "instruction": "Lesen Sie den Einführungstext.",
+        "difficulty": "leicht",
+        "points": 0,
+        "content": {
+            "text": "Willkommen in A1.1!\n\nIn Lektion 1 lernen Sie:\n- sich begrüßen und verabschieden\n- Namen sagen und nach dem Namen fragen\n- sich kurz vorstellen\n\nWichtige Wörter:\nHallo, Guten Morgen, Guten Tag, Tschüss, Auf Wiedersehen\nIch heiße ..., Wie heißen Sie?"
+        }
+    },
+    {
+        "moduleId": "A1.1",
+        "lessonNumber": 1,
+        "order": 2,
+        "exerciseType": "dialog",
+        "title": "Begrüßung und Name",
+        "instruction": "Lesen Sie den Dialog.",
+        "difficulty": "leicht",
+        "points": 0,
+        "content": {
+            "mediaUrl": "",
+            "turns": [
+                {
+                    "speaker": "A",
+                    "text": "Guten Tag!",
+                    "audioUrl": ""
+                },
+                {
+                    "speaker": "B",
+                    "text": "Guten Tag!",
+                    "audioUrl": ""
+                },
+                {
+                    "speaker": "A",
+                    "text": "Wie heißen Sie?",
+                    "audioUrl": ""
+                },
+                {
+                    "speaker": "B",
+                    "text": "Ich heiße Maria. Und Sie?",
+                    "audioUrl": ""
+                },
+                {
+                    "speaker": "A",
+                    "text": "Ich heiße Ali.",
+                    "audioUrl": ""
+                },
+                {
+                    "speaker": "B",
+                    "text": "Freut mich!",
+                    "audioUrl": ""
+                },
+                {
+                    "speaker": "A",
+                    "text": "Freut mich auch.",
+                    "audioUrl": ""
+                },
+                {
+                    "speaker": "B",
+                    "text": "Auf Wiedersehen!",
+                    "audioUrl": ""
+                },
+                {
+                    "speaker": "A",
+                    "text": "Tschüss!",
+                    "audioUrl": ""
+                }
+            ]
+        }
+    },
+    {
+        "moduleId": "A1.1",
+        "lessonNumber": 1,
+        "order": 3,
+        "exerciseType": "multiple_choice",
+        "title": "Dialog verstehen",
+        "instruction": "Wählen Sie die richtige Antwort.",
+        "difficulty": "leicht",
+        "points": 8,
+        "content": {
+            "questions": [
+                {
+                    "question": "Wie heißt Person B?",
+                    "options": [
+                        "Maria",
+                        "Ali",
+                        "Max"
+                    ],
+                    "correctAnswer": "Maria",
+                    "feedbackError": "Schau noch einmal auf den zweiten Satz von Person B."
+                },
+                {
+                    "question": "Wie heißt Person A?",
+                    "options": [
+                        "Anna",
+                        "Ali",
+                        "Tom"
+                    ],
+                    "correctAnswer": "Ali",
+                    "feedbackError": "Person A stellt sich direkt nach Maria vor."
+                },
+                {
+                    "question": "Was sagen beide am Anfang?",
+                    "options": [
+                        "Tschüss",
+                        "Guten Tag",
+                        "Danke"
+                    ],
+                    "correctAnswer": "Guten Tag"
+                },
+                {
+                    "question": "Was sagt Person B am Ende?",
+                    "options": [
+                        "Auf Wiedersehen",
+                        "Guten Morgen",
+                        "Bitte"
+                    ],
+                    "correctAnswer": "Auf Wiedersehen"
+                }
+            ]
+        }
+    },
+    {
+        "moduleId": "A1.1",
+        "lessonNumber": 1,
+        "order": 4,
+        "exerciseType": "info_screen",
+        "title": "Redemittel: Begrüßung und Abschied",
+        "instruction": "Lesen Sie die Wörter und Sätze.",
+        "difficulty": "leicht",
+        "points": 0,
+        "content": {
+            "text": "Begrüßung:\n- Hallo!\n- Guten Morgen!\n- Guten Tag!\n- Guten Abend!\n\nAbschied:\n- Tschüss!\n- Auf Wiedersehen!\n- Bis morgen!\n\nNach dem Namen fragen:\n- Wie heißen Sie?\n- Wie heißt du? (informell)\n\nName sagen:\n- Ich heiße ...\n- Mein Name ist ..."
+        }
+    },
+    {
+        "moduleId": "A1.1",
+        "lessonNumber": 1,
+        "order": 5,
+        "exerciseType": "matching",
+        "title": "Begrüßung zuordnen",
+        "instruction": "Ordnen Sie zu.",
+        "difficulty": "leicht",
+        "points": 8,
+        "content": {
+            "pairs": [
+                {
+                    "left": "Hallo",
+                    "right": "informell"
+                },
+                {
+                    "left": "Guten Morgen",
+                    "right": "morgens"
+                },
+                {
+                    "left": "Guten Tag",
+                    "right": "tagsüber"
+                },
+                {
+                    "left": "Guten Abend",
+                    "right": "abends"
+                },
+                {
+                    "left": "Tschüss",
+                    "right": "informell (Abschied)"
+                },
+                {
+                    "left": "Auf Wiedersehen",
+                    "right": "formell (Abschied)"
+                }
+            ]
+        }
+    },
+    {
+        "moduleId": "A1.1",
+        "lessonNumber": 1,
+        "order": 6,
+        "exerciseType": "info_screen",
+        "title": "Grammatik: Ich – Sie (sein/heißen)",
+        "instruction": "Lesen Sie die Erklärung.",
+        "difficulty": "leicht",
+        "points": 0,
+        "content": {
+            "text": "Verb: heißen\n- ich heiße\n- Sie heißen\n\nVerb: sein\n- ich bin\n- Sie sind\n\nBeispiele:\n- Ich heiße Anna.\n- Wie heißen Sie?\n- Ich bin Tom.\n- Ich bin aus Spanien."
+        }
+    }
+]

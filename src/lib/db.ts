@@ -58,6 +58,16 @@ export class DB {
         return results[0] || null;
     }
 
+    static async getTasksForLesson(lessonId: string): Promise<any[]> {
+        if (!window.electronAPI) {
+            const tasksRef = collection(firestore, 'lessons', lessonId, 'tasks');
+            const snapshot = await getDocs(tasksRef);
+            return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        }
+        // Electron/Local storage fallback for tasks if needed
+        return [];
+    }
+
     static async saveLesson(lesson: any) {
         const id = lesson.id || `${lesson.moduleId}-L${String(lesson.order || 1).padStart(2, '0')}`;
         const updatedAt = new Date().toISOString();

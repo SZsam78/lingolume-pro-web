@@ -167,11 +167,24 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson, initialMode }: Le
             try {
                 const data = await DB.getLesson(lessonId);
                 console.log("LessonPlayer - DB.getLesson result for", lessonId, data ? "YES" : "NO");
+                
                 if (data) {
+                    // FETCH SUBCOLLECTION TASKS
+                    const subTasks = await DB.getTasksForLesson(lessonId);
+                    console.log(`LessonPlayer - Fetched ${subTasks.length} tasks from subcollection for ${lessonId}`);
+
                     const parsed = typeof data.content_json === 'string' ? JSON.parse(data.content_json) : (data.sections ? data : data.content_json);
 
                     // If parsed is null/undefined but data has fields, use data
                     const source = parsed || data;
+
+                    // MERGE SUBCOLLECTION TASKS if they exist
+                    if (subTasks.length > 0) {
+                        // If source has tasks array, merge. Otherwise set it.
+                        const existingTasks = source.tasks || source.sections || [];
+                        // We prefer the subcollection as the source of truth if it has data
+                        source.tasks = subTasks.sort((a, b) => (a.taskId || a.order || 0) - (b.taskId || b.order || 0));
+                    }
 
                     // CRITICAL: Filter empty sections if they exist in the source JSON (common in draft A1.1-L01)
                     if (source.sections && Array.isArray(source.sections)) {

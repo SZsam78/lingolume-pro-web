@@ -26,9 +26,12 @@ export function LessonList({ moduleId, onSelectLesson, onBack }: LessonListProps
     useEffect(() => {
         async function fetchLessons() {
             setLoading(true);
+            console.log(`LessonList - Fetching lessons for module: ${moduleId}`);
             try {
                 // Fetch lessons for this module from the database
                 const dbLessons = await DB.query('SELECT * FROM lessons WHERE moduleId = ?', [moduleId]);
+                console.log(`LessonList - Fetched ${dbLessons ? dbLessons.length : 0} raw lessons from DB.`);
+                
                 const user = AuthService.getCurrentUser();
                 const completedMap = user ? await (DB as any).getCompletedLessons(user.id) : {};
 
@@ -59,6 +62,7 @@ export function LessonList({ moduleId, onSelectLesson, onBack }: LessonListProps
                     const completedCount = mapped.filter(l => l.completed).length;
                     setProgress(Math.round((completedCount / mapped.length) * 100));
                 } else {
+                    console.warn(`LessonList - No lessons found for ${moduleId} in Firestore.`);
                     mapped = Array.from({ length: 144 }, (_, i) => ({
                         id: `${moduleId}-L${String(i + 1).padStart(2, '0')}`,
                         number: i + 1,
@@ -69,7 +73,7 @@ export function LessonList({ moduleId, onSelectLesson, onBack }: LessonListProps
 
                 setLessons(mapped);
             } catch (error) {
-                console.error("Failed to fetch lessons:", error);
+                console.error("Firebase Fetch Error (LessonList):", error);
                 // Fallback to basic structure on error
                 setLessons(Array.from({ length: 144 }, (_, i) => ({
                     id: `${moduleId}-L${String(i + 1).padStart(2, '0')}`,

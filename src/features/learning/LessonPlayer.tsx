@@ -162,9 +162,11 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson, initialMode }: Le
 
     useEffect(() => {
         const loadLesson = async () => {
+            setLoading(true);
+            console.log(`LessonPlayer - Fetching lesson: ${lessonId}`);
             try {
                 const data = await DB.getLesson(lessonId);
-                console.log("DB.getLesson result for", lessonId, data ? "YES" : "NO");
+                console.log("LessonPlayer - DB.getLesson result for", lessonId, data ? "YES" : "NO");
                 if (data) {
                     const parsed = typeof data.content_json === 'string' ? JSON.parse(data.content_json) : (data.sections ? data : data.content_json);
 
@@ -176,10 +178,12 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson, initialMode }: Le
                         source.sections = source.sections.filter((s: any) => s.items && s.items.length > 0);
                     }
 
-                    setLesson(adaptLessonData(source));
+                    const adapted = adaptLessonData(source);
+                    console.log("LessonPlayer - Adapted Lesson:", adapted.title);
+                    setLesson(adapted);
                 }
             } catch (error) {
-                console.error("Failed to load lesson:", error);
+                console.error("Firebase Fetch Error (LessonPlayer):", error);
             } finally {
                 setLoading(false);
             }

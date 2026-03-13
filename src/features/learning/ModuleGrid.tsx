@@ -17,6 +17,7 @@ const getLevelGradient = (moduleId: string) => {
 };
 
 export function ModuleGrid({ user, onSelectModule }: ModuleGridProps) {
+    console.log("ModuleGrid - User Access Rights (permissions):", JSON.stringify(user.permissions));
     return (
         <div className="p-4 md:p-8 max-w-[1600px] mx-auto min-h-screen">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-8 md:mb-16 text-center text-[#1A1A1A] leading-tight">
@@ -25,6 +26,8 @@ export function ModuleGrid({ user, onSelectModule }: ModuleGridProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-10">
                 {MODULES.map((module) => {
                     const isLocked = user.role !== 'admin' && !(user.permissions || {})[module.id];
+                    if (!isLocked) console.log(`Module ${module.id} is UNLOCKED for user.`);
+                    else console.log(`Module ${module.id} is LOCKED.`);
 
                     return (
                         <button

@@ -30,17 +30,25 @@ export const AuthService = {
         // For testing, we check if a user with this email exists and the password matches
         const userDoc = await getDoc(doc(firestore, 'users', email.replace('.', '_')));
         if (userDoc.exists()) {
-            const data = userDoc.data();
-            if (data.password === password) {
-                const user: User = {
-                    email: data.email,
-                    role: data.role || 'user',
-                    id: userDoc.id,
-                    name: data.name || 'User',
-                    permissions: data.permissions || {},
-                    streakCount: data.streakCount || 0,
-                    lastActivityDate: data.lastActivityDate
-                };
+                const data = userDoc.data();
+                if (data.password === password) {
+                    // Robust Permission Mapping
+                    const mergedPermissions = {
+                        ...(data.permissions || {}),
+                        ...(data.accessibleCourses || {}),
+                        ...(data.accessRights || {}),
+                        ...(data.purchasedCourses || {})
+                    };
+
+                    const user: User = {
+                        email: data.email,
+                        role: data.role || 'user',
+                        id: userDoc.id,
+                        name: data.name || 'User',
+                        permissions: mergedPermissions,
+                        streakCount: data.streakCount || 0,
+                        lastActivityDate: data.lastActivityDate
+                    };
                 localStorage.setItem('lingolume_user', JSON.stringify(user));
                 return user;
             }

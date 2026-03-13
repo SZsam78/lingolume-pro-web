@@ -109,48 +109,51 @@ export function AdminDashboard() {
                                         value={jsonInput}
                                         onChange={(e) => setJsonInput(e.target.value)}
                                         placeholder={importMode === 'json' ? "JSON Daten hier einfügen..." : "Q: Frage?\nO: Option A\nO: Option B\nA: Option A\n\nQ: Nächste Frage..."}
-                                        className="flex-1 min-h-[150px] bg-white dark:bg-slate-900 dark:text-white border dark:border-slate-700 rounded-xl p-3 text-xs font-mono focus:ring-2 focus:ring-primary/20 outline-none"
                                     />
                                     <button
                                         onClick={async () => {
                                             setIsProcessing(true);
                                             try {
-                                                let items: any[] = [];
-                                                if (importMode === 'json') {
-                                                    const data = JSON.parse(jsonInput);
-                                                    items = Array.isArray(data) ? data : [data];
-                                                } else {
-                                                    // Simple Smart Parser
-                                                    const lines = jsonInput.split('\n');
-                                                    let current: any = null;
-                                                    lines.forEach(line => {
-                                                        const t = line.trim();
-                                                        if (!t) return;
-                                                        if (t.startsWith('Q:')) {
-                                                            if (current) items.push(current);
-                                                            current = { type: 'multiple_choice', question: t.substring(2).trim(), choices: [] };
-                                                        } else if (t.startsWith('O:') && current) {
-                                                            current.choices.push({ id: crypto.randomUUID(), text: t.substring(2).trim(), isCorrect: false });
-                                                        } else if (t.startsWith('A:') && current) {
-                                                            const ans = t.substring(2).trim();
-                                                            current.choices.forEach((c: any) => { if (c.text === ans) c.isCorrect = true; });
-                                                        }
-                                                    });
-                                                    if (current) items.push(current);
+                                                if (!jsonInput) return;
+                                                const parsedJson = JSON.parse(jsonInput);
+                                                const lessons = Array.isArray(parsedJson) ? parsedJson : [parsedJson];
 
-                                                    // Wrap items in a lesson structure if they are just tasks
-                                                    items = [{
-                                                        id: `import-${Date.now()}`,
-                                                        title: "Importierte Lektion",
-                                                        moduleId: "A1.1",
-                                                        sections: [{ id: 'sec-1', type: 'multiple_choice', title: 'Aufgaben', items }]
-                                                    }];
+                                                for (const lessonData of lessons) {
+                                                    const transformedTasks = (lessonData.tasks || []).map((task: any, index: number) => ({
+                                                        ...task,
+                                                        taskId: task.order || index + 1,
+                                                        title: task.title,
+                                                        exerciseType: task.type, // MAPPING: type wird zu exerciseType
+                                                        instruction: task.instruction || "",
+                                                        flashcard: task.flashcard || "",
+                                                        points: task.points || 10,
+                                                        mediaUrl: task.mediaUrl || "",
+                                                        extraAudios: task.extraAudios || [],
+                                                        // WICHTIG: Erstelle das exercises-Array, das das LMS-Frontend erwartet!
+                                                        exercises: [
+                                                            {
+                                                                id: Date.now().toString() + Math.random().toString(36).substr(2, 5),
+                                                                type: task.type,
+                                                                content: task.content
+                                                            }
+                                                        ]
+                                                    }));
+
+                                                    const lessonToSave = {
+                                                        ...lessonData,
+                                                        tasks: transformedTasks,
+                                                        updatedAt: new Date().toISOString()
+                                                    };
+
+                                                    await DB.saveLesson(lessonToSave);
                                                 }
-
-                                                for (const l of items) await DB.saveLesson(l);
-                                                alert(`${items.length} Lektion(en) erfolgreich importiert.`);
+                                                
+                                                alert(`${lessons.length} Lektion(en) erfolgreich importiert.`);
                                                 setJsonInput('');
-                                            } catch (err: any) { alert("Import Fehler: " + err.message); }
+                                            } catch (err: any) { 
+                                                console.error(err);
+                                                alert("Import Fehler: " + err.message); 
+                                            }
                                             finally { setIsProcessing(false); }
                                         }}
                                         disabled={!jsonInput || isProcessing}

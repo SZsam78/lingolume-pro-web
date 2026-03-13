@@ -78,10 +78,18 @@ function App() {
         const unsubscribe = onSnapshot(userRef, (snapshot) => {
             if (snapshot.exists()) {
                 const data = snapshot.data();
+                // Robust Permission Mapping: combine legacy and modern fields
+                const mergedPermissions = {
+                    ...(data.permissions || {}),
+                    ...(data.accessibleCourses || {}),
+                    ...(data.accessRights || {}),
+                    ...(data.purchasedCourses || {})
+                };
+
                 const updatedUser: User = {
                     ...user,
                     name: data.name || user.name,
-                    permissions: data.permissions || {},
+                    permissions: mergedPermissions,
                     role: data.role as 'admin' | 'user'
                 };
                 setUser(updatedUser);

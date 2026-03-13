@@ -10,9 +10,10 @@ interface LessonPlayerProps {
     lessonId: string;
     onBack: () => void;
     onNextLesson?: (lessonId: string, moduleId?: string) => void;
+    initialMode?: 'learn' | 'edit';
 }
 
-export function LessonPlayer({ lessonId, onBack, onNextLesson }: LessonPlayerProps) {
+export function LessonPlayer({ lessonId, onBack, onNextLesson, initialMode }: LessonPlayerProps) {
     const user = AuthService.getCurrentUser();
     const [lesson, setLesson] = useState<Lesson | null>(null);
     const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
@@ -57,7 +58,9 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson }: LessonPlayerPro
                 title: data.title || rawItems[0]?.title || "Lektion",
                 sections: rawItems.map((item: any, idx: number) => {
                     // 1. Map legacy types to modern types
-                    const legacyType = item.exerciseType || item.type || 'info_screen';
+                    const exerciseFromList = item.exercises && item.exercises.length > 0 ? item.exercises[0] : null;
+                    const legacyType = item.exerciseType || exerciseFromList?.type || item.type || 'info_screen';
+                    
                     let modernType: any = legacyType;
                     if (legacyType === 'richtext' || legacyType === 'rich_text') modernType = 'info_screen';
                     if (legacyType === 'word_order' || legacyType === 'reorder_sentence') modernType = 'sentence_builder';
@@ -67,7 +70,8 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson }: LessonPlayerPro
                     if (legacyType === 'fill_blank') modernType = 'fill_in_blank';
 
                     // 2. Extract content and normalize it
-                    let content = item.content || item;
+                    // Support new 'exercises' array schema
+                    let content = item.content || exerciseFromList?.content || item;
 
                     // Normalize Dialog: Convert legacy text block to turns
                     if (modernType === 'dialog' && content.text && !content.turns) {
@@ -145,7 +149,7 @@ export function LessonPlayer({ lessonId, onBack, onNextLesson }: LessonPlayerPro
                             content: content
                         }]
                     };
-                }).filter(s => s.items && s.items.length > 0),
+                }).filter((s: any) => s.items && s.items.length > 0),
                 version: "1.0.0",
                 isPublished: true
             };

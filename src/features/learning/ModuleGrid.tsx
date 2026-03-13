@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { MODULES } from '@/content/meta';
 import { cn } from '@/lib/utils';
 import { GraduationCap, Lock } from 'lucide-react';
@@ -17,6 +18,17 @@ const getLevelGradient = (moduleId: string) => {
 };
 
 export function ModuleGrid({ user, onSelectModule }: ModuleGridProps) {
+    useEffect(() => {
+        try {
+            console.log("ModuleGrid - Checking access for user:", user.email);
+            if (!user.permissions || Object.keys(user.permissions).length === 0) {
+                console.warn("User has no permissions defined. All modules will be locked.");
+            }
+        } catch (error) {
+            console.error("Fetch Modules Error:", error);
+        }
+    }, [user]);
+
     console.log("ModuleGrid - User Access Rights (permissions):", JSON.stringify(user.permissions));
     return (
         <div className="p-4 md:p-8 max-w-[1600px] mx-auto min-h-screen">

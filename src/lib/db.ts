@@ -42,16 +42,26 @@ export class DB {
 
     // --- Learning ---
 
+    private static getModuleIdFromLessonId(lessonId: string): string {
+        // e.g., "A1.1-L01" -> "A1.1"
+        const parts = lessonId.split('-L');
+        return parts[0];
+    }
+
     static async getLesson(lessonId: string): Promise<any> {
         if (!window.electronAPI) {
+            const moduleId = this.getModuleIdFromLessonId(lessonId);
+            // Try Hierarchical first
+            const nestedDoc = await getDoc(doc(firestore, 'modules', moduleId, 'lessons', lessonId));
+            if (nestedDoc.exists()) {
+                const data = nestedDoc.data();
+                return { id: lessonId, ...data, content_json: data.content_json || JSON.stringify(data) };
+            }
+            // Fallback to top-level
             const lessonDoc = await getDoc(doc(firestore, 'lessons', lessonId));
             if (lessonDoc.exists()) {
                 const data = lessonDoc.data();
-                return {
-                    id: lessonId,
-                    ...data,
-                    content_json: data.content_json || JSON.stringify(data)
-                };
+                return { id: lessonId, ...data, content_json: data.content_json || JSON.stringify(data) };
             }
         }
         const results = await this.query('SELECT * FROM lessons WHERE id = ?', [lessonId]);
@@ -60,11 +70,18 @@ export class DB {
 
     static async getTasksForLesson(lessonId: string): Promise<any[]> {
         if (!window.electronAPI) {
+            const moduleId = this.getModuleIdFromLessonId(lessonId);
+            // Try Hierarchical
+            const tasksRefNested = collection(firestore, 'modules', moduleId, 'lessons', lessonId, 'tasks');
+            const snapshotNested = await getDocs(tasksRefNested);
+            if (!snapshotNested.empty) {
+                return snapshotNested.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            }
+            // Fallback to top-level
             const tasksRef = collection(firestore, 'lessons', lessonId, 'tasks');
             const snapshot = await getDocs(tasksRef);
             return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         }
-        // Electron/Local storage fallback for tasks if needed
         return [];
     }
 
@@ -72,7 +89,8 @@ export class DB {
         const id = lesson.id || `${lesson.moduleId}-L${String(lesson.order || 1).padStart(2, '0')}`;
         const updatedAt = new Date().toISOString();
         if (!window.electronAPI) {
-            await setDoc(doc(firestore, 'lessons', id), {
+            const moduleId = lesson.moduleId;
+            await setDoc(doc(firestore, 'modules', moduleId, 'lessons', id), {
                 ...lesson,
                 id,
                 updatedAt

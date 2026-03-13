@@ -47,20 +47,25 @@ function LearnMode() {
     const { t } = useTranslation();
     const [items, setItems] = useState<VocabularyItem[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [selectedLevel, setSelectedLevel] = useState('A1.1');
+    const [selectedLevel, setSelectedLevel] = useState('LEVELS.A1.1');
     const [result, setResult] = useState<'pending' | 'correct' | 'incorrect'>('pending');
 
-    const levels = ['A1.1', 'A1.2', 'A2.1', 'A2.2', 'B1.1', 'B1.2'];
+    const levels = ['LEVELS.A1.1', 'LEVELS.A1.2', 'LEVELS.A2.1', 'LEVELS.A2.2', 'LEVELS.B1.1', 'LEVELS.B1.2'];
 
     useEffect(() => {
         loadVocab();
     }, [selectedLevel]);
 
     const loadVocab = async () => {
-        const data = await VocabularyDB.getVocabularyByLevel(selectedLevel);
-        setItems(data);
-        setCurrentIndex(0);
-        setResult('pending');
+        try {
+            const rawLevel = selectedLevel.replace('LEVELS.', '');
+            const data = await VocabularyDB.getVocabularyByLevel(rawLevel);
+            setItems(data);
+            setCurrentIndex(0);
+            setResult('pending');
+        } catch (error) {
+            console.error("Fetch Vocabulary Error:", error);
+        }
     };
 
     const handleAnswer = (article: 'der' | 'die' | 'das') => {

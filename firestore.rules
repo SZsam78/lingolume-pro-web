@@ -9,45 +9,47 @@ service cloud.firestore {
         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
     }
 
-    // AUTH REQUIRED: Allow any authenticated user to read courses, lessons, and modules
-    match /modules/{document=**} {
+    // MODULES HIERARCHY (AS REQUESTED)
+    match /modules/{moduleId} {
       allow read: if request.auth != null;
       allow write: if isAdmin();
+      
+      match /lessons/{lessonId} {
+        allow read: if request.auth != null;
+        allow write: if isAdmin();
+        
+        match /tasks/{taskId} {
+          allow read: if request.auth != null;
+          allow write: if isAdmin();
+        }
+        
+        match /{allSubcollections=**} {
+          allow read: if request.auth != null;
+        }
+      }
     }
 
+    // FALLBACK for top-level lessons (current DB behavior)
     match /lessons/{lessonId} {
       allow read: if request.auth != null;
       allow write: if isAdmin();
       
-      // Explicitly allow reading tasks subcollection
       match /tasks/{taskId} {
         allow read: if request.auth != null;
         allow write: if isAdmin();
       }
-      
-      // Recursive fallback for any other subcollections
-      match /{allSubcollections=**} {
-        allow read: if request.auth != null;
-        allow write: if isAdmin();
-      }
     }
 
-    match /tasks/{document=**} {
-      allow read: if request.auth != null;
-      allow write: if isAdmin();
-    }
-
-    // VOCABULARY: Accessible by all students
+    // VOCABULARY: Root level access (as requested)
     match /vocabulary/{document=**} {
       allow read: if request.auth != null;
       allow write: if isAdmin();
     }
 
-    // USER DATA: Students only read/write their own record
+    // USER DATA: Critical for loading permissions
     match /users/{userId} {
       allow read, write: if request.auth != null && (request.auth.uid == userId || isAdmin());
       
-      // Allow progress tracking
       match /progress/{document=**} {
         allow read, write: if request.auth != null && (request.auth.uid == userId || isAdmin());
       }

@@ -43,7 +43,8 @@ export function AdminTaskBuilder({ moduleId, lessonNumber, taskNumber, onSave, o
         try {
             const lessonStr = lessonNumber.toString().padStart(2, '0');
             const taskStr = taskNumber.toString().padStart(2, '0');
-            const docPath = `lessons/${moduleId}-L${lessonStr}/tasks/Task_${taskStr}`;
+            const lessonId = `${moduleId}-L${lessonStr}`;
+            const docPath = `modules/${moduleId}/lessons/${lessonId}/tasks/Task_${taskStr}`;
 
             const payload = {
                 moduleId,

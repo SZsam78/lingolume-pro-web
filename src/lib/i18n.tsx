@@ -39,6 +39,7 @@ const translations = {
         ueberspringen: 'Überspringen',
         abgeschlossen: 'abgeschlossen',
         kontext_vokabeln: 'Kontext & Vokabeln',
+        keine_vokabeln_gefunden: 'Keine Wörter gefunden',
         "LEVELS.A1.1": "A1.1",
         "LEVELS.A1.2": "A1.2",
         "LEVELS.A2.1": "A2.1",

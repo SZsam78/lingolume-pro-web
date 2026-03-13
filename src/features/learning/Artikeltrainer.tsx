@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { VocabularyDB, VocabularyItem } from '@/lib/vocabularyDb';
 import { Upload, ChevronRight, CheckCircle2, XCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTranslation } from '@/lib/i18n';
 
 export function Artikeltrainer() {
     const [mode, setMode] = useState<'learn' | 'import'>('learn');
@@ -43,6 +44,7 @@ export function Artikeltrainer() {
 }
 
 function LearnMode() {
+    const { t } = useTranslation();
     const [items, setItems] = useState<VocabularyItem[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedLevel, setSelectedLevel] = useState('A1.1');
@@ -78,10 +80,11 @@ function LearnMode() {
     };
 
     if (items.length === 0) {
+        const displayLevel = selectedLevel.replace('LEVELS.', '');
         return (
             <div className="bg-white rounded-3xl p-12 text-center border shadow-sm">
-                <h3 className="text-xl font-bold mb-4">Keine Wörter gefunden</h3>
-                <p className="text-muted-foreground mb-6">Für das Level {selectedLevel} gibt es noch keine Vokabeln im System.</p>
+                <h3 className="text-xl font-bold mb-4">{t('keine_vokabeln_gefunden') || 'Keine Wörter gefunden'}</h3>
+                <p className="text-muted-foreground mb-6">Für das Level {displayLevel} gibt es noch keine Vokabeln im System.</p>
                 <div className="flex justify-center gap-2">
                     {levels.map(l => (
                         <button
@@ -102,16 +105,19 @@ function LearnMode() {
     return (
         <div className="space-y-6">
             <div className="flex gap-2">
-                {levels.map(l => (
-                    <button
-                        key={l}
-                        onClick={() => setSelectedLevel(l)}
-                        className={cn("px-4 py-2 rounded-full border text-sm font-medium transition-all",
-                            selectedLevel === l ? "bg-slate-900 text-white border-slate-900" : "bg-white text-slate-600 hover:bg-slate-50")}
-                    >
-                        {l}
-                    </button>
-                ))}
+                {levels.map(l => {
+                    const displayLevel = l.replace('LEVELS.', '');
+                    return (
+                        <button
+                            key={l}
+                            onClick={() => setSelectedLevel(l)}
+                            className={cn("px-4 py-2 rounded-full border text-sm font-medium transition-all",
+                                selectedLevel === l ? "bg-slate-900 text-white border-slate-900" : "bg-white text-slate-600 hover:bg-slate-50")}
+                        >
+                            {displayLevel}
+                        </button>
+                    );
+                })}
             </div>
 
             <div className="bg-white rounded-3xl p-12 text-center border shadow-sm relative overflow-hidden">
